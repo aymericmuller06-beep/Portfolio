@@ -1,0 +1,612 @@
+/* ─────────────────────────────────────────
+   1. PALETTE
+───────────────────────────────────────── */
+:root {
+  --hero-bg: var(--bs-light); /* couleur du hero pour la transition vers la section cards */
+  --topbar-h: 56px;       /* hauteur de la topbar fixe */
+  --c-light-1: #8eb69b;  /* fond principal light */
+  --c-light-2: #588471;  /* secondaire / bordures */
+  --c-light-3: #235347;  /* accent / boutons */
+  --c-dark-1:  #020e0f;  /* fond sombre */
+  --c-dark-1-rgb: 2, 14, 15; /* pour les ombres et overlays */
+  --c-dark-2:  #051f20;  /* surface sombre */
+  --c-dark-3:  #0b2b26;  /* nuance intermédiaire sombre */
+  --c-dark-4: #163832;  /* nuance intermédiaire sombre */
+  --c-red:     #ae1625;  /* accent rouge sombre */
+  --c-red-light: #ce283b; /* accent rouge clair */
+  --c-green:   #52b788;  /* vert forêt mid-range */
+  --c-green-dark: #2d6a4f; /* vert forêt sombre */
+}
+
+/* ─────────────────────────────────────────
+   2. IF – Light (défaut)
+───────────────────────────────────────── */
+:root,
+[data-bs-theme="light"] {
+  /* --- theme perso --- */
+
+  --bg-main:    var(--bs-light);
+  --bg-surface: var(--c-light-1);
+  --text-main:  var(--c-dark-1);
+  --text-muted: var(--c-light-3);
+  --accent:     var(--c-green-dark);
+  --border-soft: var(--c-light-2);
+  --radius-lg:  18px;
+
+  /* ── Bootstrap CSS variable overrides ── */
+  --bs-primary:          var(--c-light-3);
+  --bs-primary-rgb:      35, 83, 71;
+  --bs-secondary:        var(--c-light-2);
+  --bs-secondary-rgb:    142, 182, 155;
+  --bs-body-bg:          var(--c-light-1);
+  --bs-body-color:       var(--c-dark-1);
+  --bs-link-color:       var(--c-light-3);
+  --bs-link-hover-color: var(--c-dark-1);
+  --bs-border-color:     var(--c-light-2);
+  --bs-dark:             var(--c-dark-1);
+  --bs-dark-rgb:         5, 31, 32;
+  --bs-danger:           var(--c-red-light);
+  --bs-danger-rgb:       201, 56, 74;
+  --bs-secondary-bg:     var(--c-light-2);
+  --bs-secondary-bg-rgb : 142, 182, 155;
+  --bs-tertiary-bg:      var(--c-light-3);
+  --bs-tertiary-bg-rgb: 35, 83, 71;
+}
+
+/* ─────────────────────────────────────────
+   3. IF – Dark
+───────────────────────────────────────── */
+
+html[data-bs-theme="dark"] {
+  --hero-bg: var(--c-dark-1); /* en dark mode, le hero est sombre */
+}
+
+[data-bs-theme="dark"] {
+  /* --- theme perso --- */
+
+  --bg-main:    var(--c-dark-1);
+  --bg-surface: var(--c-dark-2);
+  --text-main:  var(--c-light-1);
+  --text-muted: var(--c-light-2);
+  --accent:     var(--c-green);
+  --border-soft: var(--c-dark-3);
+
+  /* ── Bootstrap CSS variable overrides ── */
+  --bs-primary:          var(--c-light-2);
+  --bs-primary-rgb:      142, 182, 155;
+  --bs-secondary:        var(--c-light-3);
+  --bs-secondary-rgb:    35, 83, 71;
+  --bs-body-bg:          var(--c-dark-1);
+  --bs-body-color:       var(--c-light-1);
+  --bs-link-color:       var(--c-light-2);
+  --bs-link-hover-color: var(--c-light-1);
+  --bs-border-color:     var(--c-dark-3);
+  --bs-dark:             var(--c-dark-2);
+  --bs-dark-rgb:         11, 43, 38;
+  --bs-danger:           var(--c-red);
+  --bs-danger-rgb:       174, 22, 37;
+  --bs-secondary-bg:     var(--c-dark-2);
+  --bs-secondary-bg-rgb: 5, 31, 32;
+  --bs-tertiary-bg:      var(--c-dark-3);
+  --bs-tertiary-bg-rgb: 11, 43, 38;
+}
+
+/* ─────────────────────────────────────────
+   3b. PAGE LOADER
+───────────────────────────────────────── */
+#page-loader.loader-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* ── Custom cursor ── */
+@media (pointer: fine) {
+  html, html * {
+    cursor: none !important;
+  }
+
+  #custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1.5px solid white;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-80px, -80px);
+    margin-left: -16px;
+    margin-top: -16px;
+    will-change: transform;
+    mix-blend-mode: difference;
+    transition: width 0.15s ease, height 0.15s ease, margin 0.15s ease;
+  }
+
+  #custom-cursor.cursor-hover {
+    width: 44px;
+    height: 44px;
+    margin-left: -22px;
+    margin-top: -22px;
+  }
+}
+
+/* ─────────────────────────────────────────
+   4. BASE
+───────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* fix iOS Safari + desktop : évite le scroll horizontal */
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  transition: background 0.3s, color 0.3s;
+  padding-top: var(--topbar-h); /* compense la topbar fixe */
+}
+
+/* ─────────────────────────────────────────
+   4b. TRANSITIONS SWUP
+───────────────────────────────────────── */
+#swup {
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+html.is-changing #swup {
+  opacity: 0;
+  filter: blur(8px);
+}
+
+html.is-rendering #swup {
+  opacity: 1;
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #swup {
+    transition: none;
+  }
+
+  html.is-changing #swup,
+  html.is-rendering #swup {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+/* ─────────────────────────────────────────
+   5. COMPOSANTS
+───────────────────────────────────────── */
+
+/* ── Top bar ── */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--bg-main);
+  transition: transform 0.35s ease, background 0.3s;
+}
+
+.topbar--hidden {
+  transform: translateY(-100%);
+}
+
+.topbar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 20px;
+  background: linear-gradient(180deg, var(--bg-main) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 99;
+}
+
+.topbar-name {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+}
+
+.topbar-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+}
+
+.btn-home.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ── Title Banner ── */
+html {
+  --banner-vignette: rgba(2, 14, 15, 0.28);   /* light mode → ombre sombre */
+  --banner-fade:     var(--c-light-1);         /* couleur du fondu latéral */
+}
+html[data-bs-theme="dark"] {
+  --banner-vignette: rgba(142, 182, 155, 0.18); /* dark mode → lueur claire */
+  --banner-fade:     var(--c-dark-1);           /* couleur du fondu latéral */
+}
+
+.title-banner {
+  min-height: 50vh; /* mobile */
+  padding: 3.5rem 8% 3rem;
+  background: var(--bg-main);
+  box-shadow: inset 0 0 120px 30px var(--banner-vignette);
+  transition: background 0.3s, box-shadow 0.3s;
+  z-index: 0; /* derrière la section cards */
+}
+
+/* ── Particles ── */
+#particles-js {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+#particles-js canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* contenu du hero au-dessus du canvas */
+.title-banner > div:not(#particles-js):not(.hero-bottom-fade),
+.title-banner > nav {
+  position: relative;
+  z-index: 1;
+}
+
+/* conteneur « mon + PORTFOLIO » : ne dépasse jamais le viewport */
+.title-banner > div:not(#particles-js):not(.hero-bottom-fade) {
+  max-width: min(100%, 100vw);
+  overflow: hidden;
+  line-height: 1; /* empêche tout leading résiduel entre les deux éléments */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+@media (min-width: 576px) {
+  .title-banner {
+    min-height: 80vh;
+  }
+}
+
+/* ── Section cards ── */
+#categories {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Fondu en bas du hero ── */
+.hero-bottom-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  /* fondu vers la couleur de fond principale (suit le thème) */
+  background: linear-gradient(to bottom, transparent 0%, var(--bg-main) 100%);
+  pointer-events: none;
+  z-index: 3;
+  transition: background 0.3s;
+}
+
+/* dégradés latéraux */
+.title-banner::before,
+.title-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 18%;
+  pointer-events: none;
+  z-index: 1;
+}
+.title-banner::before {
+  left: 0;
+  background: linear-gradient(to right, var(--banner-fade), transparent);
+}
+.title-banner::after {
+  right: 0;
+  background: linear-gradient(to left, var(--banner-fade), transparent);
+}
+
+.banner-pre {
+  display: block;
+  font-size: clamp(0.65rem, 3.5vw, 1.8rem); /* ~30 % du titre à toutes tailles */
+  letter-spacing: 0.1em;
+  color: var(--c-red-light);
+  padding: 0;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+[data-bs-theme="dark"] .banner-pre {
+  color: var(--c-red);
+}
+
+.banner-title {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(1.5rem, 11vw, 10rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0;
+  padding: 0 0 0.12em;
+  color: var(--accent);
+  max-width: 100%;
+  overflow: visible;
+}
+
+/* TypeIt injecte des <span> inline — forcer line-height pour qu'ils
+   n'inflatent pas la line-box du h1 */
+.banner-title span {
+  line-height: 1;
+}
+.ti-cursor {
+  line-height: 1;
+  font-size: inherit;
+}
+
+/* ── Utilitaires personnalisés ── */
+.text-accent {
+  color: var(--accent) !important;
+}
+
+.ls-tight {
+  letter-spacing: -0.02em;
+}
+
+/* ── Card avec image de fond en layer ── */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+#categories .card {
+  min-height: 160px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #categories .card {
+    transition: transform 0.8s ease;
+  }
+  #categories .card:hover {
+    transform: scale(1.05);
+  }
+}
+
+.card-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+/* ── Card sweep (hover layer) ── */
+.card-sweep {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 20%, var(--c-green-dark), transparent 80%);
+  opacity: 0.30;
+  pointer-events: none;
+  z-index: 1;
+  will-change: transform;
+  transform: translateX(-100%);
+}
+
+
+
+/* ── Toggle dark mode ── */
+.theme-toggle,
+.btn-home {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.theme-toggle:hover,
+.btn-home:hover {
+  background-color: var(--accent) !important;
+  color: var(--bg-surface) !important;
+  border-color: var(--accent) !important;
+}
+
+/* ── Back to top ── */
+#backToTop {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  background-color: rgba(var(--c-dark-1-rgb), 0.55) !important;
+  border-color: rgba(var(--c-dark-1-rgb), 0.7) !important;
+  color: var(--c-light-1) !important;
+  font-size: 1.5rem;
+}
+
+[data-bs-theme="dark"] #backToTop {
+  background-color: rgba(142, 182, 155, 0.18) !important;
+  border-color: rgba(142, 182, 155, 0.35) !important;
+  color: var(--c-light-1) !important;
+}
+
+#backToTop.btt-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#backToTop:hover {
+  background-color: var(--accent) !important;
+  color: var(--c-dark-1) !important;
+  border-color: var(--accent) !important;
+}
+
+/* ── TOC buttons z-index (au-dessus du pseudo vignette) ── */
+.title-banner nav {
+  position: relative;
+  z-index: 2;
+}
+
+.title-banner nav .btn-outline-secondary:hover {
+  background-color: var(--c-green) !important;
+  border-color: var(--c-green) !important;
+  color: var(--c-dark-1) !important;
+}
+
+[data-bs-theme="light"] .title-banner nav .btn-outline-secondary:hover {
+  color: var(--bs-white) !important;
+  background-color: var(--c-green-dark) !important;
+}
+
+/* ── Letter-spacing utilitaire ── */
+.ls-wide {
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+}
+
+/* ── Anchor scroll offset (compense la topbar) ── */
+#categories,
+#apropos,
+#contact {
+  scroll-margin-top: calc(var(--topbar-h) + 8px);
+}
+
+#apropos {
+  background-color: rgba(var(--bs-secondary-bg-rgb), 0.3) !important;
+}
+
+/* ── Categories – fond suit le thème, seules les cards sont forcées dark ── */
+/* (data-bs-theme="dark" est posé sur chaque .card en HTML) */
+
+/* ── À Propos – wrapper portrait + fond banner ── */
+.portrait-wrap {
+  position: relative;
+}
+
+.portrait-bg {
+  position: absolute;
+  inset: -12% -18%;
+  width: 136%;
+  height: 124%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  opacity: 0.45;
+  pointer-events: none;
+  user-select: none;
+  filter: blur(2px);
+  z-index: 0;
+}
+
+[data-bs-theme="dark"] .portrait-bg {
+  opacity: 0.18;
+}
+
+/* ── À Propos portrait ── */
+.about-portrait {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  filter: grayscale(20%);
+  transition: filter 0.3s;
+}
+
+.about-portrait:hover {
+  filter: grayscale(0%);
+}
+
+
+/* ─────────────────────────────────────────
+   6. RESPONSIVE MOBILE  (< 576px)
+───────────────────────────────────────── */
+@media (max-width: 575.98px) {
+
+  /* ── Hero : padding réduit pour gagner de la largeur utile ── */
+  .title-banner {
+    min-height: 60vh;
+    padding: 2.5rem 5% 2rem;
+  }
+
+  /* ── Fondu côtés : réduit sur mobile (pas d'espace) ── */
+  .title-banner::before,
+  .title-banner::after {
+    width: 8%;
+  }
+
+  /* ── Nav hero boutons : plus compacts ── */
+  .ls-wide {
+    letter-spacing: 0.08em;
+    font-size: 0.65rem;
+  }
+
+  /* ── Section À Propos : padding réduit ── */
+  #apropos {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* ── Contact : padding réduit ── */
+  #contact {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* ── Topbar : nom légèrement plus visible ── */
+  .topbar-name,
+  .topbar-label {
+    font-size: 0.55rem;
+  }
+
+  /* ── Back to top : déplacé pour ne pas couvrir le contenu ── */
+  #backToTop {
+    bottom: 0.75rem;
+    right: 0.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
+
+  /* ── Footer : centrer sur petit écran ── */
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+

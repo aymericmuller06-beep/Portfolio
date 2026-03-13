@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/src/Img/favicon.png" />
+    <title>Portfolio | Aymeric Muller</title>
+  </head>
+
+  <body>
+
+    <!-- ── Page loader (inline styles : critique avant CSS) ── -->
+    <div id="page-loader" style="position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:#8eb69b;transition:opacity .45s ease,visibility .45s ease">
+      <div style="width:42px;height:42px;border-radius:50%;border:3px solid rgba(0,0,0,.12);border-top-color:rgba(35,83,71,.85);animation:_lspin .7s linear infinite"></div>
+    </div>
+    <style>@keyframes _lspin{to{transform:rotate(360deg)}}</style>
+    <script>
+      (function(){
+        var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+        if(t==='dark') document.getElementById('page-loader').style.background='#020e0f';
+      })();
+    </script>
+
+    <!-- ── Header ── -->
+    <header class="topbar d-flex justify-content-between align-items-center px-3 py-3">
+      <span class="topbar-name fw-bold text-uppercase">MULLER AYMERIC</span>
+      <div class="d-flex align-items-center gap-3">
+        <a href="/" class="btn-home btn btn-sm btn-outline-secondary" aria-label="Accueil">⌂</a>
+        <button class="theme-toggle btn btn-sm btn-outline-secondary" id="themeToggle" aria-label="Changer le thème">☀</button>
+        <span class="topbar-label fw-light text-uppercase opacity-75 ms-2 ms-sm-4">2025-2027</span>
+      </div>
+    </header>
+
+    <div id="swup" class="transition-fade">
+
+      <main></main>
+
+      <footer class="py-4 border-top">
+        <div class="container d-flex justify-content-between flex-wrap gap-2">
+          <span>© 2026 Aymeric Muller</span>
+          <a href="mailto:contact@example.com" class="nav-link p-0">contact@example.com</a>
+        </div>
+      </footer>
+
+    </div>
+
+    <button id="backToTop" class="btn btn-sm btn-outline-secondary" aria-label="Retour en haut">↑</button>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
