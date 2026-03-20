@@ -92,6 +92,22 @@ html[data-bs-theme="dark"] {
 }
 
 /* ─────────────────────────────────────────
+   3a. UNIFIED BUTTONS
+───────────────────────────────────────── */
+.btn-unified {
+  text-transform: uppercase;
+  font-weight: 600; /* semibold */
+  letter-spacing: 0.12em;
+  transition: all 0.25s ease;
+}
+
+.btn-unified.btn-outline-secondary:hover {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: var(--bg-surface) !important;
+}
+
+/* ─────────────────────────────────────────
    3b. PAGE LOADER
 ───────────────────────────────────────── */
 #page-loader.loader-hidden {
@@ -469,7 +485,7 @@ html[data-bs-theme="dark"] {
 
 #backToTop:hover {
   background-color: var(--accent) !important;
-  color: var(--c-dark-1) !important;
+  color: var(--bg-surface) !important;
   border-color: var(--accent) !important;
 }
 
@@ -477,23 +493,6 @@ html[data-bs-theme="dark"] {
 .title-banner nav {
   position: relative;
   z-index: 2;
-}
-
-.title-banner nav .btn-outline-secondary:hover {
-  background-color: var(--c-green) !important;
-  border-color: var(--c-green) !important;
-  color: var(--c-dark-1) !important;
-}
-
-[data-bs-theme="light"] .title-banner nav .btn-outline-secondary:hover {
-  color: var(--bs-white) !important;
-  background-color: var(--c-green-dark) !important;
-}
-
-/* ── Letter-spacing utilitaire ── */
-.ls-wide {
-  letter-spacing: 0.12em;
-  font-size: 0.7rem;
 }
 
 /* ── Anchor scroll offset (compense la topbar) ── */
@@ -571,8 +570,8 @@ html[data-bs-theme="dark"] {
     width: 8%;
   }
 
-  /* ── Nav hero boutons : plus compacts ── */
-  .ls-wide {
+  /* ── Nav hero boutons : plus compacts sur mobile ── */
+  .title-banner nav .btn-unified {
     letter-spacing: 0.08em;
     font-size: 0.65rem;
   }
