@@ -497,10 +497,13 @@ html[data-bs-theme="dark"] {
 }
 
 /* ── Anchor scroll offset (compense la topbar) ── */
-#categories,
+#categories {
+  scroll-margin-top: calc(50vh - var(--topbar-h) / 2);
+}
+
 #apropos,
 #contact {
-  scroll-margin-top: calc(var(--topbar-h) + 8px);
+  scroll-margin-top: calc(var(--topbar-h) + 40px);
 }
 
 #apropos {
