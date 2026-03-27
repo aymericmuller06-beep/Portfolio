@@ -6,7 +6,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        veilleTechnologique: resolve(__dirname, 'veille_technologique/index.html'),
+        veilleTechnologique: resolve(__dirname, './Pages/veille_technologique/index.html'),
       },
     },
   },
