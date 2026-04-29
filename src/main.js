@@ -11,13 +11,13 @@ import { initTopbar } from './scripts/topbar.js'
 import './style.css'
 import 'aos/dist/aos.css'
 
-// ── Page loader : masquer une fois tout chargé ──
+// Page loader
 window.addEventListener('load', () => {
   const loader = document.getElementById('page-loader')
   if (loader) loader.classList.add('loader-hidden')
 })
 
-// ── Theme toggle ──
+// Theme toggle
 const html = document.documentElement
 let particlesContainer = null
 let swupInstance = null
@@ -26,7 +26,7 @@ let particlesLoaderPromise = null
 const applyTheme = (theme) => {
   html.setAttribute('data-bs-theme', theme)
   const btn = document.getElementById('themeToggle')
-  if (btn) btn.textContent = theme === 'dark' ? '☀' : '☾'
+  if (btn) btn.innerHTML = theme === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>'
   localStorage.setItem('theme', theme)
   if (document.getElementById('particles-js')) initParticles()
 }
@@ -45,7 +45,8 @@ function initThemeToggle() {
     const current = html.getAttribute('data-bs-theme')
     applyTheme(current === 'dark' ? 'light' : 'dark')
   })
-  btn.textContent = html.getAttribute('data-bs-theme') === 'dark' ? '☀' : '☾'
+  const isDark = html.getAttribute('data-bs-theme') === 'dark'
+  btn.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>'
 }
 
 function syncTopbarState() {
