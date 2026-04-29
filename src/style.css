@@ -29,7 +29,7 @@
   --border-soft: var(--c-light-2);
   --radius-lg:  18px;
 
-  /* ── Bootstrap CSS variable overrides ── */
+  /* Bootstrap CSS variable overrides */
   --bs-primary:          var(--c-light-3);
   --bs-primary-rgb:      35, 83, 71;
   --bs-secondary:        var(--c-light-2);
@@ -64,7 +64,7 @@ html[data-bs-theme="dark"] {
   --accent:     var(--c-green);
   --border-soft: var(--c-dark-3);
 
-  /* ── Bootstrap CSS variable overrides ── */
+  /* Bootstrap CSS variable overrides */
   --bs-primary:          var(--c-light-2);
   --bs-primary-rgb:      142, 182, 155;
   --bs-secondary:        var(--c-light-3);
@@ -87,7 +87,7 @@ html[data-bs-theme="dark"] {
 /* BUTTONS */
 .btn-unified {
   text-transform: uppercase;
-  font-weight: 600; /* semibold */
+  font-weight: 600;
   letter-spacing: 0.12em;
   transition: all 0.25s ease;
 }
@@ -114,7 +114,7 @@ html[data-bs-theme="dark"] {
 /* BASE */
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden; /* fix iOS Safari + desktop : évite le scroll horizontal */
+  overflow-x: hidden; /* évite le scroll horizontal */
 }
 
 body {
@@ -196,12 +196,12 @@ html.is-rendering #swup {
 
 /* BANNER */
 html {
-  --banner-vignette: rgba(2, 14, 15, 0.28);   /* light mode → ombre sombre */
-  --banner-fade:     var(--c-light-1);         /* couleur du fondu latéral */
+  --banner-vignette: rgba(2, 14, 15, 0.28);   /* light mode */
+  --banner-fade:     var(--c-light-1);         
 }
 html[data-bs-theme="dark"] {
-  --banner-vignette: rgba(142, 182, 155, 0.18); /* dark mode → lueur claire */
-  --banner-fade:     var(--c-dark-1);           /* couleur du fondu latéral */
+  --banner-vignette: rgba(142, 182, 155, 0.18); /* dark mode */
+  --banner-fade:     var(--c-dark-1);           
 }
 
 .title-banner {
@@ -312,8 +312,7 @@ html[data-bs-theme="dark"] {
   overflow: visible;
 }
 
-/* TypeIt injecte des <span> inline — forcer line-height pour qu'ils
-   n'inflatent pas la line-box du h1 */
+/* TypeIt injecte des <span> inline */
 .banner-title span {
   line-height: 1;
 }
