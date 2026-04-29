@@ -11,6 +11,7 @@ export function initTopbar() {
 
   let lastY = window.scrollY
   const THRESHOLD = 8
+  let ticking = false
 
   const handleScroll = () => {
     const currentY = window.scrollY
@@ -24,11 +25,19 @@ export function initTopbar() {
     }
 
     lastY = currentY
+    ticking = false
   }
 
-  window.addEventListener('scroll', handleScroll, { passive: true })
+  const onScroll = () => {
+    if (!ticking) {
+      requestAnimationFrame(handleScroll)
+      ticking = true
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true })
 
   cleanupTopbar = () => {
-    window.removeEventListener('scroll', handleScroll)
+    window.removeEventListener('scroll', onScroll)
   }
 }

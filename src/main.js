@@ -7,7 +7,6 @@ import { tsParticles } from '@tsparticles/engine'
 import { loadSlim } from '@tsparticles/slim'
 import { initCardsSweep } from './scripts/cards-sweep.js'
 import { initBackToTop } from './scripts/back-to-top.js'
-import { initCursor } from './scripts/cursor.js'
 import { initTopbar } from './scripts/topbar.js'
 import './style.css'
 import 'aos/dist/aos.css'
@@ -162,7 +161,6 @@ function initPage() {
   initAOS()
   initCardsSweep()
   initBackToTop()
-  initCursor()
   initTopbar()
   initTypeIt()
   initParticles()
@@ -187,3 +185,4 @@ function initSwup() {
 
 initPage()
 initSwup()
+

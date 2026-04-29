@@ -20,7 +20,6 @@ src/
   scripts/
     back-to-top.js            → bouton retour en haut
     cards-sweep.js            → animation hover des cards
-    cursor.js                 → curseur personnalisé (desktop uniquement)
     topbar.js                 → topbar qui se cache au scroll
 
 ## Librairies utilisées
