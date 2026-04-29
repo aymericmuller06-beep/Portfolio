@@ -15,12 +15,7 @@
       <div style="width:42px;height:42px;border-radius:50%;border:3px solid rgba(0,0,0,.12);border-top-color:rgba(35,83,71,.85);animation:_lspin .7s linear infinite"></div>
     </div>
     <style>@keyframes _lspin{to{transform:rotate(360deg)}}</style>
-    <script>
-      (function(){
-        var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
-        if(t==='dark') document.getElementById('page-loader').style.background='#020e0f';
-      })();
-    </script>
+    <script src="/src/scripts/page-loader.js"></script>
 
     <!-- Header -->
     <header class="topbar d-flex justify-content-between align-items-center px-3 py-3">
@@ -58,65 +53,64 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3 g-sm-4">
 
           <div class="col">
+            <a href="./Pages/projets_stage/index.html" class="card h-100 text-decoration-none bg-body-secondary" data-bs-theme="dark">
+              <img src="./src/Img/Azurinfo.webp" alt="" class="card-bg-img">
+              <div class="card-sweep" aria-hidden="true"></div>
+              <div class="card-body d-flex flex-column gap-2 p-4 position-relative z-2">
+                <h2 class="card-title text-truncate fw-bold text-uppercase fs-6 lh-sm mb-0 text-primary">Projets / Stage</h2>
+                <p class="card-text small flex-grow-1">Mes projets et expériences en stage</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="./Pages/realisations/index.html" class="card h-100 text-decoration-none bg-body-secondary" data-bs-theme="dark">
+              <img src="./src/Img/Parcours.webp" alt="" class="card-bg-img">
+              <div class="card-sweep" aria-hidden="true"></div>
+              <div class="card-body d-flex flex-column gap-2 p-4 position-relative z-2">
+                <h2 class="card-title text-truncate fw-bold text-uppercase fs-6 lh-sm mb-0 text-primary">Réalisations</h2>
+                <p class="card-text small flex-grow-1">Projets concrets réalisés</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="./Pages/tableau_synthese/index.html" class="card h-100 text-decoration-none bg-body-secondary" data-bs-theme="dark">
+              <img src="./src/Img/Realisations.webp" alt="" class="card-bg-img">
+              <div class="card-sweep" aria-hidden="true"></div>
+              <div class="card-body d-flex flex-column gap-2 p-4 position-relative z-2">
+                <h2 class="card-title fw-bold text-uppercase fs-6 lh-sm mb-0 text-primary">Tableau<br>Synthèse</h2>
+                <p class="card-text small flex-grow-1">Vue d'ensemble de mes compétences</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="./Pages/cv/index.html" class="card h-100 text-decoration-none bg-body-secondary" data-bs-theme="dark">
+              <div class="card-sweep" aria-hidden="true"></div>
+              <div class="card-body d-flex flex-column gap-2 p-4 position-relative z-2">
+                <h2 class="card-title text-truncate fw-bold text-uppercase fs-6 lh-sm mb-0 text-primary">CV</h2>
+                <p class="card-text small flex-grow-1">Mon curriculum vitae détaillé</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="#contact" class="card h-100 text-decoration-none bg-body-secondary" data-bs-theme="dark">
+              <div class="card-sweep" aria-hidden="true"></div>
+              <div class="card-body d-flex flex-column gap-2 p-4 position-relative z-2">
+                <h2 class="card-title text-truncate fw-bold text-uppercase fs-6 lh-sm mb-0 text-primary">Contact</h2>
+                <p class="card-text small flex-grow-1">Me contacter directement</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col">
             <a href="./Pages/veille_technologique/index.html" class="card h-100 text-decoration-none bg-body-secondary" data-bs-theme="dark">
-              <img src="./src/Img/Veille techno.jpg" alt="" class="card-bg-img">
               <div class="card-sweep" aria-hidden="true"></div>
               <div class="card-body d-flex flex-column gap-2 p-4 position-relative z-2">
                 <h2 class="card-title text-truncate fw-bold text-uppercase fs-6 lh-sm mb-0 text-primary">Veille Technologique</h2>
-                <p class="card-text small flex-grow-1">Suivi des tendances, outils et innovations du secteur IT.</p>
-              </div>
-            </a>
-          </div>
-
-          <div class="col">
-            <a href="./Pages/parcours/index.html" class="card h-100 text-decoration-none bg-body-secondary" data-bs-theme="dark">
-              <img src="./src/Img/Parcours.jpg" alt="" class="card-bg-img">
-              <div class="card-sweep" aria-hidden="true"></div>
-              <div class="card-body d-flex flex-column gap-2 p-4 position-relative z-2">
-                <h2 class="card-title text-truncate fw-bold text-uppercase fs-6 lh-sm mb-0 text-primary">Parcours</h2>
-                <p class="card-text small flex-grow-1">Formations et expériences</p>
-              </div>
-            </a>
-          </div>
-
-          <div class="col">
-            <a href="./Pages/realisations_professionnelles/index.html" class="card h-100 text-decoration-none bg-body-secondary" data-bs-theme="dark">
-              <img src="./src/Img/Realisations.jpg" alt="" class="card-bg-img">
-              <div class="card-sweep" aria-hidden="true"></div>
-              <div class="card-body d-flex flex-column gap-2 p-4 position-relative z-2">
-                <h2 class="card-title fw-bold text-uppercase fs-6 lh-sm mb-0 text-primary">Réalisations<br>Professionnelles</h2>
-                <p class="card-text small flex-grow-1">Projets concrets menés en entreprise et en formation.</p>
-              </div>
-            </a>
-          </div>
-
-          <div class="col">
-            <a href="#" class="card h-100 text-decoration-none bg-body-secondary" data-bs-theme="dark">
-              <div class="card-sweep" aria-hidden="true"></div>
-              <div class="card-body d-flex flex-column gap-2 p-4 position-relative z-2">
-                <h2 class="card-title text-truncate fw-bold text-uppercase fs-6 lh-sm mb-0 text-primary">Compétences</h2>
-                <p class="card-text small flex-grow-1">À définir - Compétences techniques et transversales</p>
-              </div>
-            </a>
-          </div>
-
-          <div class="col">
-            <a href="#" class="card h-100 text-decoration-none bg-body-secondary" data-bs-theme="dark">
-              <div class="card-sweep" aria-hidden="true"></div>
-              <div class="card-body d-flex flex-column gap-2 p-4 position-relative z-2">
-                <h2 class="card-title text-truncate fw-bold text-uppercase fs-6 lh-sm mb-0 text-primary">Projets Personnels</h2>
-                <p class="card-text small flex-grow-1">À définir - Projets créatifs et exploratoires</p>
-              </div>
-            </a>
-          </div>
-
-          <div class="col">
-            <a href="./Pages/definitions/index.html" class="card h-100 text-decoration-none bg-body-secondary" data-bs-theme="dark">
-              <img src="./src/Img/Definitions.jpg" alt="" class="card-bg-img">
-              <div class="card-sweep" aria-hidden="true"></div>
-              <div class="card-body d-flex flex-column gap-2 p-4 position-relative z-2">
-                <h2 class="card-title text-truncate fw-bold text-uppercase fs-6 lh-sm mb-0 text-primary">Définitions</h2>
-                <p class="card-text small flex-grow-1">Définitions des mots que vous trouverez dans le site</p>
+                <p class="card-text small flex-grow-1">Suivi des tendances et innovations IT</p>
               </div>
             </a>
           </div>
@@ -131,8 +125,8 @@
           <div class="row align-items-center g-4">
             <div class="col-md-4 text-center">
               <div class="portrait-wrap d-inline-block overflow-hidden rounded-3">
-                <img src="./src/Img/Fond_banner.png" alt="" class="portrait-bg" aria-hidden="true">
-                <img src="./src/Img/Aymeric png.png" alt="Aymeric Muller" class="img-fluid about-portrait">
+                <img src="./src/Img/Fond_banner.webp" alt="" class="portrait-bg" aria-hidden="true">
+                <img src="./src/Img/Aymeric png.webp" alt="Aymeric Muller" class="img-fluid about-portrait">
               </div>
             </div>
             <div class="col-md-8">

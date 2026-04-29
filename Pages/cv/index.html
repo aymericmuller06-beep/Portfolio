@@ -15,26 +15,47 @@
       <div style="width:42px;height:42px;border-radius:50%;border:3px solid rgba(0,0,0,.12);border-top-color:rgba(35,83,71,.85);animation:_lspin .7s linear infinite"></div>
     </div>
     <style>@keyframes _lspin{to{transform:rotate(360deg)}}</style>
-    <script>
-      (function(){
-        var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
-        if(t==='dark') document.getElementById('page-loader').style.background='#020e0f';
-      })();
-    </script>
+    <script src="/src/scripts/page-loader.js"></script>
 
     <!-- Header -->
     <header class="topbar d-flex justify-content-between align-items-center px-3 py-3">
       <span class="topbar-name fw-bold text-uppercase">MULLER AYMERIC</span>
       <div class="d-flex align-items-center gap-3">
         <a href="/" class="btn-home btn btn-sm btn-outline-secondary btn-unified" aria-label="Accueil"><i class="fa-solid fa-house"></i></a>
-        <button class="theme-toggle btn btn-sm btn-outline-secondary btn-unified" id="themeToggle" aria-label="Changer le thème"><i class="fa-solid fa-star"></i></button>
+        <button class="theme-toggle btn btn-sm btn-outline-secondary btn-unified" id="themeToggle" aria-label="Changer le thème"><i class="fa-solid fa-sun"></i></button>
         <span class="topbar-label fw-light text-uppercase opacity-75 ms-2 ms-sm-4">2025-2027</span>
       </div>
     </header>
 
     <div id="swup" class="transition-fade">
 
-      <main></main>
+      <main>
+
+        <section class="title-banner position-relative overflow-hidden d-flex flex-column align-items-center justify-content-center text-center">
+          <div id="particles-js" aria-hidden="true"></div>
+
+          <div class="d-flex flex-column align-items-start">
+            <span class="banner-pre fw-semibold text-lowercase lh-1 mb-0">mon</span>
+            <h1 class="banner-title">CV</h1>
+          </div>
+
+          <nav class="d-flex align-items-center gap-2 gap-sm-3 flex-wrap justify-content-center mt-4" aria-label="Actions CV">
+            <a href="#cv" class="btn btn-sm btn-outline-secondary btn-unified">Voir le CV</a>
+            <span class="opacity-25 text-body" aria-hidden="true">·</span>
+            <a href="/" class="btn btn-sm btn-outline-secondary btn-unified">Retour accueil</a>
+          </nav>
+
+          <div class="hero-bottom-fade" aria-hidden="true"></div>
+        </section>
+
+        <section id="cv" class="py-5 px-3 px-sm-4 bg-body-secondary bg-opacity-25" data-aos="fade-up">
+          <div class="container-lg">
+            <h2 class="display-6 fw-black text-uppercase text-accent ls-tight mb-3">Curriculum Vitae</h2>
+            <p class="mb-0 opacity-75">Mon parcours professionnel et académique détaillé.</p>
+          </div>
+        </section>
+
+      </main>
 
       <footer class="py-4 border-top">
         <div class="container d-flex justify-content-between flex-wrap gap-2">
