@@ -15,7 +15,7 @@ export default defineConfig({
         veilleTechnologique: resolve(__dirname, './Pages/veille_technologique/index.html'),
       },
       output: {
-        // Code splitting intelligente — vendor séparé pour meilleur caching
+        // Code splitting intelligente - vendor séparé pour meilleur caching
         manualChunks: {
           'vendor-bootstrap': ['bootstrap'],
           'vendor-animations': ['aos', 'typeit', 'swup'],
