@@ -9,11 +9,18 @@
   </head>
 
   <body>
-    <header class="topbar d-flex justify-content-between align-items-center px-4 py-3">
+    <header class="topbar">
       <span class="topbar-name fw-bold text-uppercase">Aymeric Muller</span>
-      <div class="d-flex align-items-center gap-3">
-        <a href="/" class="btn btn-sm btn-outline-secondary" aria-label="Accueil"><i class="fa-solid fa-house"></i></a>
-        <button class="theme-toggle btn btn-sm btn-outline-secondary" id="themeToggle" aria-label="Changer le thème"><i class="fa-solid fa-moon"></i></button>
+      <nav class="nav nav-tabs flex-grow-1 ms-2 ms-md-3" role="navigation" aria-label="Navigation des sections">
+        <a href="/" class="nav-link px-2 px-md-3 small" data-tab="home"><i class="fa-solid fa-house"></i><span class="d-none d-md-inline ms-1">Accueil</span></a>
+        <a href="../projets_stage/index.html" class="nav-link px-2 px-md-3 small" data-tab="projets"><i class="fa-solid fa-folder"></i><span class="d-none d-md-inline ms-1">Projets</span></a>
+        <a href="../realisations/index.html" class="nav-link px-2 px-md-3 small" data-tab="realisations"><i class="fa-solid fa-star"></i><span class="d-none d-md-inline ms-1">Réalisations</span></a>
+        <a href="./index.html" class="nav-link px-2 px-md-3 small" data-tab="synthese"><i class="fa-solid fa-chart-bar"></i><span class="d-none d-md-inline ms-1">Synthèse</span></a>
+        <a href="../cv/index.html" class="nav-link px-2 px-md-3 small" data-tab="cv"><i class="fa-solid fa-file"></i><span class="d-none d-md-inline ms-1">CV</span></a>
+        <a href="../veille_technologique/index.html" class="nav-link px-2 px-md-3 small" data-tab="veille"><i class="fa-solid fa-rss"></i><span class="d-none d-md-inline ms-1">Veille</span></a>
+      </nav>
+      <div class="ms-auto">
+        <button class="theme-toggle btn-link p-0 border-0" id="themeToggle" aria-label="Changer le thème"><i class="fa-solid fa-moon"></i></button>
       </div>
     </header>
 

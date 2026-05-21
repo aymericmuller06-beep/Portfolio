@@ -2,6 +2,9 @@ export function initTopbar() {
   const topbar = document.querySelector('.topbar')
   if (!topbar) return
 
+  // Initialize active tab based on current page
+  initializeActiveTabs()
+
   let lastY = window.scrollY
   const THRESHOLD = 8
   let ticking = false
@@ -36,4 +39,26 @@ export function initTopbar() {
   return () => {
     window.removeEventListener('scroll', onScroll)
   }
+}
+
+function initializeActiveTabs() {
+  const currentPath = window.location.pathname
+  const tabs = document.querySelectorAll('.topbar .nav-link')
+
+  tabs.forEach(tab => {
+    const tabHref = tab.getAttribute('href')
+    const tabPath = new URL(tabHref, window.location.origin).pathname
+
+    // Remove active class from all tabs
+    tab.classList.remove('active')
+
+    // Add active class if this tab matches the current path
+    if (currentPath === tabPath || 
+        (currentPath === '/' && tabHref === '/') ||
+        currentPath.endsWith(tabPath)) {
+      tab.classList.add('active')
+      // Scroll tab into view
+      tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+    }
+  })
 }
