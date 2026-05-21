@@ -1,28 +1,32 @@
-let cleanupBackToTop = null
-
 export function initBackToTop() {
-  cleanupBackToTop?.()
-
   const btn = document.getElementById('backToTop')
-  if (!btn) {
-    cleanupBackToTop = null
-    return
-  }
+  if (!btn) return
 
   const threshold = 300
-  const toggle = () => {
-    btn.classList.toggle('btt-visible', window.scrollY > threshold)
-  }
-  const handleClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+
+  const updateVisibility = () => {
+    const isVisible = window.scrollY > threshold
+    btn.classList.toggle('btt-visible', isVisible)
   }
 
-  window.addEventListener('scroll', toggle, { passive: true })
-  btn.addEventListener('click', handleClick)
-  toggle()
+  const scrollToTop = (e) => {
+    e.preventDefault()
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
 
-  cleanupBackToTop = () => {
-    window.removeEventListener('scroll', toggle)
-    btn.removeEventListener('click', handleClick)
+  // Update on scroll
+  window.addEventListener('scroll', updateVisibility, { passive: true })
+  btn.addEventListener('click', scrollToTop)
+
+  // Initial state
+  updateVisibility()
+
+  // Cleanup function (if needed for page transitions)
+  return () => {
+    window.removeEventListener('scroll', updateVisibility)
+    btn.removeEventListener('click', scrollToTop)
   }
 }
