@@ -2,7 +2,7 @@ import Swup from 'swup'
 import { initTopbar } from './topbar.js'
 import { initBackToTop } from './back-to-top.js'
 
-export function initPageTransition() {
+export function initPageTransition(showLoaderOnTransition) {
   const swup = new Swup({
     containers: ['#swup'],
     cache: true,
@@ -15,6 +15,9 @@ export function initPageTransition() {
 
   // Animation de transition au changement de page
   swup.on('transitionStart', () => {
+    if (showLoaderOnTransition) {
+      showLoaderOnTransition()
+    }
     document.documentElement.classList.add('is-transitioning')
   })
 

@@ -5,6 +5,7 @@ import './style.css'
 import { initBackToTop } from './scripts/back-to-top.js'
 import { initTopbar } from './scripts/topbar.js'
 import { initPageTransition } from './scripts/page-transition.js'
+import { initLoader } from './scripts/loader.js'
 
 // Theme management
 const html = document.documentElement
@@ -46,7 +47,8 @@ function init() {
   initThemeToggle()
   initBackToTop()
   initTopbar()
-  initPageTransition()
+  const showLoaderOnTransition = initLoader()
+  initPageTransition(showLoaderOnTransition)
 }
 
 if (document.readyState === 'loading') {
