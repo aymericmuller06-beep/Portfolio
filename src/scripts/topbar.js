@@ -3,7 +3,7 @@ export function initTopbar() {
   if (!topbar) return
 
   // Initialize active tab based on current page
-  initializeActiveTabs()
+  updateActiveTabs()
 
   let lastY = window.scrollY
   const THRESHOLD = 8
@@ -35,30 +35,35 @@ export function initTopbar() {
 
   window.addEventListener('scroll', onScroll, { passive: true })
 
+  // Add click handlers to nav links to update active state
+  const navLinks = topbar.querySelectorAll('.nav-link')
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      // Update active class immediately for UX
+      navLinks.forEach(l => l.classList.remove('active'))
+      link.classList.add('active')
+    })
+  })
+
   // Cleanup function (if needed for page transitions)
   return () => {
     window.removeEventListener('scroll', onScroll)
   }
 }
 
-function initializeActiveTabs() {
-  const currentPath = window.location.pathname
+function updateActiveTabs() {
+  const currentPath = window.location.pathname.replace(/\/$/, '') || '/'
   const tabs = document.querySelectorAll('.topbar .nav-link')
 
   tabs.forEach(tab => {
-    const tabHref = tab.getAttribute('href')
-    const tabPath = new URL(tabHref, window.location.origin).pathname
-
+    const tabHref = tab.getAttribute('href').replace(/\/$/, '') || '/'
+    
     // Remove active class from all tabs
     tab.classList.remove('active')
 
     // Add active class if this tab matches the current path
-    if (currentPath === tabPath || 
-        (currentPath === '/' && tabHref === '/') ||
-        currentPath.endsWith(tabPath)) {
+    if (currentPath === tabHref) {
       tab.classList.add('active')
-      // Scroll tab into view
-      tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
     }
   })
 }
