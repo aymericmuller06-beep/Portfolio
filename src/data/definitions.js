@@ -106,9 +106,9 @@ export const definitions = [
   },
   {
     id: 16,
-    acronym: 'Réseaux TCP/IP',
-    fullName: 'Protocoles de communication réseau',
-    description: 'Suite de protocoles fondamentaux pour la communication sur Internet et les réseaux informatiques.',
+    acronym: 'TCP/IP',
+    fullName: 'Transmission Control Protocol/Internet Protocol',
+    description: 'Protocole de communication utilisé pour interconnecter des dispositifs sur un réseau.',
     category: 'Systèmes & Réseaux'
   },
   {
@@ -165,6 +165,13 @@ export const definitions = [
     acronym: 'Agile/Scrum',
     fullName: 'Méthodologie de gestion de projet',
     description: 'Méthodologie itérative et collaborative pour la gestion de projets, mettant l\'accent sur l\'adaptabilité et la livraison rapide.',
+    category: 'Outils & Technologies'
+  },
+  {
+    id: 25,
+    acronym: 'HOTLINE',
+    fullName: 'Centre d\'appel',
+    description: 'Centre d\'appel pour aider les utilisateurs à résoudre leurs problèmes, informatiques dans mon cas.',
     category: 'Outils & Technologies'
   }
 ]
