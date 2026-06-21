@@ -12,6 +12,9 @@ export default function Home() {
   const btsModal = useModal()
   const sioModal = useModal()
   const sisrModal = useModal()
+  const htmlModal = useModal()
+  const cssModal = useModal()
+  const scssModal = useModal()
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -23,8 +26,11 @@ export default function Home() {
       <section className="py-5 px-4 text-center" style={{ minHeight: 'calc(100vh - 56px)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, rgba(45, 106, 79, 0.05) 0%, rgba(82, 183, 136, 0.05) 100%)' }}>
         <div style={{ maxWidth: '700px' }}>
           <div className="mb-3">
-            <span className="badge bg-opacity-10 fw-normal mb-3">
-              <i className="fa-solid fa-star me-1"></i>Bienvenue sur mon portfolio
+            <span className="badge bg-opacity-10 fw-normal mb-3 me-3" style={{color: 'var(--bs-warning)'}}>
+              <i className="fa-solid fa-star me-2"></i>Bienvenue sur mon portfolio
+            </span>
+            <span className="badge bg-opacity-10 fw-normal mb-3" style={{color: 'var(--bs-info)'}}>
+              <i className="fa-solid fa-info me-2"></i>Cliquez sur les mots soulignés pour leurs significations
             </span>
           </div>
           <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', fontWeight: 800, color: 'var(--accent)', marginBottom: '1.5rem', lineHeight: 1.2 }}>
@@ -68,7 +74,7 @@ export default function Home() {
                 {' '}<button className="modal-trigger-btn" onClick={btsModal.open}>BTS</button>
                 {' '}<button className="modal-trigger-btn" onClick={sioModal.open}>SIO</button>
                 {' '}<button className="modal-trigger-btn" onClick={sisrModal.open}>SISR</button>
-                {' '}(cliquez sur les mots sous-lignées pour en savoir plus) en alternance chez 
+                {' '}<span className="text-muted" style={{ fontStyle: 'italic', fontSize: '1rem' }}>(cliquez sur les mots sous-lignées pour en savoir plus)</span> en alternance chez 
                 {' '}<Link to="/pages/mon_entreprise" className="modal-trigger-btn">Azurinfo</Link>
                 . Mon objectif est de devenir assez compétent pour pouvoir me rendre indispensable auprès d'entreprises et de clients.
               </p>
@@ -84,6 +90,9 @@ export default function Home() {
       <section className="py-5 px-4 border-top bg-body-secondary">
         <div className="container">
           <h2 className="display-5 fw-bold mb-5 text-center">Mes compétences principales</h2>
+          <span className="badge bg-opacity-10 fw-normal mb-3" style={{color: 'var(--bs-info)'}}>
+              <i className="fa-solid fa-info me-2"></i>Définitions dans la page "annuaire"
+          </span>
           <div className="row g-4">
             {/* Web Development */}
             <div className="col-lg-6">
@@ -95,9 +104,9 @@ export default function Home() {
                   </div>
                   <div className="mb-3">
                     <div className="d-flex align-items-center mb-2">
-                      <span className="badge bg-success text-black me-2">HTML</span>
-                      <span className="badge bg-success text-black me-2">CSS</span>
-                      <span className="badge bg-success text-black me-2">SCSS</span>
+                      <span className="badge bg-success text-black me-2"><button className="modal-trigger-btn" onClick={htmlModal.open}>HTML</button></span>
+                      <span className="badge bg-success text-black me-2"><button className="modal-trigger-btn" onClick={cssModal.open}>CSS</button></span>
+                      <span className="badge bg-success text-black me-2"><button className="modal-trigger-btn" onClick={scssModal.open}>SCSS</button></span>
                       <span className="badge bg-success text-black">JavaScript</span>
                     </div>
                     <div className="d-flex align-items-center mb-2">
@@ -274,6 +283,39 @@ export default function Home() {
       >
         <p>
           <strong>{getDefinitionByAcronym('SISR')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('SISR')?.fullName}"</strong>.
+        </p>
+      </Modal>
+
+      {/* Modal HTML */}
+      <Modal 
+        isOpen={htmlModal.isOpen} 
+        title={getDefinitionByAcronym('HTML')?.acronym}
+        onClose={htmlModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('HTML')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('HTML')?.fullName}"</strong>.
+        </p>
+      </Modal>
+
+      {/* Modal CSS */}
+      <Modal 
+        isOpen={cssModal.isOpen} 
+        title={getDefinitionByAcronym('CSS')?.acronym}
+        onClose={cssModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('CSS')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('CSS')?.fullName}"</strong>.
+        </p>
+      </Modal>
+
+      {/* Modal SCSS */}
+      <Modal 
+        isOpen={scssModal.isOpen} 
+        title={getDefinitionByAcronym('SCSS')?.acronym}
+        onClose={scssModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('SCSS')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('SCSS')?.fullName}"</strong>.
         </p>
       </Modal>
 
