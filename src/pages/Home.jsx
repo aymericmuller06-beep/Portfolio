@@ -15,6 +15,8 @@ export default function Home() {
   const htmlModal = useModal()
   const cssModal = useModal()
   const scssModal = useModal()
+  const tcpModal = useModal()
+  const vsCodeModal = useModal()
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -133,7 +135,9 @@ export default function Home() {
                       <span className="badge bg-success text-black">Active Directory</span>
                     </div>
                     <div className="d-flex align-items-center mb-2">
-                      <span className="badge bg-success text-black me-2">Réseaux TCP/IP</span>
+                      <span className="badge bg-success text-black me-2">
+                        <button className="modal-trigger-btn" onClick={tcpModal.open}>Réseaux TCP/IP</button>
+                      </span>
                       <span className="badge bg-success text-black me-2">Virtualisation</span>
                     </div>
                   </div>
@@ -150,7 +154,9 @@ export default function Home() {
                   </div>
                   <div className="d-flex flex-wrap gap-2">
                     <span className="badge bg-success text-black">Git / GitHub</span>
-                    <span className="badge bg-success text-black">VS Code</span>
+                    <span className="badge bg-success text-black">
+                      <button className="modal-trigger-btn" onClick={vsCodeModal.open}>VS Code</button>
+                    </span>
                     <span className="badge bg-success text-black">Vite</span>
                     <span className="badge bg-success text-black">Docker</span>
                     <span className="badge bg-success text-black">Figma</span>
@@ -316,6 +322,28 @@ export default function Home() {
       >
         <p>
           <strong>{getDefinitionByAcronym('SCSS')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('SCSS')?.fullName}"</strong>.
+        </p>
+      </Modal>
+
+      {/* Modal TCP/IP */}
+      <Modal 
+        isOpen={tcpModal.isOpen} 
+        title={getDefinitionByAcronym('TCP/IP')?.acronym}
+        onClose={tcpModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('TCP/IP')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('TCP/IP')?.fullName}"</strong>.
+        </p>
+      </Modal>
+
+      {/* Modal VS Code */}
+      <Modal 
+        isOpen={vsCodeModal.isOpen} 
+        title={getDefinitionByAcronym('VS Code')?.acronym}
+        onClose={vsCodeModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('VS Code')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('VS Code')?.fullName}"</strong>.
         </p>
       </Modal>
 
