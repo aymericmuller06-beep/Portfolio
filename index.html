@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fr" data-bs-theme="light">
   <head>
     <meta charset="UTF-8" />
@@ -6,100 +6,10 @@
     <title>Portfolio | Aymeric Muller</title>
     <link rel="icon" type="image/png" href="/src/Img/favicon.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-      body { opacity: 0; visibility: hidden; }
-    </style>
   </head>
 
   <body>
-    <!-- Loader -->
-    <div id="pageLoader" class="page-loader">
-      <div class="loader-spinner"></div>
-    </div>
-
-    <!-- Header -->
-    <header class="topbar">
-      <span class="topbar-name fw-bold text-uppercase">Aymeric Muller</span>
-      <nav class="nav nav-tabs flex-grow-1 ms-2 ms-md-3" role="navigation" aria-label="Navigation des sections">
-        <a href="/" class="nav-link px-2 px-md-3 small" data-tab="home"><i class="fa-solid fa-house"></i><span class="d-none d-md-inline ms-1">Accueil</span></a>
-        <a href="/Pages/projets_stage/" class="nav-link px-2 px-md-3 small" data-tab="projets"><i class="fa-solid fa-folder"></i><span class="d-none d-md-inline ms-1">Projets</span></a>
-        <a href="/Pages/realisations/" class="nav-link px-2 px-md-3 small" data-tab="realisations"><i class="fa-solid fa-star"></i><span class="d-none d-md-inline ms-1">Réalisations</span></a>
-        <a href="/Pages/tableau_synthese/" class="nav-link px-2 px-md-3 small" data-tab="synthese"><i class="fa-solid fa-chart-bar"></i><span class="d-none d-md-inline ms-1">Synthèse</span></a>
-        <a href="/Pages/cv/" class="nav-link px-2 px-md-3 small" data-tab="cv"><i class="fa-solid fa-file"></i><span class="d-none d-md-inline ms-1">CV</span></a>
-        <a href="/Pages/veille_technologique/" class="nav-link px-2 px-md-3 small" data-tab="veille"><i class="fa-solid fa-rss"></i><span class="d-none d-md-inline ms-1">Veille</span></a>
-      </nav>
-      <div class="ms-auto">
-        <button class="theme-toggle btn-link p-0 border-0" id="themeToggle" aria-label="Changer le thème"><i class="fa-solid fa-moon"></i></button>
-      </div>
-    </header>
-
-    <main id="swup">
-
-      <!-- Hero -->
-      <section class="py-5 px-4 text-center" style="min-height: calc(100vh - 56px); display: flex; flex-direction: column; align-items: center; justify-content: center; border-bottom: 1px solid var(--border-soft);">
-        <div style="max-width: 600px;">
-          <h1 style="font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 700; color: var(--accent); margin-bottom: 1rem;">Portfolio</h1>
-          <p style="font-size: clamp(1rem, 3vw, 1.25rem); color: var(--text-muted); margin-bottom: 2rem;">Développeur Web & Mobile | Étudiant en Informatique</p>
-          <nav class="d-flex align-items-center gap-2 gap-sm-3 flex-wrap justify-content-center" aria-label="Navigation principale">
-            <a href="#projects" class="btn btn-sm btn-outline-secondary">Projets</a>
-            <span class="opacity-25" aria-hidden="true">·</span>
-            <a href="#about" class="btn btn-sm btn-outline-secondary">À propos</a>
-            <span class="opacity-25" aria-hidden="true">·</span>
-            <a href="#contact" class="btn btn-sm btn-outline-secondary">Contact</a>
-          </nav>
-        </div>
-      </section>
-
-      <!-- Projects Grid -->
-      <section class="py-5 px-4" style="display: none;">
-
-      <!-- About -->
-      <section id="about" class="py-5 px-4 border-top">
-        <div class="container">
-          <h2 style="font-size: clamp(1.75rem, 5vw, 2.5rem); font-weight: 700; margin-bottom: 2rem;">À propos</h2>
-          <div class="row g-4 align-items-center">
-            <div class="col-md-4 text-center">
-              <div style="aspect-ratio: 1; overflow: hidden; border-radius: 8px;">
-                <img src="./src/Img/Aymeric png.webp" alt="Aymeric Muller" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-            </div>
-            <div class="col-md-8">
-              <p style="line-height: 1.7; margin-bottom: 1rem;">
-                Alternant en <strong>BTS SIO option SISR</strong>, je développe mes compétences en systèmes et réseaux à travers une formation en entreprise.
-              </p>
-              <p style="line-height: 1.7; margin-bottom: 1rem;">
-                Objectif : maîtriser l'infrastructure pour, à terme, élargir mon champ d'expertise au développement et appréhender l'informatique dans sa globalité.
-              </p>
-              <p style="font-size: 0.9rem; color: var(--text-muted);">
-                <strong>Formation :</strong> BTS SIO - 2025 / 2027
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact" class="py-5 px-4 border-top">
-        <div class="container">
-          <h2 style="font-size: clamp(1.75rem, 5vw, 2.5rem); font-weight: 700; margin-bottom: 2rem;">Contact</h2>
-          <div class="d-flex flex-wrap gap-3">
-            <a href="mailto:aymericmuller06@gmail.com" class="btn btn-outline-secondary"><i class="fa-solid fa-envelope"></i> Email</a>
-            <a href="#" class="btn btn-outline-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-            <a href="https://github.com/aymericmuller06-beep" class="btn btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <footer class="border-top py-4">
-      <div class="container text-center">
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">© 2026 Aymeric Muller</p>
-      </div>
-    </footer>
-
-    <button id="backToTop" class="btn btn-sm btn-outline-secondary" aria-label="Retour en haut"><i class="fa-solid fa-arrow-up"></i></button>
-
-    <script type="module" src="/src/main.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

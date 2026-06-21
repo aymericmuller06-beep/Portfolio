@@ -2,21 +2,25 @@
 :root {
   --topbar-h: 56px;
   
-  /* Light theme */
+  /* Light theme - Green palette */
   --c-light-bg: #f8f8f8;
   --c-light-surface: #ffffff;
   --c-light-text: #1a1a1a;
   --c-light-text-muted: #666666;
   --c-light-border: #dddddd;
   --c-light-accent: #2d6a4f;
+  --c-light-accent-light: #40916c;
+  --c-light-accent-lighter: #52b788;
   
-  /* Dark theme */
+  /* Dark theme - Green palette */
   --c-dark-bg: #0f0f0f;
   --c-dark-surface: #1a1a1a;
   --c-dark-text: #e8e8e8;
   --c-dark-text-muted: #999999;
   --c-dark-border: #333333;
   --c-dark-accent: #52b788;
+  --c-dark-accent-light: #74c69d;
+  --c-dark-accent-lighter: #95d5b2;
 }
 
 /* LIGHT THEME */
@@ -32,8 +36,10 @@
   /* Bootstrap overrides */
   --bs-primary:          var(--c-light-accent);
   --bs-primary-rgb:      45, 106, 79;
-  --bs-secondary:        var(--c-light-text-muted);
-  --bs-secondary-rgb:    102, 102, 102;
+  --bs-secondary:        var(--c-light-accent-light);
+  --bs-secondary-rgb:    64, 145, 108;
+  --bs-success:          var(--c-light-accent-lighter);
+  --bs-success-rgb:      82, 183, 136;
   --bs-body-bg:          var(--c-light-bg);
   --bs-body-color:       var(--c-light-text);
   --bs-link-color:       var(--c-light-accent);
@@ -57,8 +63,10 @@
   /* Bootstrap overrides */
   --bs-primary:          var(--c-dark-accent);
   --bs-primary-rgb:      82, 183, 136;
-  --bs-secondary:        var(--c-dark-text-muted);
-  --bs-secondary-rgb:    153, 153, 153;
+  --bs-secondary:        var(--c-dark-accent-light);
+  --bs-secondary-rgb:    116, 198, 157;
+  --bs-success:          var(--c-dark-accent-lighter);
+  --bs-success-rgb:      149, 213, 178;
   --bs-body-bg:          var(--c-dark-bg);
   --bs-body-color:       var(--c-dark-text);
   --bs-link-color:       var(--c-dark-accent);
@@ -288,6 +296,120 @@ html.is-transitioning #swup {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* TIMELINE STYLES */
+.timeline {
+  position: relative;
+}
+
+.timeline .row {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .timeline .row:not(:last-child) {
+    padding-bottom: 2rem;
+  }
+  
+  .timeline .row:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    height: 1px;
+    width: 100%;
+    background-color: var(--border-soft);
+  }
+}
+
+/* CARD ENHANCEMENTS */
+.card {
+  transition: all 0.3s ease;
+  border-color: var(--border-soft) !important;
+  background-color: var(--bg-surface) !important;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+[data-bs-theme="dark"] .card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* BADGE IMPROVEMENTS */
+.badge {
+  font-weight: 500;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.85rem;
+}
+
+/* BUTTON ENHANCEMENTS */
+.btn {
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-primary {
+  box-shadow: 0 4px 15px rgba(45, 106, 79, 0.2);
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+[data-bs-theme="dark"] .btn-primary {
+  box-shadow: 0 4px 15px rgba(82, 183, 136, 0.2);
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(45, 106, 79, 0.3);
+  transform: translateY(-2px);
+}
+
+[data-bs-theme="dark"] .btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(82, 183, 136, 0.3);
+}
+
+.btn-outline-primary {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.btn-outline-secondary {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+/* SECTION SPACING */
+section {
+  scroll-margin-top: var(--topbar-h);
+}
+
+/* RESPONSIVE IMPROVEMENTS */
+@media (max-width: 768px) {
+  h2.display-5 {
+    font-size: 1.75rem !important;
+  }
+  
+  .btn-lg {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
   }
 }
 
