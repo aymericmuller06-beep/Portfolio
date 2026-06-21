@@ -1,0 +1,16 @@
+.modal-trigger-btn {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  vertical-align: baseline;
+}
+
+.modal-trigger-btn:hover {
+  opacity: 0.8;
+}

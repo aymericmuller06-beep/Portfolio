@@ -1,6 +1,6 @@
 # Portfolio – Aymeric Muller
 
-## 🚀 Lancer le projet
+## Lancer le projet
 
 ```bash
 npm install                  # Installe les dépendances
@@ -9,7 +9,7 @@ npm run build                # Génère le dossier dist/ pour la production
 npm run preview              # Prévisualise le build de production
 ```
 
-## 📁 Structure du projet
+## Structure du projet
 
 ```
 src/
@@ -34,7 +34,7 @@ package.json             # Dépendances et scripts
 vite.config.js           # Configuration Vite
 ```
 
-## 🛠 Stack technique
+## Stack technique
 
 - **Vite 8** → Bundler ultra-rapide et dev server
 - **React 18** → Framework UI réactif
@@ -42,7 +42,7 @@ vite.config.js           # Configuration Vite
 - **Bootstrap 5** → Grille et composants UI
 - **CSS personnalisé** → Thème vert avec mode sombre/clair
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
 - ✅ Navigation fluide entre pages (React Router)
 - ✅ Mode clair/sombre avec toggle
@@ -53,7 +53,7 @@ vite.config.js           # Configuration Vite
 - ✅ Hot reload en développement (Vite)
 - ✅ Build optimisé pour production
 
-## 📝 Routes disponibles
+## Routes disponibles
 
 | Route | Page |
 |-------|------|
@@ -64,7 +64,7 @@ vite.config.js           # Configuration Vite
 | `/pages/cv` | CV |
 | `/pages/veille_technologique` | Veille technologique |
 
-## 🎨 Thème personnalisé
+## Thème personnalisé
 
 Les couleurs sont définies dans `src/style.css` avec CSS variables:
 
@@ -78,7 +78,7 @@ Les couleurs sont définies dans `src/style.css` avec CSS variables:
 - Texte: Gris clair (`#e8e8e8`)
 - Fond: Noir (`#0f0f0f`)
 
-## 📦 Configuration des réseaux sociaux
+## Configuration des réseaux sociaux
 
 Modifier `src/config.js` pour mettre à jour:
 - Email
@@ -93,6 +93,6 @@ export const socialLinks = {
 }
 ```
 
-## 📱 Responsive
+## Responsive
 
 Le site est entièrement responsive grâce à Bootstrap et media queries CSS.
