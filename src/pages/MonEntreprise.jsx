@@ -1,9 +1,14 @@
 import { useEffect, useState } from 'react'
 import AzurLogo from '../Img/Azurinfo.png'
 import AzurLogoLight from '../Img/AzurinfoLight.png'
+import { definitions, getDefinitionByAcronym } from '../data/definitions'
+import Modal from '../components/Modal'
+import { useModal } from '../hooks/useModal'
+import '../style/modal.css'
 
 export default function MonEntreprise() {
   const [theme, setTheme] = useState('light')
+   const hotlineModal = useModal()
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -21,11 +26,153 @@ export default function MonEntreprise() {
   }, [])
 
   return (
-    <section className="py-5 px-4">
-      <div className="container">
-        <img src={theme === 'light' ? AzurLogo : AzurLogoLight} alt="Azur Logo" className="d-block mx-auto" style={{ maxWidth: '25vw', height: 'auto' }} />
-        
-      </div>
-    </section>
+    <>
+      {/* Hero Section */}
+      <section className="py-5 px-4 text-center border-bottom" style={{ minHeight: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, rgba(45, 106, 79, 0.05) 0%, rgba(82, 183, 136, 0.05) 100%)' }}>
+        <div style={{ maxWidth: '600px' }}>
+          <img src={theme === 'light' ? AzurLogo : AzurLogoLight} alt="Azur Logo" className="mb-4" style={{ maxWidth: '180px', height: 'auto' }} />
+          <h1 style={{ fontSize: 'clamp(2rem, 6vw, 3rem)', fontWeight: 800, color: 'var(--accent)', marginBottom: '1rem' }}>
+            Azurinfo
+          </h1>
+          <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
+            Mon entreprise d'alternance
+          </p>
+        </div>
+      </section>
+
+      {/* À propos l'entreprise */}
+      <section className="py-5 px-4 border-bottom">
+        <div className="container">
+          <h2 className="display-5 fw-bold mb-5 text-center">Présentation</h2>
+          <div className="row g-4 align-items-center">
+            <div className="col-lg-6">
+              <p style={{ lineHeight: 1.8, marginBottom: '1.5rem', fontSize: '1.1rem' }}>
+                Azurinfo est une entreprise spécialisée dans les solutions informatiques, les systèmes et réseaux, et le développement web.
+              </p>
+              <p style={{ lineHeight: 1.8, marginBottom: '1.5rem', fontSize: '1.1rem' }}>
+                En tant qu'alternant, j'y développe mes compétences dans un environnement professionnel et dynamique.
+              </p>
+            </div>
+            <div className="col-lg-6">
+              <div style={{ aspectRatio: '16/9', overflow: 'hidden', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', backgroundColor: 'var(--bs-gray-200)' }}>
+                <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)' }}>
+                  <i className="fa-solid fa-image" style={{ fontSize: '3rem' }}></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mes Missions */}
+      <section className="py-5 px-4 border-bottom bg-body-secondary">
+        <div className="container">
+          <h2 className="display-5 fw-bold mb-5 text-center">Mes Missions</h2>
+          <div className="row g-4">
+            <div className="col-lg-6">
+              <div className="card border-0 h-100 shadow-sm">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-headset text-primary" style={{ fontSize: '1.8rem' }}></i>
+                    <h5 className="card-title mb-0 ms-3">Service 
+                      {' '}<button className="modal-trigger-btn" onClick={hotlineModal.open}>{getDefinitionByAcronym('HOTLINE')?.acronym}</button>
+                    </h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Gestion des appels et tickets pour résoudre les problèmes informatiques des clients.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="card border-0 h-100 shadow-sm">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-tools text-primary" style={{ fontSize: '1.8rem' }}></i>
+                    <h5 className="card-title mb-0 ms-3">Préparation / réparation matérielle</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Préparation et réparation des équipements informatiques pour nos clients, assurant la disponibilité de leur matériel.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="card border-0 h-100 shadow-sm">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-book text-primary" style={{ fontSize: '1.8rem' }}></i>
+                    <h5 className="card-title mb-0 ms-3">Documentation</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Création et maintenance de la documentation technique pour l'entreprise, assurant la continuité du service.
+                  </p>
+                </div>
+              </div>
+            </div>
+             <div className="col-lg-6">
+              <div className="card border-0 h-100 shadow-sm">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-project-diagram text-primary" style={{ fontSize: '1.8rem' }}></i>
+                    <h5 className="card-title mb-0 ms-3">Projets parallèles</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Projets en parallèle des missions principales, permettant de dévélopper d'autres compétences ou de les renforcer.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Détails et Informations */}
+      <section className="py-5 px-4">
+        <div className="container">
+          <h2 className="display-5 fw-bold mb-5 text-center">Détails supplémentaires</h2>
+          <div className="row g-4">
+            <div className="col-lg-4">
+              <div className="card border-0 h-100 shadow-sm">
+                <div className="card-body text-center">
+                  <i className="fa-solid fa-sitemap text-primary mb-3" style={{ fontSize: '2.5rem' }}></i>
+                  <h5 className="card-title mb-3">Organigramme</h5>
+                  <p className="text-muted">Structure et organisation de l'entreprise</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="card border-0 h-100 shadow-sm">
+                <div className="card-body text-center">
+                  <i className="fa-solid fa-chart-bar text-primary mb-3" style={{ fontSize: '2.5rem' }}></i>
+                  <h5 className="card-title mb-3">Statistiques</h5>
+                  <p className="text-muted">Chiffres clés et informations</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="card border-0 h-100 shadow-sm">
+                <div className="card-body text-center">
+                  <i className="fa-solid fa-globe text-primary mb-3" style={{ fontSize: '2.5rem' }}></i>
+                  <h5 className="card-title mb-3">Site de l'entreprise</h5>
+                  <p className="text-muted">Lien vers le site officiel de l'entreprise</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       {/* Modal Hotline*/}
+      <Modal 
+        isOpen={hotlineModal.isOpen} 
+        title={getDefinitionByAcronym('HOTLINE')?.acronym}
+        onClose={hotlineModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('HOTLINE')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('HOTLINE')?.fullName}"</strong>.
+        </p>
+      </Modal>
+    </>
   )
 }
