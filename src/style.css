@@ -11,6 +11,7 @@
   --c-light-accent: #2d6a4f;
   --c-light-accent-light: #40916c;
   --c-light-accent-lighter: #52b788;
+  --c-light-turquoise: #1abc9c;
   
   /* Dark theme - Green palette */
   --c-dark-bg: #0f0f0f;
@@ -21,6 +22,7 @@
   --c-dark-accent: #52b788;
   --c-dark-accent-light: #74c69d;
   --c-dark-accent-lighter: #95d5b2;
+  --c-dark-turquoise: #17d4c4;
 }
 
 /* LIGHT THEME */
@@ -331,20 +333,17 @@ html.is-transitioning #swup {
   background-color: var(--bg-surface) !important;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1) !important;
-}
-
-[data-bs-theme="dark"] .card:hover {
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3) !important;
-}
-
 /* BADGE IMPROVEMENTS */
 .badge {
   font-weight: 500;
   padding: 0.4rem 0.7rem;
   font-size: 0.85rem;
+  background-color: var(--border-soft);
+  color: var(--bs-primary);
+}
+
+[data-bs-theme="dark"] .badge {
+  color: var(--c-dark-turquoise);
 }
 
 /* BUTTON ENHANCEMENTS */
@@ -366,12 +365,17 @@ html.is-transitioning #swup {
 }
 
 .btn-primary:hover {
-  box-shadow: 0 6px 20px rgba(45, 106, 79, 0.3);
+  background-color: var(--c-light-turquoise);
+  border-color: var(--c-light-turquoise);
+  box-shadow: 0 6px 20px rgba(26, 188, 156, 0.3);
   transform: translateY(-2px);
 }
 
 [data-bs-theme="dark"] .btn-primary:hover {
-  box-shadow: 0 6px 20px rgba(82, 183, 136, 0.3);
+  background-color: var(--c-dark-turquoise);
+  border-color: var(--c-dark-turquoise);
+  box-shadow: 0 6px 20px rgba(23, 212, 196, 0.3);
+  transform: translateY(-2px);
 }
 
 .btn-outline-primary {

@@ -7,40 +7,37 @@ import { initTopbar } from './scripts/topbar.js'
 import { initPageTransition } from './scripts/page-transition.js'
 import { initLoader } from './scripts/loader.js'
 
-// Theme management
+// Theme management - simple version
 const html = document.documentElement
 
-function applyTheme(theme) {
-  html.setAttribute('data-bs-theme', theme)
+// Set dark mode by default immediately
+const theme = localStorage.getItem('theme') || 'dark'
+html.setAttribute('data-bs-theme', theme)
+
+// Update button icon based on theme
+function updateThemeButton() {
   const btn = document.getElementById('themeToggle')
   if (btn) {
-    btn.innerHTML = theme === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>'
+    const isDark = html.getAttribute('data-bs-theme') === 'dark'
+    btn.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>'
   }
-  localStorage.setItem('theme', theme)
 }
 
-// Restore theme from storage or OS preference
-const osTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-const savedTheme = localStorage.getItem('theme') || osTheme
-applyTheme(savedTheme)
-
-// Theme toggle button
+// Toggle between light and dark
 function initThemeToggle() {
   const btn = document.getElementById('themeToggle')
   if (!btn) return
 
   btn.addEventListener('click', () => {
     const current = html.getAttribute('data-bs-theme')
-    applyTheme(current === 'dark' ? 'light' : 'dark')
+    const newTheme = current === 'dark' ? 'light' : 'dark'
+    html.setAttribute('data-bs-theme', newTheme)
+    localStorage.setItem('theme', newTheme)
+    updateThemeButton()
   })
+  
+  updateThemeButton()
 }
-
-// Listen for OS theme changes
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-  if (!localStorage.getItem('theme')) {
-    applyTheme(e.matches ? 'dark' : 'light')
-  }
-})
 
 // Initialize features on page load
 function init() {
