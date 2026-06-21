@@ -24,13 +24,17 @@ export default function Header() {
           <i className="fa-solid fa-house"></i>
           <span className="d-none d-md-inline ms-1">Accueil</span>
         </Link>
-        <Link to="/pages/projets_stage" className="nav-link px-2 px-md-3 small" data-tab="projets">
-          <i className="fa-solid fa-folder"></i>
-          <span className="d-none d-md-inline ms-1">Projets</span>
-        </Link>
         <Link to="/pages/realisations" className="nav-link px-2 px-md-3 small" data-tab="realisations">
-          <i className="fa-solid fa-star"></i>
+          <i className="fa-solid fa-folder"></i>
           <span className="d-none d-md-inline ms-1">Réalisations</span>
+        </Link>
+        <Link to="/pages/veille_technologique" className="nav-link px-2 px-md-3 small" data-tab="veille">
+          <i className="fa-solid fa-rss"></i>
+          <span className="d-none d-md-inline ms-1">Veille</span>
+        </Link>
+        <Link to="/pages/mon_entreprise" className="nav-link px-2 px-md-3 small" data-tab="entreprise">
+          <i className="fa-solid fa-building"></i>
+          <span className="d-none d-md-inline ms-1">Entreprise</span>
         </Link>
         <Link to="/pages/tableau_synthese" className="nav-link px-2 px-md-3 small" data-tab="synthese">
           <i className="fa-solid fa-chart-bar"></i>
@@ -40,9 +44,9 @@ export default function Header() {
           <i className="fa-solid fa-file"></i>
           <span className="d-none d-md-inline ms-1">CV</span>
         </Link>
-        <Link to="/pages/veille_technologique" className="nav-link px-2 px-md-3 small" data-tab="veille">
-          <i className="fa-solid fa-rss"></i>
-          <span className="d-none d-md-inline ms-1">Veille</span>
+        <Link to="/pages/annuaire" className="nav-link px-2 px-md-3 small" data-tab="annuaire">
+          <i className="fa-solid fa-address-book"></i>
+          <span className="d-none d-md-inline ms-1">Annuaire</span>
         </Link>
       </nav>
       <div className="ms-auto">

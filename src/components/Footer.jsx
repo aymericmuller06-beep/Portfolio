@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="border-top py-4">
       <div className="container">
         <section id="contact" className="py-5 px-4 border-top">
-          <h2 className="display-5 fw-bold mb-4 text-center">Connectez-vous avec moi</h2>
+          <h2 className="display-5 fw-bold mb-4 text-center">Me contacter :</h2>
           <div className="d-flex flex-wrap gap-3 justify-content-center">
             <a href={`mailto:${socialLinks.email}`} className="btn btn-outline-primary btn-lg" title="Envoyer un email">
               <i className="fa-solid fa-envelope me-2"></i>Email
@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
         </section>
         <div className="text-center mt-5">
-          <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', margin: 0 }}>© 2026 Aymeric Muller</p>
+          <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', margin: 0 }}>© 2026-2027 MULLER Aymeric</p>
         </div>
       </div>
     </footer>
