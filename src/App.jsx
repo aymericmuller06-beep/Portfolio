@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -9,11 +10,24 @@ import Veilletech from './pages/Veilletech'
 import MonEntreprise from './pages/MonEntreprise'
 import Annuaire from './pages/Annuaire'
 
+import { initBackToTop } from './scripts/back-to-top.js'
+import { initTopbar } from './scripts/topbar.js'
+import { initPageTransition } from './scripts/page-transition.js'
+import { initLoader } from './scripts/loader.js'
+
 function App() {
+  useEffect(() => {
+    // Initialize features after React renders the DOM
+    initTopbar()
+    const showLoaderOnTransition = initLoader()
+    initPageTransition(showLoaderOnTransition)
+    initBackToTop()
+  }, [])
+
   return (
     <Router>
       <Header />
-      <main id="swup">
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pages/realisations" element={<Realisations />} />
