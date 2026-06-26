@@ -1,53 +1,48 @@
 export function initLoader() {
   const loader = document.getElementById('pageLoader')
-  const body = document.body
+  const backToTopBtn = document.getElementById('backToTop')
   
   if (!loader) return
 
-  // Make body visible and hide loader
+  // Ensure loader is visible and button is hidden initially
+  loader.style.display = 'flex'
+  loader.style.opacity = '1'
+  loader.style.visibility = 'visible'
+  
+  if (backToTopBtn) {
+    backToTopBtn.style.display = 'none'
+  }
+
+  // Make loader disappear
   function hideLoader() {
-    body.style.opacity = '1'
-    body.style.visibility = 'visible'
+    loader.style.opacity = '0'
+    loader.style.visibility = 'hidden'
+    loader.style.pointerEvents = 'none'
     loader.classList.add('hidden')
   }
 
-  // Observer pour détecter quand le contenu React est rendu
-  const observer = new MutationObserver(() => {
-    const mainContent = document.querySelector('main')
-    if (mainContent && mainContent.children.length > 0) {
-      hideLoader()
-      observer.disconnect()
-    }
-  })
+  // Check if React has rendered
+  const root = document.getElementById('root')
+  if (!root) return
 
-  // Vérifier d'abord si le contenu est déjà rendu
-  const mainContent = document.querySelector('main')
-  if (mainContent && mainContent.children.length > 0) {
+  // Simple timeout approach - React should be ready by then
+  setTimeout(() => {
     hideLoader()
-  } else {
-    // Sinon observer les changements du DOM
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    })
-    
-    // Timeout de sécurité : forcer le masquage du loader après 5s
-    setTimeout(() => {
-      hideLoader()
-      observer.disconnect()
-    }, 5000)
-  }
+  }, 800)
 
   // Return function to show loader again (for page transitions)
   return () => {
+    loader.style.opacity = '1'
+    loader.style.visibility = 'visible'
+    loader.style.pointerEvents = 'auto'
     loader.classList.remove('hidden')
-    body.style.opacity = '0'
-    body.style.visibility = 'hidden'
-    // Small delay to show the loader during transition
+    
     setTimeout(() => {
       hideLoader()
-    }, 500)
+    }, 300)
   }
 }
+
+
 
 
