@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import AzurLogo from '../Img/Azurinfo.png'
 import AzurLogoLight from '../Img/AzurinfoLight.png'
+import AzurinfoImage from '../Img/Azurinfo.webp'
 import { definitions, getDefinitionByAcronym } from '../data/definitions'
 import Modal from '../components/Modal'
 import { useModal } from '../hooks/useModal'
@@ -27,13 +28,13 @@ export default function MonEntreprise() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-5 px-4 text-center border-bottom" style={{ minHeight: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, rgba(45, 106, 79, 0.05) 0%, rgba(82, 183, 136, 0.05) 100%)' }}>
-        <div style={{ maxWidth: '600px' }}>
+      <section className="hero-section hero-section--large">
+        <div className="content-max-width">
           <img src={theme === 'light' ? AzurLogo : AzurLogoLight} alt="Azur Logo" className="mb-4" style={{ maxWidth: '180px', height: 'auto' }} />
-          <h1 style={{ fontSize: 'clamp(2rem, 6vw, 3rem)', fontWeight: 800, color: 'var(--accent)', marginBottom: '1rem' }}>
+          <h1 className="responsive-title responsive-title--medium">
             Azurinfo
           </h1>
-          <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
+          <p className="intro-text">
             Mon entreprise d'alternance
           </p>
         </div>
@@ -45,18 +46,16 @@ export default function MonEntreprise() {
           <h2 className="display-5 fw-bold mb-5 text-center">Présentation</h2>
           <div className="row g-4 align-items-center">
             <div className="col-lg-6">
-              <p style={{ lineHeight: 1.8, marginBottom: '1.5rem', fontSize: '1.1rem' }}>
+              <p className="body-text body-text--muted">
                 Azurinfo est une entreprise spécialisée dans les solutions informatiques, les systèmes et réseaux, et le développement web.
               </p>
-              <p style={{ lineHeight: 1.8, marginBottom: '1.5rem', fontSize: '1.1rem' }}>
+              <p className="body-text body-text--muted">
                 En tant qu'alternant, j'y développe mes compétences dans un environnement professionnel et dynamique.
               </p>
             </div>
             <div className="col-lg-6">
-              <div style={{ aspectRatio: '16/9', overflow: 'hidden', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', backgroundColor: 'var(--bs-gray-200)' }}>
-                <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)' }}>
-                  <i className="fa-solid fa-image" style={{ fontSize: '3rem' }}></i>
-                </div>
+              <div className="image-container image-container--wide">
+                <img src={AzurinfoImage} alt="Azurinfo" />
               </div>
             </div>
           </div>

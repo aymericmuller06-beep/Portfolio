@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-5 px-4 text-center" style={{ minHeight: 'calc(100vh - 56px)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, rgba(45, 106, 79, 0.05) 0%, rgba(82, 183, 136, 0.05) 100%)' }}>
+      <section className="py-5 px-4 text-center hero-section" style={{ minHeight: 'calc(100vh - 56px)' }}>
         <div style={{ maxWidth: '700px' }}>
           <div className="mb-3">
             <span className="badge bg-opacity-10 fw-normal mb-3 me-3" style={{color: 'var(--bs-warning)'}}>
@@ -34,7 +34,7 @@ export default function Home() {
               <i className="fa-solid fa-info me-2"></i>Cliquez sur les mots soulignés pour leurs significations
             </span>
           </div>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', fontWeight: 800, color: 'var(--accent)', marginBottom: '1.5rem', lineHeight: 1.2 }}>
+          <h1 className="responsive-title responsive-title--large">
             Muller Aymeric
           </h1>
           <p style={{ fontSize: 'clamp(1.1rem, 3vw, 1.35rem)', color: 'var(--text-muted)', marginBottom: '1rem', lineHeight: 1.6 }}>
@@ -65,12 +65,12 @@ export default function Home() {
           <h2 className="display-5 fw-bold mb-5 text-center">À propos de moi</h2>
           <div className="row g-4 align-items-center mb-5">
             <div className="col-lg-4 text-center">
-              <div style={{ aspectRatio: 1, overflow: 'hidden', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                <img src="./src/Img/Aymeric png.webp" alt="Aymeric Muller" className="img-fluid" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div className="image-container image-container--square">
+                <img src="./src/Img/Aymeric png.webp" alt="Aymeric Muller" className="img-fluid" />
               </div>
             </div>
             <div className="col-lg-8">
-              <p style={{ lineHeight: 1.8, marginBottom: '1.5rem', fontSize: '1.2rem' }}>
+              <p className="body-text body-text--large">
                 Je suis actuellement étudiant en 
                 {' '}<button className="modal-trigger-btn" onClick={btsModal.open}>BTS</button>
                 {' '}<button className="modal-trigger-btn" onClick={sioModal.open}>SIO</button>
@@ -79,7 +79,7 @@ export default function Home() {
                 {' '}<Link to="/pages/mon_entreprise" className="modal-trigger-btn">Azurinfo</Link>
                 . Mon objectif est de devenir assez compétent pour pouvoir me rendre indispensable auprès d'entreprises et de clients.
               </p>
-              <p style={{ lineHeight: 1.8, marginBottom: '1.5rem', fontSize: '1.2rem' }}>
+              <p className="body-text body-text--large">
                 J'apprends à développer une culture informatique solide, à maîtriser les systèmes et réseaux, et à comprendre les besoins des entreprises pour leur proposer des solutions adaptées.
               </p>
             </div>

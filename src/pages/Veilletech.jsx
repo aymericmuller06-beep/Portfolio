@@ -8,7 +8,7 @@ export default function Veilletech() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-5 px-4 text-center border-bottom" style={{ minHeight: '250px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, rgba(45, 106, 79, 0.05) 0%, rgba(82, 183, 136, 0.05) 100%)' }}>
+      <section className="py-5 px-4 text-center border-bottom hero-section hero-section--small">
         <div style={{ maxWidth: '900px' }}>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent)', marginBottom: '1.5rem' }}>
             L'IoT dans le Football

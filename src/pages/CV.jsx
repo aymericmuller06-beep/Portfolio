@@ -18,12 +18,12 @@ export default function CV() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-5 px-4 text-center border-bottom" style={{ minHeight: '250px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, rgba(45, 106, 79, 0.05) 0%, rgba(82, 183, 136, 0.05) 100%)' }}>
+      <section className="py-5 px-4 text-center border-bottom hero-section hero-section--small">
         <div style={{ maxWidth: '900px' }}>
-          <h1 style={{ fontSize: 'clamp(2rem, 6vw, 2.5rem)', fontWeight: 800, color: 'var(--accent)', marginBottom: '1.5rem' }}>
+          <h1 className="responsive-title responsive-title--medium">
             Mon CV
           </h1>
-          <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
+          <p className="body-text body-text--muted">
             Retrouvez mon parcours professionnel et mes compétences
           </p>
         </div>

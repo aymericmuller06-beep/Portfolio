@@ -69,19 +69,9 @@ export default function Annuaire() {
                     <div className="row align-items-start">
                       <div className="col-auto">
                         <div
+                          className="icon-box"
                           style={{
-                            width: '60px',
-                            height: '60px',
-                            borderRadius: '12px',
-                            background: getCategoryColor(def.category).gradient,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            color: 'white',
-                            fontWeight: 'bold',
-                            fontSize: '1.2rem',
-                            textAlign: 'center',
-                            padding: '0.5rem'
+                            background: getCategoryColor(def.category).gradient
                           }}
                         >
                           {def.acronym.substring(0, 3)}
