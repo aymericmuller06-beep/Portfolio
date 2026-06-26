@@ -162,7 +162,7 @@ export const definitions = [
   },
   {
     id: 24,
-    acronym: 'Agile/Scrum',
+    acronym: 'Agile',
     fullName: 'Méthodologie de gestion de projet',
     description: 'Méthodologie itérative et collaborative pour la gestion de projets, mettant l\'accent sur l\'adaptabilité et la livraison rapide.',
     category: 'Outils & Technologies'

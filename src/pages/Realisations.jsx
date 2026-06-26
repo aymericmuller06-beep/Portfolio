@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { realizations, categories } from '../data/realizations'
+import { realizations, categories } from '../data/realisations'
 
 export default function Realisations() {
   useEffect(() => {

@@ -159,7 +159,7 @@ export default function Home() {
                     <span className="badge bg-success text-black">Vite</span>
                     <span className="badge bg-success text-black">Docker</span>
                     <span className="badge bg-success text-black">Figma</span>
-                    <span className="badge bg-success text-black">Agile/Scrum</span>
+                    <span className="badge bg-success text-black">Agile</span>
                   </div>
                 </div>
               </div>
