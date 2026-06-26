@@ -1,0 +1,27 @@
+/* ====================================
+   TIMELINE STYLES
+   ==================================== */
+
+.timeline {
+  position: relative;
+
+  .row {
+    position: relative;
+
+    @media (max-width: 768px) {
+      &:not(:last-child) {
+        padding-bottom: 2rem;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 2rem;
+          height: 1px;
+          width: 100%;
+          background-color: var(--border-soft);
+        }
+      }
+    }
+  }
+}

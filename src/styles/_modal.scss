@@ -1,3 +1,7 @@
+/* ====================================
+   MODAL BUTTON STYLES
+   ==================================== */
+
 .modal-trigger-btn {
   font-family: inherit;
   font-size: inherit;
@@ -9,8 +13,8 @@
   cursor: pointer;
   text-decoration: underline;
   vertical-align: baseline;
-}
 
-.modal-trigger-btn:hover {
-  opacity: 0.8;
+  &:hover {
+    opacity: 0.8;
+  }
 }

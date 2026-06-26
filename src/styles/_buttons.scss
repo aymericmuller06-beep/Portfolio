@@ -1,0 +1,46 @@
+/* ====================================
+   BUTTON ENHANCEMENTS
+   ==================================== */
+
+.btn {
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-primary {
+  box-shadow: 0 4px 15px rgba(45, 106, 79, 0.2);
+  background-color: var(--accent);
+  border-color: var(--accent);
+
+  &:hover {
+    background-color: var(--c-light-turquoise);
+    border-color: var(--c-light-turquoise);
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.3);
+    transform: translateY(-2px);
+  }
+}
+
+[data-bs-theme="dark"] .btn-primary {
+  box-shadow: 0 4px 15px rgba(82, 183, 136, 0.2);
+  background-color: var(--accent);
+  border-color: var(--accent);
+
+  &:hover {
+    background-color: var(--c-dark-turquoise);
+    border-color: var(--c-dark-turquoise);
+    box-shadow: 0 6px 20px rgba(23, 212, 196, 0.3);
+    transform: translateY(-2px);
+  }
+}
+
+.btn-outline-primary,
+.btn-outline-secondary {
+  color: var(--accent);
+  border-color: var(--accent);
+
+  &:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+}

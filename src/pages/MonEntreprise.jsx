@@ -4,7 +4,6 @@ import AzurLogoLight from '../Img/AzurinfoLight.png'
 import { definitions, getDefinitionByAcronym } from '../data/definitions'
 import Modal from '../components/Modal'
 import { useModal } from '../hooks/useModal'
-import '../style/modal.css'
 
 export default function MonEntreprise() {
   const [theme, setTheme] = useState('light')

@@ -1,0 +1,15 @@
+/* ====================================
+   BADGE IMPROVEMENTS
+   ==================================== */
+
+.badge {
+  font-weight: 500;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.85rem;
+  background-color: var(--border-soft);
+  color: var(--bs-primary);
+}
+
+[data-bs-theme="dark"] .badge {
+  color: var(--c-dark-turquoise);
+}

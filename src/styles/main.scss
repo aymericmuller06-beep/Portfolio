@@ -1,0 +1,22 @@
+/* ====================================
+   MAIN STYLES - AGGREGATION
+   ==================================== */
+
+/* Variables et configuration */
+@use 'variables' as *;
+
+/* Resets et styles de base */
+@use 'reset' as *;
+
+/* Composants */
+@use 'loader' as *;
+@use 'topbar' as *;
+@use 'back-to-top' as *;
+@use 'buttons' as *;
+@use 'cards' as *;
+@use 'badges' as *;
+@use 'modal' as *;
+@use 'timeline' as *;
+
+/* Utilitaires */
+@use 'responsive' as *;

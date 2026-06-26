@@ -4,7 +4,6 @@ import { socialLinks } from '../config'
 import { definitions, getDefinitionByAcronym } from '../data/definitions'
 import Modal from '../components/Modal'
 import { useModal } from '../hooks/useModal'
-import '../style/modal.css'
 
 export default function Home() {
   const sti2dModal = useModal()

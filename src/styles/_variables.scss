@@ -1,0 +1,83 @@
+/* ====================================
+   VARIABLES ET CONFIGURATION
+   ==================================== */
+
+/* Espacements */
+:root {
+  --topbar-h: 56px;
+}
+
+/* Palette Light Theme */
+:root,
+[data-bs-theme="light"] {
+  --c-light-bg: #f8f8f8;
+  --c-light-surface: #ffffff;
+  --c-light-text: #1a1a1a;
+  --c-light-text-muted: #666666;
+  --c-light-border: #dddddd;
+  --c-light-accent: #2d6a4f;
+  --c-light-accent-light: #40916c;
+  --c-light-accent-lighter: #52b788;
+  --c-light-turquoise: #1abc9c;
+  
+  --bg-main:    var(--c-light-bg);
+  --bg-surface: var(--c-light-surface);
+  --text-main:  var(--c-light-text);
+  --text-muted: var(--c-light-text-muted);
+  --accent:     var(--c-light-accent);
+  --border-soft: var(--c-light-border);
+
+  /* Bootstrap overrides */
+  --bs-primary:          var(--c-light-accent);
+  --bs-primary-rgb:      45, 106, 79;
+  --bs-secondary:        var(--c-light-accent-light);
+  --bs-secondary-rgb:    64, 145, 108;
+  --bs-success:          var(--c-light-accent-lighter);
+  --bs-success-rgb:      82, 183, 136;
+  --bs-body-bg:          var(--c-light-bg);
+  --bs-body-color:       var(--c-light-text);
+  --bs-link-color:       var(--c-light-accent);
+  --bs-link-hover-color: var(--c-light-text);
+  --bs-border-color:     var(--c-light-border);
+  --bs-dark:             var(--c-light-text);
+  --bs-dark-rgb:         26, 26, 26;
+  --bs-secondary-bg:     var(--c-light-surface);
+  --bs-secondary-bg-rgb: 255, 255, 255;
+}
+
+/* Palette Dark Theme */
+[data-bs-theme="dark"] {
+  --c-dark-bg: #0f0f0f;
+  --c-dark-surface: #1a1a1a;
+  --c-dark-text: #e8e8e8;
+  --c-dark-text-muted: #999999;
+  --c-dark-border: #333333;
+  --c-dark-accent: #52b788;
+  --c-dark-accent-light: #74c69d;
+  --c-dark-accent-lighter: #95d5b2;
+  --c-dark-turquoise: #17d4c4;
+  
+  --bg-main:    var(--c-dark-bg);
+  --bg-surface: var(--c-dark-surface);
+  --text-main:  var(--c-dark-text);
+  --text-muted: var(--c-dark-text-muted);
+  --accent:     var(--c-dark-accent);
+  --border-soft: var(--c-dark-border);
+
+  /* Bootstrap overrides */
+  --bs-primary:          var(--c-dark-accent);
+  --bs-primary-rgb:      82, 183, 136;
+  --bs-secondary:        var(--c-dark-accent-light);
+  --bs-secondary-rgb:    116, 198, 157;
+  --bs-success:          var(--c-dark-accent-lighter);
+  --bs-success-rgb:      149, 213, 178;
+  --bs-body-bg:          var(--c-dark-bg);
+  --bs-body-color:       var(--c-dark-text);
+  --bs-link-color:       var(--c-dark-accent);
+  --bs-link-hover-color: var(--c-dark-text);
+  --bs-border-color:     var(--c-dark-border);
+  --bs-dark:             var(--c-dark-text);
+  --bs-dark-rgb:         232, 232, 232;
+  --bs-secondary-bg:     var(--c-dark-surface);
+  --bs-secondary-bg-rgb: 26, 26, 26;
+}
