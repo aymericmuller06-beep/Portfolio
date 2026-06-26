@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -36,6 +36,8 @@ function App() {
           <Route path="/pages/cv" element={<CV />} />
           <Route path="/pages/veille_technologique" element={<Veilletech />} />
           <Route path="/pages/annuaire" element={<Annuaire />} />
+          {/* Catch-all route pour les routes non trouvées */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
       <Footer />

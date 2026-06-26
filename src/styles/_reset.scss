@@ -15,8 +15,7 @@ body {
   transition: background-color 0.2s, color 0.2s;
   padding-top: var(--topbar-h);
   opacity: 0;
-  animation: fadeIn 0.3s ease forwards;
-  animation-delay: 0.1s;
+  visibility: hidden;
 }
 
 /* Animation de fade-in */
