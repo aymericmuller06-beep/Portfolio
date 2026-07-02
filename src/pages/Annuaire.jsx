@@ -33,13 +33,21 @@ export default function Annuaire() {
   const filteredDefinitions = searchTerm ? searchDefinitions(searchTerm) : definitions
 
   return (
+  <>
+    {/* Hero Section */}
+      <section className="py-5 px-4 text-center border-bottom hero-section hero-section--small">
+        <div style={{ maxWidth: '900px' }}>
+          <h1 className="responsive-title responsive-title--medium">
+            Annuaire
+          </h1>
+          <p className="body-text body-text--muted">
+            Découvrez toutes les définitions et acronymes utilisés sur mon portfolio.
+          </p>
+        </div>
+      </section>
+
     <section className="py-5 px-4">
       <div className="container">
-        <h1 className="display-5 fw-bold mb-4 text-center">Annuaire</h1>
-        <p className="text-muted text-center mb-5">
-          Retrouvez ici toutes les définitions et les acronymes utilisés sur mon portfolio
-        </p>
-
         {/* Zone de recherche */}
         <div className="row mb-5">
           <div className="col-lg-8 mx-auto">
@@ -58,8 +66,6 @@ export default function Annuaire() {
             </div>
           </div>
         </div>
-
-        {/* Résultats */}
         {filteredDefinitions.length > 0 ? (
           <div className="row g-4">
             {filteredDefinitions.map(def => (
@@ -119,5 +125,6 @@ export default function Annuaire() {
         </div>
       </div>
     </section>
+  </>
   )
 }
