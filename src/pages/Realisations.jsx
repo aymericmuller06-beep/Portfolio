@@ -1,7 +1,10 @@
 import { useEffect } from 'react'
-import { realizations, categories } from '../data/realisations'
+import { useNavigate } from 'react-router-dom'
+import { realizations, allReferentiels, referentielCategories } from '../data/realisations'
 
 export default function Realisations() {
+  const navigate = useNavigate()
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -33,18 +36,18 @@ export default function Realisations() {
               <div key={realization.id} className="col-12">
                 <div className="card border-0 shadow-sm h-100" style={{ transition: 'box-shadow 0.2s ease, transform 0.2s ease' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 12px 32px rgba(0,0,0,0.15)'; e.currentTarget.style.transform = 'translateY(-2px)' }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)'; e.currentTarget.style.transform = 'translateY(0)' }}>
                   <div className="card-body p-4">
-                    <div className="row align-items-center">
+                    <div className="row align-items-center mb-3">
                       {/* Icon and Title Section */}
-                      <div className="col-lg-7">
+                      <div className="col-lg-8">
                         <div className="d-flex align-items-center mb-3">
-                          <div style={{ width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: categories[realization.category]?.lightColor || 'rgba(45, 106, 79, 0.1)', borderRadius: '8px', marginRight: '1rem' }}>
-                            <i className={`fa-solid ${realization.icon}`} style={{ fontSize: '1.5rem', color: categories[realization.category]?.color || 'var(--accent)' }}></i>
+                          <div style={{ width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: referentielCategories[realization.category]?.lightColor || 'rgba(45, 106, 79, 0.1)', borderRadius: '8px', marginRight: '1rem' }}>
+                            <i className={`fa-solid ${realization.icon}`} style={{ fontSize: '1.5rem', color: referentielCategories[realization.category]?.color || 'var(--accent)' }}></i>
                           </div>
                           <div>
                             <h5 className="card-title mb-0 fw-bold" style={{ fontSize: '1.25rem' }}>
                               {realization.title}
                             </h5>
-                            <small style={{ color: categories[realization.category]?.color || 'var(--accent)', fontWeight: '600' }} className="mt-1 d-block">
+                            <small style={{ color: referentielCategories[realization.category]?.color || 'var(--accent)', fontWeight: '600' }} className="mt-1 d-block">
                               {realization.category} • {realization.date}
                             </small>
                           </div>
@@ -54,26 +57,62 @@ export default function Realisations() {
                         </p>
                       </div>
 
-                      {/* Technologies Section */}
-                      <div className="col-lg-3 mb-3 mb-lg-0">
-                        <div className="d-flex flex-wrap gap-2">
-                          {realization.technologies.map((tech, idx) => (
-                            <span key={idx} className="badge" style={{ backgroundColor: categories[realization.category]?.lightColor || 'rgba(45, 106, 79, 0.1)', color: categories[realization.category]?.color || 'var(--accent)', borderRadius: '20px', paddingLeft: '0.75rem', paddingRight: '0.75rem' }}>
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
                       {/* CTA Section */}
-                      <div className="col-lg-2 text-lg-end">
+                      <div className="col-lg-4 text-lg-end">
                         <button 
                           onClick={() => handleViewMore(realization)}
-                          className="btn btn-primary btn-sm fw-semibold"
-                          style={{ whiteSpace: 'nowrap' }}
+                          className="btn btn-primary fw-semibold"
+                          style={{ whiteSpace: 'nowrap', padding: '0.75rem 1.5rem', fontSize: '1.1rem' }}
                         >
                           <i className="fa-solid fa-arrow-right me-2"></i>Voir plus
                         </button>
+                      </div>
+                    </div>
+
+                    {/* Referentiels Section - Full Width at Bottom */}
+                    <div className="row mt-4 pt-3" style={{ borderTop: '1px solid var(--border-color)' }}>
+                      <div className="col-12">
+                        <div className="d-flex flex-wrap gap-2">
+                          {realization.referentiels.map((refId, idx) => {
+                            const referentiel = allReferentiels.find(ref => ref.id === refId)
+                            const category = referentiel ? referentielCategories[referentiel.category] : null
+                            return (
+                              <button 
+                                key={idx} 
+                                onClick={() => navigate('/pages/tableau_synthese')}
+                                className="badge" 
+                                style={{ 
+                                  backgroundColor: category?.lightColor || 'rgba(45, 106, 79, 0.1)', 
+                                  color: category?.color || 'var(--accent)', 
+                                  borderRadius: '20px', 
+                                  paddingLeft: '0.75rem', 
+                                  paddingRight: '0.75rem', 
+                                  paddingTop: '0.5rem',
+                                  paddingBottom: '0.5rem',
+                                  fontSize: '0.85rem',
+                                  border: 'none',
+                                  cursor: 'pointer',
+                                  transition: 'all 0.2s ease',
+                                  whiteSpace: 'normal',
+                                  textAlign: 'left'
+                                }} 
+                                title={referentiel?.text}
+                                onMouseEnter={(e) => {
+                                  e.currentTarget.style.backgroundColor = category?.color || 'var(--accent)'
+                                  e.currentTarget.style.color = '#333'
+                                  e.currentTarget.style.transform = 'scale(1.02)'
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.currentTarget.style.backgroundColor = category?.lightColor || 'rgba(45, 106, 79, 0.1)'
+                                  e.currentTarget.style.color = category?.color || 'var(--accent)'
+                                  e.currentTarget.style.transform = 'scale(1)'
+                                }}
+                              >
+                                ▸ {referentiel?.text}
+                              </button>
+                            )
+                          })}
+                        </div>
                       </div>
                     </div>
                   </div>
