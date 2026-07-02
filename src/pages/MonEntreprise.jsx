@@ -35,7 +35,7 @@ export default function MonEntreprise() {
             Azurinfo
           </h1>
           <p className="intro-text">
-            Mon entreprise d'alternance
+            Mon entreprise d'alternance.
           </p>
         </div>
       </section>
