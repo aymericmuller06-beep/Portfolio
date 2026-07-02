@@ -20,7 +20,7 @@ export default function Realisations() {
             Mes Réalisations
           </h1>
           <p className="body-text body-text--muted">
-            Découvrez les projets et réalisations que j&apos;ai développés
+            Découvrez mes projets et réalisations.
           </p>
         </div>
       </section>

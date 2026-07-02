@@ -75,7 +75,7 @@ export default function Home() {
                 {' '}<button className="modal-trigger-btn" onClick={btsModal.open}>BTS</button>
                 {' '}<button className="modal-trigger-btn" onClick={sioModal.open}>SIO</button>
                 {' '}<button className="modal-trigger-btn" onClick={sisrModal.open}>SISR</button>
-                {' '}<span className="text-muted" style={{ fontStyle: 'italic', fontSize: '1rem' }}>(cliquez sur les mots sous-lignées pour en savoir plus)</span> en alternance chez 
+                {' '}en alternance chez 
                 {' '}<Link to="/pages/mon_entreprise" className="modal-trigger-btn">Azurinfo</Link>
                 . Mon objectif est de devenir assez compétent pour pouvoir me rendre indispensable auprès d'entreprises et de clients.
               </p>

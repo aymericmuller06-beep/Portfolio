@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import CVFile from '../Img/CV.pdf'
+import CVImage from '../Img/CV.webp'
 
 export default function CV() {
   useEffect(() => {
@@ -50,15 +51,17 @@ export default function CV() {
               </div>
 
               {/* PDF Viewer */}
-              <div className="card border-0 shadow-sm" style={{ overflow: 'hidden' }}>
-                <iframe
-                  src={`${CVFile}#zoom=page-fit`}
+              <div style={{ overflow: 'hidden', display: 'flex', justifyContent: 'center' }}>
+                <img
+                  src={CVImage}
+                  alt="Mon CV"
                   style={{
                     width: '100%',
-                    height: '800px',
-                    border: 'none'
+                    height: 'auto',
+                    display: 'block',
+                    maxHeight: '85vh',
+                    objectFit: 'contain'
                   }}
-                  title="Mon CV"
                 />
               </div>
             </div>
