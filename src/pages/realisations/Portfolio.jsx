@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { allReferentiels, referentielCategories } from '../../data/realisations'
 import { getContrastColor } from '../../utils/contrast'
 import ProofsCarousel from '../../components/ProofsCarousel'
-import { getProjectProofs } from '../../data/proofs'
+import { getProjectProofs } from '../../data/preuve'
 
 export default function Portfolio() {
   const navigate = useNavigate()
