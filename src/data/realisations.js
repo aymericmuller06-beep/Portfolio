@@ -1,26 +1,3 @@
-export const categories = {
-  'Développement Web': {
-    color: '#2d6a4f',
-    lightColor: 'rgba(45, 106, 79, 0.1)',
-    label: 'Développement Web'
-  },
-  'Projet en équipe': {
-    color: '#1abc9c',
-    lightColor: 'rgba(26, 188, 156, 0.1)',
-    label: 'Projet en équipe'
-  },
-  'Infrastructure IT': {
-    color: '#9b59b6',
-    lightColor: 'rgba(155, 89, 182, 0.1)',
-    label: 'Infrastructure IT'
-  },
-  'Système et Réseaux': {
-    color: '#3498db',
-    lightColor: 'rgba(52, 152, 219, 0.1)',
-    label: 'Système et Réseaux'
-  }
-}
-
 // Catégories de referentiels avec couleurs standards Excel
 export const referentielCategories = {
   'Gérer le patrimoine informatique': {
@@ -94,22 +71,22 @@ export const realizations = [
   },
   {
     id: 2,
+    title: 'Refonte d\'une base de connaissances technique',
+    shortDescription: 'Restructuration complète de la base de connaissances interne de mon entreprise.',
+    category: 'Gérer le patrimoine informatique',
+    icon: 'fa-database',
+    referentiels: [1, 2, 6],
+    date: '2026',
+    status: 'Actif'
+  },
+  {
+    id: 3,
     title: 'Mon Portfolio',
     shortDescription: 'Ce présent portfolio qui présente les différents aspects de ma formation et de mes compétences.',
     category: 'Organiser son développement professionnel',
     icon: 'fa-laptop',
     referentiels: [19, 20, 21],
     date: '2026-2027',
-    status: 'Actif'
-  },
-  {
-    id: 3,
-    title: 'Refonte, structuration et sécurisation de la base de connaissances technique',
-    shortDescription: 'Restructuration complète de la base de connaissances interne de l\'entreprise, incluant l\'identification des ressources, l\'application des normes et standards, et la vérification des règles d\'utilisation.',
-    category: 'Gérer le patrimoine informatique',
-    icon: 'fa-database',
-    referentiels: [1, 2, 6],
-    date: '2026',
     status: 'Actif'
   }
 ]

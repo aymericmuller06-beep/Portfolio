@@ -11,8 +11,7 @@ export default function Realisations() {
   }, [])
 
   const handleViewMore = (realization) => {
-    // Modal will be implemented later
-    console.log('View more:', realization.title)
+    navigate(`/pages/realisations/${realization.id}`)
   }
 
   return (

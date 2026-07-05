@@ -24,7 +24,7 @@ export default function Header() {
           <i className="fa-solid fa-house"></i>
           <span className="d-none d-md-inline ms-1">Accueil</span>
         </NavLink>
-        <NavLink to="/pages/realisations" className={({ isActive }) => `nav-link px-2 px-md-3 small ${isActive ? 'active' : ''}`} data-tab="realisations">
+        <NavLink to="/pages/realisations" end={false} className={({ isActive }) => `nav-link px-2 px-md-3 small ${isActive ? 'active' : ''}`} data-tab="realisations">
           <i className="fa-solid fa-folder"></i>
           <span className="d-none d-md-inline ms-1">Réalisations</span>
         </NavLink>

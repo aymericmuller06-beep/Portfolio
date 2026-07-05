@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Realisations from './pages/Realisations'
+import RealisationDetail from './pages/RealisationDetail'
 import TableauSynthese from './pages/TableauSynthese'
 import CV from './pages/CV'
 import Veilletech from './pages/Veilletech'
@@ -31,6 +32,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pages/realisations" element={<Realisations />} />
+          <Route path="/pages/realisations/:id" element={<RealisationDetail />} />
           <Route path="/pages/tableau_synthese" element={<TableauSynthese />} />
           <Route path="/pages/mon_entreprise" element={<MonEntreprise />} />
           <Route path="/pages/cv" element={<CV />} />
