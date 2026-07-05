@@ -1,23 +1,56 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
-import { allReferentiels, referentielCategories } from '../../data/realisations'
-import { getContrastColor } from '../../utils/contrast'
-import ProofsCarousel from '../../components/ProofsCarousel'
-import { projectProofs } from '../../data/preuve'
+import { realisations, allReferentiels, referentielCategories, detailsRealisations } from '../data/realisations'
+import { getContrastColor } from '../utils/contrast'
+import ProofsCarousel from '../components/ProofsCarousel'
 
-export default function BaseConnaissances() {
+export default function DetailRealisation() {
   const navigate = useNavigate()
+  const { id } = useParams()
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-  const referentiels = [1, 2, 6]
-  const project = projectProofs.baseConnaissances
+  // Trouver la réalisation
+  const realisationId = parseInt(id)
+  const realisation = realisations.find(r => r.id === realisationId)
+
+  if (!realisation) {
+    return (
+      <section className="py-4 px-3 text-center border-bottom hero-section hero-section--small">
+        <div className="container">
+          <h1 className="responsive-title responsive-title--medium">Réalisation non trouvée</h1>
+          <button 
+            onClick={() => navigate('/pages/realisations')}
+            className="btn btn-primary mt-4"
+          >
+            Retour aux réalisations
+          </button>
+        </div>
+      </section>
+    )
+  }
+
+  // Récupérer les détails selon l'ID
+  let project = null
+  switch(realisationId) {
+    case 1:
+      project = detailsRealisations.niceVolley
+      break
+    case 2:
+      project = detailsRealisations.baseConnaissances
+      break
+    case 3:
+      project = detailsRealisations.portfolio
+      break
+    default:
+      project = detailsRealisations.niceVolley
+  }
 
   return (
     <>
-      <section className="py-5 px-4 text-center border-bottom hero-section hero-section--small">
+      <section className="py-4 px-3 text-center border-bottom hero-section hero-section--small">
         <div style={{ maxWidth: '900px' }}>
           <button 
             onClick={() => navigate('/pages/realisations')}
@@ -26,22 +59,50 @@ export default function BaseConnaissances() {
             <i className="fa-solid fa-arrow-left me-2"></i>Retour aux réalisations
           </button>
           <h1 className="responsive-title responsive-title--medium">
-            Refonte, structuration et sécurisation d'une base de connaissances technique
+            {realisation.title}
           </h1>
         </div>
       </section>
 
-      <section className="py-5 px-4 border-bottom">
-        <div className="container" style={{ maxWidth: '800px' }}>
+      <section className="py-4 px-3 border-bottom">
+        <div className="container" style={{ maxWidth: '1000px' }}>
           <h2 className="display-5 fw-bold text-center mb-4">Introduction</h2>
           <p className="lead text-center text-muted" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
             {project.introduction}
           </p>
+          
+          {project.besoinsClients && project.besoinsClients.length > 0 && (
+            <div className="row g-4 mt-5">
+              {project.besoinsClients.map((besoin, idx) => (
+                <div key={idx} className="col-md-6 col-lg-6">
+                  <div className="card h-100 border-0 shadow-sm" style={{ transition: 'transform 0.2s ease, box-shadow 0.2s ease' }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-5px)'
+                      e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.15)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)'
+                      e.currentTarget.style.boxShadow = '0 0.125rem 0.25rem rgba(0,0,0,0.075)'
+                    }}
+                  >
+                    <div className="card-body">
+                      <h5 className="card-title fw-semibold text-primary mb-3">
+                        <i className="fa-solid fa-check-circle me-2"></i>{besoin.titre}
+                      </h5>
+                      <p className="card-text text-muted" style={{ fontSize: '0.95rem', lineHeight: '1.6' }}>
+                        {besoin.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
-      <section className="py-5 px-4 border-bottom bg-body-secondary">
-        <div className="container" style={{ maxWidth: '800px' }}>
+      <section className="py-4 px-3 border-bottom bg-body-secondary">
+        <div className="container" style={{ maxWidth: '1000px' }}>
           <h2 className="display-5 fw-bold text-center mb-4">Ce qu'on a fait</h2>
           <p className="text-start" style={{ fontSize: '1rem', lineHeight: '1.8', textAlign: 'justify' }}>
             {project.ceQuOnAfait}
@@ -49,8 +110,8 @@ export default function BaseConnaissances() {
         </div>
       </section>
 
-      <section className="py-5 px-4 border-bottom">
-        <div className="container" style={{ maxWidth: '800px' }}>
+      <section className="py-4 px-3 border-bottom">
+        <div className="container" style={{ maxWidth: '1000px' }}>
           <h2 className="display-5 fw-bold text-center mb-4">Ce que j'ai fait</h2>
           <p className="text-start" style={{ fontSize: '1rem', lineHeight: '1.8', textAlign: 'justify' }}>
             {project.ceQueJaiFailText}
@@ -58,7 +119,7 @@ export default function BaseConnaissances() {
         </div>
       </section>
 
-      <section className="py-5 px-4 border-bottom bg-body-secondary">
+      <section className="py-4 px-3 border-bottom bg-body-secondary">
         <div className="container">
           <h2 className="display-5 fw-bold text-center mb-5">Preuves & détails</h2>
           {project.preuves && project.preuves.length > 0 ? (
@@ -73,13 +134,13 @@ export default function BaseConnaissances() {
         </div>
       </section>
 
-      <section className="py-5 px-4 border-bottom">
+      <section className="py-4 px-3 border-bottom">
         <div className="container">
           <h2 className="display-5 fw-bold text-center mb-5">Compétences acquises</h2>
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className="d-flex flex-wrap gap-2 justify-content-center">
-                {referentiels.map((refId, idx) => {
+                {realisation.referentiels.map((refId, idx) => {
                   const referentiel = allReferentiels.find(ref => ref.id === refId)
                   const category = referentiel ? referentielCategories[referentiel.category] : null
                   const bgColor = category?.color || '#2d6a4f'
@@ -123,8 +184,7 @@ export default function BaseConnaissances() {
         </div>
       </section>
 
-
-      <section className="py-5 px-4 text-center bg-body-secondary">
+      <section className="py-4 px-3 text-center bg-body-secondary">
         <div className="container">
           <button 
             onClick={() => navigate('/pages/realisations')}

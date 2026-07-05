@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { realizations, allReferentiels, referentielCategories } from '../data/realisations'
+import { realisations, allReferentiels, referentielCategories } from '../data/realisations'
 import { getContrastColor } from '../utils/contrast'
 
 export default function Realisations() {
@@ -30,7 +30,7 @@ export default function Realisations() {
       <section className="py-5 px-4">
         <div className="container">
           <div className="row g-4">
-            {realizations.map((realization) => (
+            {realisations.map((realization) => (
               <div key={realization.id} className="col-12">
                 <div className="card border-0 shadow-sm h-100" style={{ transition: 'box-shadow 0.2s ease, transform 0.2s ease' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 12px 32px rgba(0,0,0,0.15)'; e.currentTarget.style.transform = 'translateY(-2px)' }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)'; e.currentTarget.style.transform = 'translateY(0)' }}>
                   <div className="card-body p-4">
@@ -116,7 +116,7 @@ export default function Realisations() {
             ))}
           </div>
 
-          {realizations.length === 0 && (
+          {realisations.length === 0 && (
             <div className="text-center py-5">
               <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem' }}>
                 Aucune réalisation pour le moment.
