@@ -4,6 +4,7 @@ import { socialLinks } from '../config'
 import { definitions, getDefinitionByAcronym } from '../data/definitions'
 import Modal from '../components/Modal'
 import { useModal } from '../hooks/useModal'
+import { getContrastColor } from '../utils/contrast'
 
 export default function Home() {
   const sti2dModal = useModal()
@@ -27,10 +28,10 @@ export default function Home() {
       <section className="py-5 px-4 text-center hero-section" style={{ minHeight: 'calc(100vh - 56px)' }}>
         <div style={{ maxWidth: '700px' }}>
           <div className="mb-3">
-            <span className="badge bg-opacity-10 fw-normal mb-3 me-3" style={{color: 'var(--bs-warning)'}}>
+            <span className="badge bg-warning fw-normal mb-3 me-3" style={{color: getContrastColor('#ffc107')}}>
               <i className="fa-solid fa-star me-2"></i>Bienvenue sur mon portfolio
             </span>
-            <span className="badge bg-opacity-10 fw-normal mb-3" style={{color: 'var(--bs-info)'}}>
+            <span className="badge bg-info fw-normal mb-3" style={{color: getContrastColor('#0dcaf0')}}>
               <i className="fa-solid fa-info me-2"></i>Cliquez sur les mots soulignés pour leurs significations
             </span>
           </div>
@@ -91,7 +92,7 @@ export default function Home() {
       <section className="py-5 px-4 border-top bg-body-secondary">
         <div className="container">
           <h2 className="display-5 fw-bold mb-5 text-center">Mes compétences principales</h2>
-          <span className="badge bg-opacity-10 fw-normal mb-3" style={{color: 'var(--bs-info)'}}>
+          <span className="badge bg-info fw-normal mb-3" style={{color: getContrastColor('#0dcaf0')}}>
               <i className="fa-solid fa-info me-2"></i>Définitions dans la page "annuaire"
           </span>
           <div className="row g-4">

@@ -230,9 +230,6 @@ export default function Veilletech() {
         <p>
           <strong>{getDefinitionByAcronym('Hardware')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('Hardware')?.fullName}"</strong>.
         </p>
-        <p className="text-muted mt-3">
-          {getDefinitionByAcronym('Hardware')?.description}
-        </p>
       </Modal>
 
       {/* Modal IoT */}
@@ -243,9 +240,6 @@ export default function Veilletech() {
       >
         <p>
           <strong>{getDefinitionByAcronym('IoT')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('IoT')?.fullName}"</strong>.
-        </p>
-        <p className="text-muted mt-3">
-          {getDefinitionByAcronym('IoT')?.description}
         </p>
       </Modal>
     </>

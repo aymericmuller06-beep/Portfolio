@@ -101,5 +101,15 @@ export const realizations = [
     referentiels: [19, 20, 21],
     date: '2026-2027',
     status: 'Actif'
+  },
+  {
+    id: 3,
+    title: 'Refonte, structuration et sécurisation de la base de connaissances technique',
+    shortDescription: 'Restructuration complète de la base de connaissances interne de l\'entreprise, incluant l\'identification des ressources, l\'application des normes et standards, et la vérification des règles d\'utilisation.',
+    category: 'Gérer le patrimoine informatique',
+    icon: 'fa-database',
+    referentiels: [1, 2, 6],
+    date: '2026',
+    status: 'Actif'
   }
 ]

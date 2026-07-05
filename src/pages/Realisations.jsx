@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { realizations, allReferentiels, referentielCategories } from '../data/realisations'
+import { getContrastColor } from '../utils/contrast'
 
 export default function Realisations() {
   const navigate = useNavigate()
@@ -76,14 +77,16 @@ export default function Realisations() {
                           {realization.referentiels.map((refId, idx) => {
                             const referentiel = allReferentiels.find(ref => ref.id === refId)
                             const category = referentiel ? referentielCategories[referentiel.category] : null
+                            const bgColor = category?.color || '#2d6a4f'
+                            const textColor = getContrastColor(bgColor)
                             return (
                               <button 
                                 key={idx} 
                                 onClick={() => navigate('/pages/tableau_synthese')}
                                 className="badge" 
                                 style={{ 
-                                  backgroundColor: category?.lightColor || 'rgba(45, 106, 79, 0.1)', 
-                                  color: category?.color || 'var(--accent)', 
+                                  backgroundColor: bgColor, 
+                                  color: textColor, 
                                   borderRadius: '20px', 
                                   paddingLeft: '0.75rem', 
                                   paddingRight: '0.75rem', 
@@ -98,13 +101,11 @@ export default function Realisations() {
                                 }} 
                                 title={referentiel?.text}
                                 onMouseEnter={(e) => {
-                                  e.currentTarget.style.backgroundColor = category?.color || 'var(--accent)'
-                                  e.currentTarget.style.color = '#333'
+                                  e.currentTarget.style.filter = 'brightness(0.85)'
                                   e.currentTarget.style.transform = 'scale(1.02)'
                                 }}
                                 onMouseLeave={(e) => {
-                                  e.currentTarget.style.backgroundColor = category?.lightColor || 'rgba(45, 106, 79, 0.1)'
-                                  e.currentTarget.style.color = category?.color || 'var(--accent)'
+                                  e.currentTarget.style.filter = 'brightness(1)'
                                   e.currentTarget.style.transform = 'scale(1)'
                                 }}
                               >

@@ -8,9 +8,13 @@ export default defineConfig({
     minify: 'esbuild',
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor-bootstrap': ['bootstrap'],
-          'vendor-react': ['react', 'react-dom'],
+        manualChunks: (id) => {
+          if (id.includes('node_modules/bootstrap')) {
+            return 'vendor-bootstrap'
+          }
+          if (id.includes('node_modules/react')) {
+            return 'vendor-react'
+          }
         },
         chunkFileNames: 'chunks/[name]-[hash].js',
         entryFileNames: '[name]-[hash].js',

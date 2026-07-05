@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { definitions, searchDefinitions } from '../data/definitions'
+import { getContrastColor } from '../utils/contrast'
 
 export default function Annuaire() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -11,23 +12,27 @@ export default function Annuaire() {
   const getCategoryColor = (category) => {
     const colors = {
       'Formation': {
-        gradient: 'linear-gradient(135deg, #3498db, #2980b9)',
-        badge: 'bg-info'
+        gradient: '#0dcaf0',
+        badge: 'bg-info',
+        badgeColor: '#0dcaf0'
       },
       'Développement Web': {
-        gradient: 'linear-gradient(135deg, #e74c3c, #c0392b)',
-        badge: 'bg-danger'
+        gradient: '#dc3545',
+        badge: 'bg-danger',
+        badgeColor: '#dc3545'
       },
       'Systèmes & Réseaux': {
-        gradient: 'linear-gradient(135deg, #9b59b6, #8e44ad)',
-        badge: 'bg-warning'
+        gradient: '#ffc107',
+        badge: 'bg-warning',
+        badgeColor: '#ffc107'
       },
       'Outils & Technologies': {
-        gradient: 'linear-gradient(135deg, #1abc9c, #16a085)',
-        badge: 'bg-success'
+        gradient: '#52b788',
+        badge: 'bg-success',
+        badgeColor: '#52b788'
       }
     }
-    return colors[category] || { gradient: 'linear-gradient(135deg, var(--c-light-turquoise), var(--accent))', badge: 'bg-primary' }
+    return colors[category] || { gradient: '#0d6efd', badge: 'bg-primary', badgeColor: '#0d6efd' }
   }
 
   const filteredDefinitions = searchTerm ? searchDefinitions(searchTerm) : definitions
@@ -77,7 +82,8 @@ export default function Annuaire() {
                         <div
                           className="icon-box"
                           style={{
-                            background: getCategoryColor(def.category).gradient
+                            background: getCategoryColor(def.category).badgeColor,
+                            color: '#ffffff'
                           }}
                         >
                           {def.acronym.substring(0, 3)}
@@ -88,7 +94,7 @@ export default function Annuaire() {
                           <h5 className="card-title mb-0">
                             <strong>{def.acronym}</strong>
                           </h5>
-                          <span className={`badge ${getCategoryColor(def.category).badge} bg-opacity-10 text-dark small`}>
+                          <span className={`badge ${getCategoryColor(def.category).badge}`} style={{ color: getContrastColor(getCategoryColor(def.category).badgeColor) }}>
                             {def.category}
                           </span>
                         </div>
