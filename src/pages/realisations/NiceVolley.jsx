@@ -51,10 +51,6 @@ export default function NiceVolley() {
     {
       titre: "Facilité d'utilisation",
       description: "Notre CRM devait rendre les processus de démarche client bien plus simple et rapide pour le club."
-    },
-    {
-      titre: "Faciliter la communication",
-      description: "Intégrer les outils de mailing et de communication pour atteindre facilement les membres."
     }
   ]
 
@@ -102,16 +98,35 @@ export default function NiceVolley() {
       </section>
 
       <section className="py-4 px-3 border-bottom">
-        <div className="container" style={{ maxWidth: '1000px' }}>
-          <h2 className="display-5 fw-bold text-center mb-4">Introduction</h2>
-          <p className="lead text-center text-muted" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
-            {introduction}
-          </p>
+        <div className="container" style={{ maxWidth: '80%' }}>
+          <h2 className="display-5 fw-bold text-center mb-3">Introduction</h2>
           
+          {/* Texte + Image */}
+          <div className="row g-3 align-items-start mb-3">
+            <div className="col-lg-6">
+              <p className="lead text-muted" style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: 0 }}>
+                {introduction}
+              </p>
+            </div>
+            
+            <div className="col-lg-6">
+              <div className="card border-0 shadow-sm" style={{ minHeight: '250px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f8f9fa' }}>
+                <div className="card-body text-center p-3">
+                  <img 
+                    src="./src/Img/NVB.webp"
+                    alt="Club Nice Volley-Ball"
+                    style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px' }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Cartes en horizontal */}
           {besoinsClients && besoinsClients.length > 0 && (
-            <div className="row g-4 mt-5">
+            <div className="row g-3">
               {besoinsClients.map((besoin, idx) => (
-                <div key={idx} className="col-md-6 col-lg-6">
+                <div key={idx} className="col-md-6 col-lg-4">
                   <div className="card h-100 border-0 shadow-sm" style={{ transition: 'transform 0.2s ease, box-shadow 0.2s ease' }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.transform = 'translateY(-5px)'
@@ -122,11 +137,11 @@ export default function NiceVolley() {
                       e.currentTarget.style.boxShadow = '0 0.125rem 0.25rem rgba(0,0,0,0.075)'
                     }}
                   >
-                    <div className="card-body">
-                      <h5 className="card-title fw-semibold text-primary mb-3">
+                    <div className="card-body p-3">
+                      <h5 className="card-title fw-semibold text-primary mb-2">
                         <i className="fa-solid fa-check-circle me-2"></i>{besoin.titre}
                       </h5>
-                      <p className="card-text text-muted" style={{ fontSize: '0.95rem', lineHeight: '1.6' }}>
+                      <p className="card-text text-muted" style={{ fontSize: '0.95rem', lineHeight: '1.6', marginBottom: 0 }}>
                         {besoin.description}
                       </p>
                     </div>
@@ -139,7 +154,7 @@ export default function NiceVolley() {
       </section>
 
       <section className="py-4 px-3 border-bottom bg-body-secondary">
-        <div className="container" style={{ maxWidth: '1000px' }}>
+        <div className="container" style={{ maxWidth: '80%' }}>
           <h2 className="display-5 fw-bold text-center mb-4">Ce qu'on a fait</h2>
           <p className="text-start" style={{ fontSize: '1rem', lineHeight: '1.8', textAlign: 'justify' }}>
             {ceQuOnAfait}
@@ -148,7 +163,7 @@ export default function NiceVolley() {
       </section>
 
       <section className="py-4 px-3 border-bottom">
-        <div className="container" style={{ maxWidth: '1000px' }}>
+        <div className="container" style={{ maxWidth: '80%' }}>
           <h2 className="display-5 fw-bold text-center mb-4">Ce que j'ai fait</h2>
           <p className="text-start" style={{ fontSize: '1rem', lineHeight: '1.8', textAlign: 'justify' }}>
             {ceQueJaiFailText}

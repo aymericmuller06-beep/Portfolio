@@ -87,7 +87,7 @@ export default function BaseConnaissances() {
   return (
     <>
       <section className="py-4 px-3 text-center border-bottom hero-section hero-section--small">
-        <div style={{ maxWidth: '900px' }}>
+        <div style={{ maxWidth: '80%' }}>
           <button 
             onClick={() => navigate('/pages/realisations')}
             className="btn btn-link text-decoration-none mb-3"
@@ -101,7 +101,7 @@ export default function BaseConnaissances() {
       </section>
 
       <section className="py-4 px-3 border-bottom">
-        <div className="container" style={{ maxWidth: '1000px' }}>
+        <div className="container" style={{ maxWidth: '80%' }}>
           <h2 className="display-5 fw-bold text-center mb-4">Introduction</h2>
           <p className="lead text-center text-muted" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
             {introduction}
@@ -138,7 +138,7 @@ export default function BaseConnaissances() {
       </section>
 
       <section className="py-4 px-3 border-bottom bg-body-secondary">
-        <div className="container" style={{ maxWidth: '1000px' }}>
+        <div className="container" style={{ maxWidth: '80%' }}>
           <h2 className="display-5 fw-bold text-center mb-4">Ce qu'on a fait</h2>
           <p className="text-start" style={{ fontSize: '1rem', lineHeight: '1.8', textAlign: 'justify' }}>
             {ceQuOnAfait}
@@ -147,7 +147,7 @@ export default function BaseConnaissances() {
       </section>
 
       <section className="py-4 px-3 border-bottom">
-        <div className="container" style={{ maxWidth: '1000px' }}>
+        <div className="container" style={{ maxWidth: '80%' }}>
           <h2 className="display-5 fw-bold text-center mb-4">Ce que j'ai fait</h2>
           <p className="text-start" style={{ fontSize: '1rem', lineHeight: '1.8', textAlign: 'justify' }}>
             {ceQueJaiFailText}
