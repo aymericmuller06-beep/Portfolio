@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { allReferentiels, referentielCategories } from '../../data/realisations'
 import { getContrastColor } from '../../utils/contrast'
 import ProofsCarousel from '../../components/ProofsCarousel'
-import { getProjectProofs } from '../../data/preuve'
+import { projectProofs } from '../../data/preuve'
 
 export default function Portfolio() {
   const navigate = useNavigate()
@@ -13,10 +13,7 @@ export default function Portfolio() {
   }, [])
 
   const referentiels = [19, 20, 21]
-  const pourQuiProofs = getProjectProofs('portfolio', 'pourQui')
-  const pourQuoiProofs = getProjectProofs('portfolio', 'pourQuoi')
-  const commentProofs = getProjectProofs('portfolio', 'comment')
-  const ceQueJaiFailProofs = getProjectProofs('portfolio', 'ceQueJaiFait')
+  const project = projectProofs.portfolio
 
   return (
     <>
@@ -36,55 +33,37 @@ export default function Portfolio() {
 
 
       <section className="py-5 px-4 border-bottom">
-        <div className="container">
-          <h2 className="display-5 fw-bold text-center mb-5">Pour qui</h2>
-          {pourQuiProofs.length > 0 ? (
-            <ProofsCarousel proofs={pourQuiProofs} />
-          ) : (
-            <div className="card border-0 shadow-sm">
-              <div className="card-body">
-                <p className="text-muted">Aucune preuve ajoutée pour cette section.</p>
-              </div>
-            </div>
-          )}
+        <div className="container" style={{ maxWidth: '800px' }}>
+          <h2 className="display-5 fw-bold text-center mb-4">Introduction</h2>
+          <p className="lead text-center text-muted" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
+            {project.introduction}
+          </p>
         </div>
       </section>
 
       <section className="py-5 px-4 border-bottom bg-body-secondary">
-        <div className="container">
-          <h2 className="display-5 fw-bold text-center mb-5">Pour quoi</h2>
-          {pourQuoiProofs.length > 0 ? (
-            <ProofsCarousel proofs={pourQuoiProofs} />
-          ) : (
-            <div className="card border-0 shadow-sm">
-              <div className="card-body">
-                <p className="text-muted">Aucune preuve ajoutée pour cette section.</p>
-              </div>
-            </div>
-          )}
+        <div className="container" style={{ maxWidth: '800px' }}>
+          <h2 className="display-5 fw-bold text-center mb-4">Ce qu'on a fait</h2>
+          <p className="text-start" style={{ fontSize: '1rem', lineHeight: '1.8', textAlign: 'justify' }}>
+            {project.ceQuOnAfait}
+          </p>
         </div>
       </section>
 
       <section className="py-5 px-4 border-bottom">
-        <div className="container">
-          <h2 className="display-5 fw-bold text-center mb-5">Comment</h2>
-          {commentProofs.length > 0 ? (
-            <ProofsCarousel proofs={commentProofs} />
-          ) : (
-            <div className="card border-0 shadow-sm">
-              <div className="card-body">
-                <p className="text-muted">Aucune preuve ajoutée pour cette section.</p>
-              </div>
-            </div>
-          )}
+        <div className="container" style={{ maxWidth: '800px' }}>
+          <h2 className="display-5 fw-bold text-center mb-4">Ce que j'ai fait</h2>
+          <p className="text-start" style={{ fontSize: '1rem', lineHeight: '1.8', textAlign: 'justify' }}>
+            {project.ceQueJaiFailText}
+          </p>
         </div>
       </section>
 
       <section className="py-5 px-4 border-bottom bg-body-secondary">
         <div className="container">
-          <h2 className="display-5 fw-bold text-center mb-5">Ce que j'ai fait</h2>
-          {ceQueJaiFailProofs.length > 0 ? (
-            <ProofsCarousel proofs={ceQueJaiFailProofs} />
+          <h2 className="display-5 fw-bold text-center mb-5">Preuves & détails</h2>
+          {project.preuves && project.preuves.length > 0 ? (
+            <ProofsCarousel proofs={project.preuves} />
           ) : (
             <div className="card border-0 shadow-sm">
               <div className="card-body">

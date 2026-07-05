@@ -32,7 +32,10 @@ export default function Veilletech() {
 
       <section className="py-5 px-4 border-bottom bg-body-secondary">
         <div className="container">
-          <h2 className="display-6 fw-bold mb-4" style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent)', marginBottom: '1.5rem' }}>Sujet : L'{' '}<button className="modal-trigger-btn" onClick={iotModal.open}>{getDefinitionByAcronym('IoT')?.acronym}</button> dans le football.</h2>
+          <h2 className="display-6 fw-bold mb-4" style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent)', marginBottom: '1.5rem' }}>
+            Sujet : L'
+            <button className="modal-trigger-btn" onClick={iotModal.open}>{getDefinitionByAcronym('IoT')?.acronym}</button> 
+            {' '}dans le football.</h2>
           <h1 style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--bs-text-light)', marginBottom: '1rem', lineHeight: 1.3 }}>
             Comment faire pour fiabiliser une infrastructure dédiée à de la précision et rapidité dans un milieu tel qu'un stade ?
           </h1>
