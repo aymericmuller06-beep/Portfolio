@@ -3,12 +3,14 @@ import AzurLogo from '../Img/Azurinfo.png'
 import AzurLogoLight from '../Img/AzurinfoLight.png'
 import AzurinfoImage from '../Img/Azurinfo.webp'
 import { definitions, getDefinitionByAcronym } from '../data/definitions'
+import { companyLinks } from '../config'
 import Modal from '../components/Modal'
 import { useModal } from '../hooks/useModal'
 
 export default function MonEntreprise() {
   const [theme, setTheme] = useState('light')
-   const hotlineModal = useModal()
+  const hotlineModal = useModal()
+  const statsModal = useModal()
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -87,7 +89,7 @@ export default function MonEntreprise() {
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
                     <i className="fa-solid fa-tools text-primary" style={{ fontSize: '1.8rem' }}></i>
-                    <h5 className="card-title mb-0 ms-3">Préparation / réparation matérielle</h5>
+                    <h5 className="card-title mb-0 ms-3">Préparation / réparation du matériel</h5>
                   </div>
                   <p className="text-muted mb-0">
                     Préparation et réparation des équipements informatiques pour nos clients, assurant la disponibilité de leur matériel.
@@ -116,7 +118,7 @@ export default function MonEntreprise() {
                     <h5 className="card-title mb-0 ms-3">Projets parallèles</h5>
                   </div>
                   <p className="text-muted mb-0">
-                    Projets en parallèle des missions principales, permettant de dévélopper d'autres compétences ou de les renforcer.
+                    Projets en parallèle des missions principales, permettant de développer d'autres compétences ou de les renforcer.
                   </p>
                 </div>
               </div>
@@ -131,29 +133,44 @@ export default function MonEntreprise() {
           <h2 className="display-5 fw-bold mb-5 text-center">Détails supplémentaires</h2>
           <div className="row g-4">
             <div className="col-lg-4">
-              <div className="card border-0 h-100 shadow-sm">
+              <div className="card border-0 h-100 shadow-sm" style={{ opacity: 0.5, cursor: 'not-allowed' }}>
                 <div className="card-body text-center">
                   <i className="fa-solid fa-sitemap text-primary mb-3" style={{ fontSize: '2.5rem' }}></i>
                   <h5 className="card-title mb-3">Organigramme</h5>
                   <p className="text-muted">Structure et organisation de l'entreprise</p>
+                  <small className="text-muted">(Bientôt disponible)</small>
                 </div>
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="card border-0 h-100 shadow-sm">
+              <div 
+                className="card border-0 h-100 shadow-sm" 
+                onClick={statsModal.open}
+                style={{ cursor: 'pointer', transition: 'all 0.3s ease' }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+              >
                 <div className="card-body text-center">
                   <i className="fa-solid fa-chart-bar text-primary mb-3" style={{ fontSize: '2.5rem' }}></i>
                   <h5 className="card-title mb-3">Statistiques</h5>
                   <p className="text-muted">Chiffres clés et informations</p>
+                  <small className="text-primary" style={{ fontWeight: '500' }}>Cliquez pour en savoir plus</small>
                 </div>
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="card border-0 h-100 shadow-sm">
+              <div 
+                className="card border-0 h-100 shadow-sm"
+                onClick={() => window.open(companyLinks.azurinfo, '_blank')}
+                style={{ cursor: 'pointer', transition: 'all 0.3s ease' }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+              >
                 <div className="card-body text-center">
                   <i className="fa-solid fa-globe text-primary mb-3" style={{ fontSize: '2.5rem' }}></i>
                   <h5 className="card-title mb-3">Site de l'entreprise</h5>
                   <p className="text-muted">Lien vers le site officiel de l'entreprise</p>
+                  <small className="text-primary" style={{ fontWeight: '500' }}>Visitez le site</small>
                 </div>
               </div>
             </div>
@@ -161,7 +178,7 @@ export default function MonEntreprise() {
         </div>
       </section>
 
-       {/* Modal Hotline*/}
+      {/* Modal Hotline*/}
       <Modal 
         isOpen={hotlineModal.isOpen} 
         title={getDefinitionByAcronym('HOTLINE')?.acronym}
@@ -170,6 +187,39 @@ export default function MonEntreprise() {
         <p>
           <strong>{getDefinitionByAcronym('HOTLINE')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('HOTLINE')?.fullName}"</strong>.
         </p>
+      </Modal>
+
+      {/* Modal Statistiques*/}
+      <Modal 
+        isOpen={statsModal.isOpen} 
+        title="Statistiques Azurinfo"
+        onClose={statsModal.close}
+      >
+        <div>
+          <p className="mb-3">
+            <strong>Azurinfo</strong> est une entreprise dynamique avec des chiffres clés impressionnants :
+          </p>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">
+              <strong>Année de création :</strong> 2015
+            </li>
+            <li className="list-group-item">
+              <strong>Nombre de collaborateurs :</strong> Environ 50 personnes
+            </li>
+            <li className="list-group-item">
+              <strong>Domaines d'expertise :</strong> Infogérance, Systèmes & Réseaux, Développement Web
+            </li>
+            <li className="list-group-item">
+              <strong>Clients :</strong> TPE/PME du Rhône et environs
+            </li>
+            <li className="list-group-item">
+              <strong>Certification :</strong> Partner Microsoft et Cisco
+            </li>
+          </ul>
+          <p className="mt-3 text-muted">
+            Ces informations reflètent l'engagement de l'entreprise envers l'excellence et la satisfaction client.
+          </p>
+        </div>
       </Modal>
     </>
   )
