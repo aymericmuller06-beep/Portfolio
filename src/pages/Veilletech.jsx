@@ -1,6 +1,12 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { definitions, getDefinitionByAcronym } from '../data/definitions'
+import Modal from '../components/Modal'
+import { useModal } from '../hooks/useModal'
 
 export default function Veilletech() {
+  const hardwareModal = useModal()
+  const iotModal = useModal()
+  
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -28,7 +34,7 @@ export default function Veilletech() {
 
       <section className="py-5 px-4 border-bottom bg-body-secondary">
         <div className="container">
-          <h2 className="display-6 fw-bold mb-4" style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent)', marginBottom: '1.5rem' }}>Sujet : L'IoT dans le football.</h2>
+          <h2 className="display-6 fw-bold mb-4" style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent)', marginBottom: '1.5rem' }}>Sujet : L'{' '}<button className="modal-trigger-btn" onClick={iotModal.open}>{getDefinitionByAcronym('IoT')?.acronym}</button> dans le football.</h2>
           <h1 style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--bs-text-light)', marginBottom: '1rem', lineHeight: 1.3 }}>
             Comment faire pour fiabiliser une infrastructure dédiée à de la précision et rapidité dans un milieu tel qu'un stade ?
           </h1>
@@ -116,7 +122,7 @@ export default function Veilletech() {
                     <div>
                       <i className="fa-solid fa-microchip" style={{ fontSize: '3rem', color: 'var(--accent)', marginBottom: '1rem', display: 'block' }}></i>
                       <h5 className="card-title fw-bold">La convergence des technologies</h5>
-                      <p className="text-muted" style={{ fontSize: '0.95rem', marginTop: '0.75rem' }}>Hardware, Réseau, Système</p>
+                      <p className="text-muted" style={{ fontSize: '0.95rem', marginTop: '0.75rem' }}><button className="modal-trigger-btn" onClick={hardwareModal.open}>{getDefinitionByAcronym('Hardware')?.acronym}</button>, Réseau, Système</p>
                     </div>
                     <button className="fw-semibold mt-3" style={{ background: 'none', border: 'none', padding: '0', color: 'var(--accent)', cursor: 'pointer', fontSize: '1rem', alignSelf: 'flex-start', textDecoration: 'none' }}>
                       <i className="fa-solid fa-arrow-right me-2"></i>Savoir plus
@@ -214,6 +220,34 @@ export default function Veilletech() {
           </div>
         </div>
       </section>
+
+      {/* Modal Hardware */}
+      <Modal 
+        isOpen={hardwareModal.isOpen} 
+        title={getDefinitionByAcronym('Hardware')?.acronym}
+        onClose={hardwareModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('Hardware')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('Hardware')?.fullName}"</strong>.
+        </p>
+        <p className="text-muted mt-3">
+          {getDefinitionByAcronym('Hardware')?.description}
+        </p>
+      </Modal>
+
+      {/* Modal IoT */}
+      <Modal 
+        isOpen={iotModal.isOpen} 
+        title={getDefinitionByAcronym('IoT')?.acronym}
+        onClose={iotModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('IoT')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('IoT')?.fullName}"</strong>.
+        </p>
+        <p className="text-muted mt-3">
+          {getDefinitionByAcronym('IoT')?.description}
+        </p>
+      </Modal>
     </>
   )
 }

@@ -138,7 +138,7 @@ export default function MonEntreprise() {
                   <i className="fa-solid fa-sitemap text-primary mb-3" style={{ fontSize: '2.5rem' }}></i>
                   <h5 className="card-title mb-3">Organigramme</h5>
                   <p className="text-muted">Structure et organisation de l'entreprise</p>
-                  <small className="text-muted">(Bientôt disponible)</small>
+                  <small className="text-muted">(Non disponible)</small>
                 </div>
               </div>
             </div>
@@ -154,7 +154,7 @@ export default function MonEntreprise() {
                   <i className="fa-solid fa-chart-bar text-primary mb-3" style={{ fontSize: '2.5rem' }}></i>
                   <h5 className="card-title mb-3">Statistiques</h5>
                   <p className="text-muted">Chiffres clés et informations</p>
-                  <small className="text-primary" style={{ fontWeight: '500' }}>Cliquez pour en savoir plus</small>
+                  <small className="text-primary" style={{ fontWeight: '500' }}>En savoir plus</small>
                 </div>
               </div>
             </div>
@@ -195,31 +195,7 @@ export default function MonEntreprise() {
         title="Statistiques Azurinfo"
         onClose={statsModal.close}
       >
-        <div>
-          <p className="mb-3">
-            <strong>Azurinfo</strong> est une entreprise dynamique avec des chiffres clés impressionnants :
-          </p>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">
-              <strong>Année de création :</strong> 2015
-            </li>
-            <li className="list-group-item">
-              <strong>Nombre de collaborateurs :</strong> Environ 50 personnes
-            </li>
-            <li className="list-group-item">
-              <strong>Domaines d'expertise :</strong> Infogérance, Systèmes & Réseaux, Développement Web
-            </li>
-            <li className="list-group-item">
-              <strong>Clients :</strong> TPE/PME du Rhône et environs
-            </li>
-            <li className="list-group-item">
-              <strong>Certification :</strong> Partner Microsoft et Cisco
-            </li>
-          </ul>
-          <p className="mt-3 text-muted">
-            Ces informations reflètent l'engagement de l'entreprise envers l'excellence et la satisfaction client.
-          </p>
-        </div>
+        
       </Modal>
     </>
   )

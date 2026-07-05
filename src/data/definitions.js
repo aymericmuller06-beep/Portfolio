@@ -173,6 +173,20 @@ export const definitions = [
     fullName: 'Centre d\'appel',
     description: 'Centre d\'appel pour aider les utilisateurs à résoudre leurs problèmes, informatiques dans mon cas.',
     category: 'Outils & Technologies'
+  },
+  {
+    id: 26,
+    acronym: 'Hardware',
+    fullName: 'Matériel informatique',
+    description: 'Ensemble des composants physiques d\'un ordinateur : processeur, mémoire, disque dur, cartes réseau, etc.',
+    category: 'Infrastructure'
+  },
+  {
+    id: 27,
+    acronym: 'IoT',
+    fullName: 'Internet of Things (Internet des Objets)',
+    description: 'Réseau de dispositifs physiques, capteurs et logiciels connectés à Internet pour collecter et échanger des données sans intervention humaine.',
+    category: 'Technologie'
   }
 ]
 
