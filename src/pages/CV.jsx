@@ -1,8 +1,16 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { Document, Page, pdfjs } from 'react-pdf'
+import 'react-pdf/dist/Page/AnnotationLayer.css'
+import 'react-pdf/dist/Page/TextLayer.css'
 import CVFile from '../Img/CV.pdf'
-import CVImage from '../Img/CV.webp'
+import workerSrc from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
+
+// Set up the worker
+pdfjs.GlobalWorkerOptions.workerSrc = workerSrc
 
 export default function CV() {
+  const [numPages, setNumPages] = useState(null)
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -14,6 +22,10 @@ export default function CV() {
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
+  }
+
+  const onDocumentLoadSuccess = ({ numPages }) => {
+    setNumPages(numPages)
   }
 
   return (
@@ -51,18 +63,30 @@ export default function CV() {
               </div>
 
               {/* PDF Viewer */}
-              <div style={{ overflow: 'hidden', display: 'flex', justifyContent: 'center' }}>
-                <img
-                  src={CVImage}
-                  alt="Mon CV"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'block',
-                    maxHeight: '85vh',
-                    objectFit: 'contain'
-                  }}
-                />
+              <div style={{ 
+                display: 'flex', 
+                justifyContent: 'center',
+                backgroundColor: 'var(--body-bg)',
+                padding: '20px',
+                borderRadius: '8px'
+              }}>
+                <Document
+                  file={CVFile}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                  loading={<p className="text-center">Chargement du PDF...</p>}
+                  error={<p className="text-center text-danger">Erreur lors du chargement du PDF</p>}
+                >
+                  {Array.from(new Array(numPages), (el, index) => (
+                    <div key={`page_${index + 1}`} style={{ marginBottom: '20px' }}>
+                      <Page 
+                        pageNumber={index + 1}
+                        scale={1.5}
+                        renderTextLayer={true}
+                        renderAnnotationLayer={true}
+                      />
+                    </div>
+                  ))}
+                </Document>
               </div>
             </div>
           </div>
