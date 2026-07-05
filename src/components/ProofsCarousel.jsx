@@ -26,7 +26,6 @@ export default function ProofsCarousel({ proofs = [], showTitle = false }) {
       <div className="card border-0 shadow-sm">
         <div className="card-body p-4">
           <div className="row g-4 align-items-center">
-            {/* Image à gauche */}
             <div className={hasMultiple ? 'col-lg-5' : 'col-lg-6'}>
               <div className="position-relative">
                 <img 
@@ -40,7 +39,6 @@ export default function ProofsCarousel({ proofs = [], showTitle = false }) {
                   }}
                 />
                 
-                {/* Compteur si plusieurs preuves */}
                 {hasMultiple && (
                   <div 
                     className="position-absolute bottom-0 end-0 m-3"
@@ -59,14 +57,12 @@ export default function ProofsCarousel({ proofs = [], showTitle = false }) {
               </div>
             </div>
 
-            {/* Contenu à droite */}
             <div className={hasMultiple ? 'col-lg-7' : 'col-lg-6'}>
               <h5 className="fw-bold mb-3">{current.title}</h5>
               <p className="text-muted mb-4" style={{ lineHeight: '1.6' }}>
                 {current.description}
               </p>
 
-              {/* Bouton lien externe si present */}
               {current.link && (
                 <a 
                   href={current.link}
@@ -79,7 +75,6 @@ export default function ProofsCarousel({ proofs = [], showTitle = false }) {
                 </a>
               )}
 
-              {/* Navigation carousel si plusieurs preuves */}
               {hasMultiple && (
                 <div className="d-flex gap-2 mt-4">
                   <button
@@ -103,7 +98,6 @@ export default function ProofsCarousel({ proofs = [], showTitle = false }) {
         </div>
       </div>
 
-      {/* Indicateurs visuels (dots) si plusieurs preuves */}
       {hasMultiple && (
         <div className="d-flex justify-content-center gap-2 mt-4">
           {proofs.map((_, idx) => (

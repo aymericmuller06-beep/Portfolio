@@ -13,7 +13,6 @@ export default function Veilletech() {
 
   return (
     <>
-      {/* Hero Section */}
       <section className="py-5 px-4 text-center border-bottom hero-section hero-section--small">
         <div style={{ maxWidth: '900px' }}>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent)', marginBottom: '1.5rem' }}>
@@ -25,7 +24,6 @@ export default function Veilletech() {
         </div>
       </section>
 
-      {/* Problématique et Introduction */}
       <section className="py-5 px-4 border-bottom">
         <div className="container">
           <h2 className="display-6 fw-bold mb-4">Introduction</h2>
@@ -41,7 +39,6 @@ export default function Veilletech() {
         </div>
       </section>
 
-      {/* Mise en place de la veille */}
       <section className="py-5 px-4 border-bottom">
         <div className="container">
           <h2 className="display-6 fw-bold mb-5">Mise en place de la Veille</h2>
@@ -77,12 +74,10 @@ export default function Veilletech() {
         </div>
       </section>
 
-      {/* Recherche et Analyse */}
       <section className="py-5 px-4 border-bottom bg-body-secondary">
         <div className="container">
           <h2 className="display-6 fw-bold mb-5">Recherche et Analyse</h2>
           
-          {/* Pourquoi c'est complexe */}
           <div className="mb-5">
             <h3 className="fw-bold mb-4">Pourquoi c'est "complexe" ?</h3>
             <div className="row g-4">
@@ -133,7 +128,6 @@ export default function Veilletech() {
             </div>
           </div>
 
-          {/* Comment faire */}
           <div>
             <h3 className="fw-bold mb-4">Comment faire ?</h3>
             <div className="row g-4">
@@ -195,19 +189,16 @@ export default function Veilletech() {
         </div>
       </section>
 
-      {/* Conclusion */}
       <section className="py-5 px-4 border-bottom">
         <div className="container">
           <h2 className="display-6 fw-bold mb-4">Conclusion</h2>
           <div className="row">
             <div className="col-lg-8">
-              {/* À remplir */}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Bibliographie */}
       <section className="py-5 px-4 bg-body-secondary">
         <div className="container">
           <h2 className="display-6 fw-bold mb-4">Bibliographie</h2>
@@ -215,13 +206,11 @@ export default function Veilletech() {
           <div className="row">
             <div className="col-lg-8">
               <h4 className="fw-bold mb-3">Sitographie</h4>
-              {/* À remplir */}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Modal Hardware */}
       <Modal 
         isOpen={hardwareModal.isOpen} 
         title={getDefinitionByAcronym('Hardware')?.acronym}
@@ -232,7 +221,6 @@ export default function Veilletech() {
         </p>
       </Modal>
 
-      {/* Modal IoT */}
       <Modal 
         isOpen={iotModal.isOpen} 
         title={getDefinitionByAcronym('IoT')?.acronym}

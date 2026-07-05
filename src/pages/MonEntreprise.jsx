@@ -29,7 +29,6 @@ export default function MonEntreprise() {
 
   return (
     <>
-      {/* Hero Section */}
       <section className="hero-section hero-section--large">
         <div className="content-max-width">
           <img src={theme === 'light' ? AzurLogo : AzurLogoLight} alt="Azur Logo" className="mb-4" style={{ maxWidth: '180px', height: 'auto' }} />
@@ -42,7 +41,6 @@ export default function MonEntreprise() {
         </div>
       </section>
 
-      {/* À propos l'entreprise */}
       <section className="py-5 px-4 border-bottom">
         <div className="container">
           <h2 className="display-5 fw-bold mb-5 text-center">Présentation</h2>
@@ -64,7 +62,6 @@ export default function MonEntreprise() {
         </div>
       </section>
 
-      {/* Mes Missions */}
       <section className="py-5 px-4 border-bottom bg-body-secondary">
         <div className="container">
           <h2 className="display-5 fw-bold mb-5 text-center">Mes Missions</h2>
@@ -127,7 +124,6 @@ export default function MonEntreprise() {
         </div>
       </section>
 
-      {/* Détails et Informations */}
       <section className="py-5 px-4">
         <div className="container">
           <h2 className="display-5 fw-bold mb-5 text-center">Détails supplémentaires</h2>
@@ -178,7 +174,6 @@ export default function MonEntreprise() {
         </div>
       </section>
 
-      {/* Modal Hotline*/}
       <Modal 
         isOpen={hotlineModal.isOpen} 
         title={getDefinitionByAcronym('HOTLINE')?.acronym}
@@ -189,7 +184,6 @@ export default function MonEntreprise() {
         </p>
       </Modal>
 
-      {/* Modal Statistiques*/}
       <Modal 
         isOpen={statsModal.isOpen} 
         title="Statistiques Azurinfo"

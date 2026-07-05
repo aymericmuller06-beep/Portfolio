@@ -4,7 +4,6 @@ export function initLoader() {
   
   if (!loader) return
 
-  // Ensure loader is visible and button is hidden initially
   loader.style.display = 'flex'
   loader.style.opacity = '1'
   loader.style.visibility = 'visible'
@@ -13,7 +12,6 @@ export function initLoader() {
     backToTopBtn.style.display = 'none'
   }
 
-  // Make loader disappear
   function hideLoader() {
     loader.style.opacity = '0'
     loader.style.visibility = 'hidden'
@@ -21,7 +19,6 @@ export function initLoader() {
     loader.classList.add('hidden')
   }
 
-  // Check if React has rendered
   const root = document.getElementById('root')
   if (!root) return
 
@@ -30,7 +27,6 @@ export function initLoader() {
     hideLoader()
   }, 800)
 
-  // Return function to show loader again (for page transitions)
   return () => {
     loader.style.opacity = '1'
     loader.style.visibility = 'visible'

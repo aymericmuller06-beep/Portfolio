@@ -24,7 +24,6 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero Section */}
       <section className="py-5 px-4 text-center hero-section" style={{ minHeight: 'calc(100vh - 56px)' }}>
         <div style={{ maxWidth: '700px' }}>
           <div className="mb-3">
@@ -60,7 +59,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* À propos détaillé */}
       <section id="about" className="py-5 px-4 border-top">
         <div className="container">
           <h2 className="display-5 fw-bold mb-5 text-center">À propos de moi</h2>
@@ -88,7 +86,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Compétences principales */}
       <section className="py-5 px-4 border-top bg-body-secondary">
         <div className="container">
           <h2 className="display-5 fw-bold mb-5 text-center">Mes compétences principales</h2>
@@ -96,7 +93,6 @@ export default function Home() {
               <i className="fa-solid fa-info me-2"></i>Définitions dans la page "annuaire"
           </span>
           <div className="row g-4">
-            {/* Web Development */}
             <div className="col-lg-6">
               <div className="card border-0 h-100 shadow-sm">
                 <div className="card-body">
@@ -120,7 +116,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            {/* Systèmes et Réseaux */}
             <div className="col-lg-6">
               <div className="card border-0 h-100 shadow-sm">
                 <div className="card-body">
@@ -144,7 +139,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            {/* Outils et Technologies */}
             <div className="col-lg-12">
               <div className="card border-0 shadow-sm">
                 <div className="card-body">
@@ -169,15 +163,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Parcours & Expérience */}
       <section className="py-5 px-4 border-top">
         <div className="container">
           <h2 className="display-5 fw-bold mb-5 text-center">Mon parcours</h2>
           <div className="row g-4">
             <div className="col-lg-8 mx-auto">
-              {/* Timeline */}
               <div className="timeline">
-                {/* Item 1 */}
                 <div className="row g-0 mb-4 pb-4 border-bottom">
                   <div className="col-md-3 text-md-end pe-md-4">
                     <h6 className="fw-bold text-primary mb-1">2025 - 2027</h6>
@@ -199,8 +190,8 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                {/* Item 2 */}
                 <div className="row g-0 mb-4 pb-4 border-bottom">
+
                   <div className="col-md-3 text-md-end pe-md-4">
                     <h6 className="fw-bold text-primary mb-1">2025</h6>
                     <p className="text-muted small mb-0">Lycée Renée-Goscinny,</p>
@@ -217,7 +208,6 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                {/* Item 3 */}
                 <div className="row g-0 mb-4 pb-4">
                   <div className="col-md-3 text-md-end pe-md-4">
                     <h6 className="fw-bold text-primary mb-1">2022</h6>
@@ -237,7 +227,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Modal STI2D */}
       <Modal 
         isOpen={sti2dModal.isOpen} 
         title={getDefinitionByAcronym('STI2D')?.acronym}
@@ -248,7 +237,6 @@ export default function Home() {
         </p>
       </Modal>
 
-      {/* Modal SIN */}
       <Modal 
         isOpen={sinModal.isOpen} 
         title={getDefinitionByAcronym('SIN')?.acronym}
@@ -259,7 +247,6 @@ export default function Home() {
         </p>
       </Modal>
 
-      {/* Modal BTS */}
       <Modal 
         isOpen={btsModal.isOpen} 
         title={getDefinitionByAcronym('BTS')?.acronym}
@@ -270,7 +257,6 @@ export default function Home() {
         </p>
       </Modal>
 
-      {/* Modal SIO */}
       <Modal 
         isOpen={sioModal.isOpen} 
         title={getDefinitionByAcronym('SIO')?.acronym}
@@ -281,7 +267,6 @@ export default function Home() {
         </p>
       </Modal>
 
-      {/* Modal SISR */}
       <Modal 
         isOpen={sisrModal.isOpen} 
         title={getDefinitionByAcronym('SISR')?.acronym}
@@ -292,7 +277,6 @@ export default function Home() {
         </p>
       </Modal>
 
-      {/* Modal HTML */}
       <Modal 
         isOpen={htmlModal.isOpen} 
         title={getDefinitionByAcronym('HTML')?.acronym}
@@ -303,7 +287,6 @@ export default function Home() {
         </p>
       </Modal>
 
-      {/* Modal CSS */}
       <Modal 
         isOpen={cssModal.isOpen} 
         title={getDefinitionByAcronym('CSS')?.acronym}
@@ -314,7 +297,6 @@ export default function Home() {
         </p>
       </Modal>
 
-      {/* Modal SCSS */}
       <Modal 
         isOpen={scssModal.isOpen} 
         title={getDefinitionByAcronym('SCSS')?.acronym}
@@ -325,7 +307,6 @@ export default function Home() {
         </p>
       </Modal>
 
-      {/* Modal TCP/IP */}
       <Modal 
         isOpen={tcpModal.isOpen} 
         title={getDefinitionByAcronym('TCP/IP')?.acronym}
@@ -336,7 +317,6 @@ export default function Home() {
         </p>
       </Modal>
 
-      {/* Modal VS Code */}
       <Modal 
         isOpen={vsCodeModal.isOpen} 
         title={getDefinitionByAcronym('VS Code')?.acronym}

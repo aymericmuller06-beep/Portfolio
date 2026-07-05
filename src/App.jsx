@@ -38,7 +38,6 @@ function App() {
           <Route path="/pages/cv" element={<CV />} />
           <Route path="/pages/veille_technologique" element={<Veilletech />} />
           <Route path="/pages/annuaire" element={<Annuaire />} />
-          {/* Catch-all route pour les routes non trouvées */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

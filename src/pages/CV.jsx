@@ -30,7 +30,6 @@ export default function CV() {
 
   return (
     <>
-      {/* Hero Section */}
       <section className="py-5 px-4 text-center border-bottom hero-section hero-section--small">
         <div style={{ maxWidth: '900px' }}>
           <h1 className="responsive-title responsive-title--medium">
@@ -42,12 +41,10 @@ export default function CV() {
         </div>
       </section>
 
-      {/* CV Content */}
       <section className="py-5 px-4">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10">
-              {/* Download Button */}
               <div className="text-center mb-4">
                 <button 
                   onClick={handleDownloadCV}
@@ -62,7 +59,6 @@ export default function CV() {
                 </button>
               </div>
 
-              {/* PDF Viewer */}
               <div style={{ 
                 display: 'flex', 
                 justifyContent: 'center',

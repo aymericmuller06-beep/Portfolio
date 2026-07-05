@@ -1,13 +1,8 @@
-/* ====================================
-   RESETS ET STYLES DE BASE
-   ==================================== */
 
-/* Scroll fluide */
 html {
   scroll-behavior: smooth;
 }
 
-/* Body */
 body {
   background-color: var(--bg-main);
   color: var(--text-main);
@@ -16,7 +11,6 @@ body {
   padding-top: var(--topbar-h);
 }
 
-/* Scrollbar personnalisée */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -38,13 +32,11 @@ body {
   display: none;
 }
 
-/* Firefox scrollbar */
 * {
   scrollbar-color: var(--accent) transparent;
   scrollbar-width: thin;
 }
 
-/* Sections */
 section {
   scroll-margin-top: var(--topbar-h);
 }

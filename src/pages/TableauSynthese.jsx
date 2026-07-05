@@ -8,7 +8,6 @@ export default function TableauSynthese() {
 
   return (
     <>
-      {/* Hero Section */}
       <section className="py-5 px-4 text-center border-bottom hero-section hero-section--small">
         <div style={{ maxWidth: '900px' }}>
           <h1 className="responsive-title responsive-title--medium">
@@ -20,7 +19,6 @@ export default function TableauSynthese() {
         </div>
       </section>
 
-      {/* Tableau Content */}
       <section className="py-5 px-4">
         <div className="container-fluid">
           <div style={{

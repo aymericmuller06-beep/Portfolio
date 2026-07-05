@@ -16,7 +16,6 @@ export default function Realisations() {
 
   return (
     <>
-      {/* Hero Section */}
       <section className="py-5 px-4 text-center border-bottom hero-section hero-section--small">
         <div style={{ maxWidth: '900px' }}>
           <h1 className="responsive-title responsive-title--medium">
@@ -28,7 +27,6 @@ export default function Realisations() {
         </div>
       </section>
 
-      {/* Realizations Grid */}
       <section className="py-5 px-4">
         <div className="container">
           <div className="row g-4">
@@ -37,7 +35,6 @@ export default function Realisations() {
                 <div className="card border-0 shadow-sm h-100" style={{ transition: 'box-shadow 0.2s ease, transform 0.2s ease' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 12px 32px rgba(0,0,0,0.15)'; e.currentTarget.style.transform = 'translateY(-2px)' }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)'; e.currentTarget.style.transform = 'translateY(0)' }}>
                   <div className="card-body p-4">
                     <div className="row align-items-center mb-3">
-                      {/* Icon and Title Section */}
                       <div className="col-lg-8">
                         <div className="d-flex align-items-center mb-3">
                           <div style={{ width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: referentielCategories[realization.category]?.lightColor || 'rgba(45, 106, 79, 0.1)', borderRadius: '8px', marginRight: '1rem' }}>
@@ -57,7 +54,6 @@ export default function Realisations() {
                         </p>
                       </div>
 
-                      {/* CTA Section */}
                       <div className="col-lg-4 text-lg-end">
                         <button 
                           onClick={() => handleViewMore(realization)}
@@ -69,7 +65,6 @@ export default function Realisations() {
                       </div>
                     </div>
 
-                    {/* Referentiels Section - Full Width at Bottom */}
                     <div className="row mt-4 pt-3" style={{ borderTop: '1px solid var(--border-color)' }}>
                       <div className="col-12">
                         <div className="d-flex flex-wrap gap-2">

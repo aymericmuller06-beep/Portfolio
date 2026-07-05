@@ -5,12 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
 import './styles/main.scss'
 
-// Theme management - set default immediately
 const html = document.documentElement
 const theme = localStorage.getItem('theme') || 'dark'
 html.setAttribute('data-bs-theme', theme)
 
-// Toggle between light and dark
 function initThemeToggle() {
   const btn = document.getElementById('themeToggle')
   if (!btn) return
@@ -27,7 +25,7 @@ function initThemeToggle() {
     localStorage.setItem('theme', newTheme)
     updateThemeButton()
   })
-  
+
   updateThemeButton()
 }
 

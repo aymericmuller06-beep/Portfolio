@@ -5,7 +5,6 @@ export default function Modal({ isOpen, title, children, onClose }) {
 
   return createPortal(
     <>
-      {/* Backdrop */}
       <div
         style={{
           position: 'fixed',
@@ -20,7 +19,6 @@ export default function Modal({ isOpen, title, children, onClose }) {
         onClick={onClose}
       />
       
-      {/* Modal */}
       <div
         style={{
           position: 'fixed',

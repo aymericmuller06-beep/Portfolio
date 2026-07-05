@@ -39,8 +39,7 @@ export default function Annuaire() {
 
   return (
   <>
-    {/* Hero Section */}
-      <section className="py-5 px-4 text-center border-bottom hero-section hero-section--small">
+    <section className="py-5 px-4 text-center border-bottom hero-section hero-section--small">
         <div style={{ maxWidth: '900px' }}>
           <h1 className="responsive-title responsive-title--medium">
             Annuaire
@@ -53,7 +52,6 @@ export default function Annuaire() {
 
     <section className="py-5 px-4">
       <div className="container">
-        {/* Zone de recherche */}
         <div className="row mb-5">
           <div className="col-lg-8 mx-auto">
             <div className="input-group input-group-lg">
@@ -120,7 +118,7 @@ export default function Annuaire() {
           </div>
         )}
 
-        {/* Résumé */}
+
         <div className="row mt-5 pt-5 border-top">
           <div className="col-md-6 mx-auto text-center">
             <p className="text-muted mb-0">

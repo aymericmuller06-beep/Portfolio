@@ -17,14 +17,11 @@ export function initBackToTop() {
     })
   }
 
-  // Update on scroll
   window.addEventListener('scroll', updateVisibility, { passive: true })
   btn.addEventListener('click', scrollToTop)
 
-  // Initial state
   updateVisibility()
 
-  // Cleanup function (if needed for page transitions)
   return () => {
     window.removeEventListener('scroll', updateVisibility)
     btn.removeEventListener('click', scrollToTop)

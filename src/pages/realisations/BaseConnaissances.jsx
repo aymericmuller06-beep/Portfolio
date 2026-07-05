@@ -20,7 +20,6 @@ export default function BaseConnaissances() {
 
   return (
     <>
-      {/* Hero Section */}
       <section className="py-5 px-4 text-center border-bottom hero-section hero-section--small">
         <div style={{ maxWidth: '900px' }}>
           <button 
@@ -35,7 +34,6 @@ export default function BaseConnaissances() {
         </div>
       </section>
 
-      {/* Pour qui Section */}
       <section className="py-5 px-4 border-bottom">
         <div className="container">
           <h2 className="display-5 fw-bold text-center mb-5">Pour qui</h2>
@@ -51,7 +49,6 @@ export default function BaseConnaissances() {
         </div>
       </section>
 
-      {/* Pour quoi Section */}
       <section className="py-5 px-4 border-bottom bg-body-secondary">
         <div className="container">
           <h2 className="display-5 fw-bold text-center mb-5">Pour quoi</h2>
@@ -67,7 +64,6 @@ export default function BaseConnaissances() {
         </div>
       </section>
 
-      {/* Comment Section */}
       <section className="py-5 px-4 border-bottom">
         <div className="container">
           <h2 className="display-5 fw-bold text-center mb-5">Comment</h2>
@@ -83,7 +79,6 @@ export default function BaseConnaissances() {
         </div>
       </section>
 
-      {/* Ce que j'ai fait Section */}
       <section className="py-5 px-4 border-bottom bg-body-secondary">
         <div className="container">
           <h2 className="display-5 fw-bold text-center mb-5">Ce que j'ai fait</h2>
@@ -99,7 +94,6 @@ export default function BaseConnaissances() {
         </div>
       </section>
 
-      {/* Compétences Section */}
       <section className="py-5 px-4 border-bottom">
         <div className="container">
           <h2 className="display-5 fw-bold text-center mb-5">Compétences acquises</h2>
@@ -150,7 +144,7 @@ export default function BaseConnaissances() {
         </div>
       </section>
 
-      {/* Retour Button Section */}
+
       <section className="py-5 px-4 text-center bg-body-secondary">
         <div className="container">
           <button 

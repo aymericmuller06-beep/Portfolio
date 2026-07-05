@@ -2,7 +2,6 @@ export function initTopbar() {
   const topbar = document.querySelector('.topbar')
   if (!topbar) return
 
-  // Initialize active tab based on current page
   updateActiveTabs()
 
   let lastY = window.scrollY
@@ -15,10 +14,8 @@ export function initTopbar() {
     if (currentY <= 0) {
       topbar.classList.remove('topbar--hidden')
     } else if (currentY > lastY + THRESHOLD) {
-      // Scrolling down - hide
       topbar.classList.add('topbar--hidden')
     } else if (currentY < lastY - THRESHOLD) {
-      // Scrolling up - show
       topbar.classList.remove('topbar--hidden')
     }
 
@@ -39,13 +36,11 @@ export function initTopbar() {
   const navLinks = topbar.querySelectorAll('.nav-link')
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      // Update active class immediately for UX
       navLinks.forEach(l => l.classList.remove('active'))
       link.classList.add('active')
     })
   })
 
-  // Cleanup function (if needed for page transitions)
   return () => {
     window.removeEventListener('scroll', onScroll)
   }
