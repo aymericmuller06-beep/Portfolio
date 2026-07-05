@@ -187,6 +187,27 @@ export const definitions = [
     fullName: 'Internet of Things (Internet des Objets)',
     description: 'Réseau de dispositifs physiques, capteurs et logiciels connectés à Internet pour collecter et échanger des données sans intervention humaine.',
     category: 'Technologie'
+  },
+  {
+    id: 28,
+    acronym: 'CRM',
+    fullName: 'Customer Relationship Management',
+    description: 'Logiciel de gestion de la relation client permettant de centraliser les données des clients, les interactions et les transactions pour améliorer les relations commerciales.',
+    category: 'Outils & Technologies'
+  },
+  {
+    id: 29,
+    acronym: 'Weezevent',
+    fullName: 'Weezevent',
+    description: 'Plateforme complète de gestion d\'événements avec billetterie en ligne, gestion des participants et des statistiques.',
+    category: 'Outils & Technologies'
+  },
+  {
+    id: 30,
+    acronym: 'Brevo',
+    fullName: 'Brevo',
+    description: 'Plateforme d\'email marketing et de CRM pour gérer les campagnes marketing, l\'automatisation et les communications avec les clients.',
+    category: 'Outils & Technologies'
   }
 ]
 

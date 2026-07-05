@@ -120,7 +120,9 @@ export default function Veilletech() {
                     <div>
                       <i className="fa-solid fa-microchip" style={{ fontSize: '3rem', color: 'var(--accent)', marginBottom: '1rem', display: 'block' }}></i>
                       <h5 className="card-title fw-bold">La convergence des technologies</h5>
-                      <p className="text-muted" style={{ fontSize: '0.95rem', marginTop: '0.75rem' }}><button className="modal-trigger-btn" onClick={hardwareModal.open}>{getDefinitionByAcronym('Hardware')?.acronym}</button>, Réseau, Système</p>
+                      <p className="text-muted" style={{ fontSize: '0.95rem', marginTop: '0.75rem' }}>
+                        <button className="modal-trigger-btn" onClick={hardwareModal.open}>{getDefinitionByAcronym('Hardware')?.acronym}</button>
+                        , Réseau, Système</p>
                     </div>
                     <button className="fw-semibold mt-3" style={{ background: 'none', border: 'none', padding: '0', color: 'var(--accent)', cursor: 'pointer', fontSize: '1rem', alignSelf: 'flex-start', textDecoration: 'none' }}>
                       <i className="fa-solid fa-arrow-right me-2"></i>Savoir plus
