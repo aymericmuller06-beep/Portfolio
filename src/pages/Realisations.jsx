@@ -17,7 +17,7 @@ export default function Realisations() {
   return (
     <>
       <section className="py-5 px-4 text-center border-bottom hero-section hero-section--small">
-        <div style={{ maxWidth: '900px' }}>
+        <div className="container-max-900">
           <h1 className="responsive-title responsive-title--medium">
             Mes Réalisations
           </h1>
@@ -32,13 +32,13 @@ export default function Realisations() {
           <div className="row g-4">
             {realisations.map((realization) => (
               <div key={realization.id} className="col-12">
-                <div className="card border-0 shadow-sm h-100" style={{ transition: 'box-shadow 0.2s ease, transform 0.2s ease' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 12px 32px rgba(0,0,0,0.15)'; e.currentTarget.style.transform = 'translateY(-2px)' }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)'; e.currentTarget.style.transform = 'translateY(0)' }}>
+                <div className="card border-0 shadow-sm h-100 transition-smooth card-hover-light">
                   <div className="card-body p-4">
                     <div className="row align-items-center mb-3">
                       <div className="col-lg-8">
                         <div className="d-flex align-items-center mb-3">
-                          <div style={{ width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: referentielCategories[realization.category]?.lightColor || 'rgba(45, 106, 79, 0.1)', borderRadius: '8px', marginRight: '1rem' }}>
-                            <i className={`fa-solid ${realization.icon}`} style={{ fontSize: '1.5rem', color: referentielCategories[realization.category]?.color || 'var(--accent)' }}></i>
+                          <div className="icon-box-sm" style={{ backgroundColor: referentielCategories[realization.category]?.lightColor || 'rgba(45, 106, 79, 0.1)', marginRight: '1rem' }}>
+                            <i className={`fa-solid ${realization.icon} icon-base`} style={{ color: referentielCategories[realization.category]?.color || 'var(--accent)' }}></i>
                           </div>
                           <div>
                             <h5 className="card-title mb-0 fw-bold" style={{ fontSize: '1.25rem' }}>
@@ -57,8 +57,8 @@ export default function Realisations() {
                       <div className="col-lg-4 text-lg-end">
                         <button 
                           onClick={() => handleViewMore(realization)}
-                          className="btn btn-primary fw-semibold"
-                          style={{ whiteSpace: 'nowrap', padding: '0.75rem 1.5rem', fontSize: '1.1rem' }}
+                          className="btn btn-primary fw-semibold whitespace-nowrap"
+                          style={{ padding: '0.75rem 1.5rem', fontSize: '1.1rem' }}
                         >
                           <i className="fa-solid fa-arrow-right me-2"></i>Voir plus
                         </button>
@@ -77,7 +77,7 @@ export default function Realisations() {
                               <button 
                                 key={idx} 
                                 onClick={() => navigate('/pages/tableau_synthese')}
-                                className="badge" 
+                                className="badge cursor-pointer whitespace-nowrap transition-smooth" 
                                 style={{ 
                                   backgroundColor: bgColor, 
                                   color: textColor, 
@@ -87,11 +87,7 @@ export default function Realisations() {
                                   paddingTop: '0.5rem',
                                   paddingBottom: '0.5rem',
                                   fontSize: '0.85rem',
-                                  border: 'none',
-                                  cursor: 'pointer',
-                                  transition: 'all 0.2s ease',
-                                  whiteSpace: 'normal',
-                                  textAlign: 'left'
+                                  border: 'none'
                                 }} 
                                 title={referentiel?.text}
                                 onMouseEnter={(e) => {
@@ -118,7 +114,7 @@ export default function Realisations() {
 
           {realisations.length === 0 && (
             <div className="text-center py-5">
-              <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem' }}>
+              <p className="text-muted">
                 Aucune réalisation pour le moment.
               </p>
             </div>

@@ -9,7 +9,7 @@ export default function TableauSynthese() {
   return (
     <>
       <section className="py-5 px-4 text-center border-bottom hero-section hero-section--small">
-        <div style={{ maxWidth: '900px' }}>
+        <div className="container-max-900">
           <h1 className="responsive-title responsive-title--medium">
             Tableau de Synthèse
           </h1>

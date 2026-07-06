@@ -13,3 +13,10 @@
 @use 'timeline' as *;
 @use 'pages' as *;
 @use 'responsive' as *;
+
+/* New utility files */
+@use 'containers' as *;
+@use 'icons' as *;
+@use 'typography' as *;
+@use 'animations' as *;
+@use 'utilities' as *;

@@ -31,7 +31,7 @@ export default function CV() {
   return (
     <>
       <section className="py-5 px-4 text-center border-bottom hero-section hero-section--small">
-        <div style={{ maxWidth: '900px' }}>
+        <div className="container-max-900">
           <h1 className="responsive-title responsive-title--medium">
             Mon CV
           </h1>
@@ -48,24 +48,14 @@ export default function CV() {
               <div className="text-center mb-4">
                 <button 
                   onClick={handleDownloadCV}
-                  className="btn btn-primary fw-semibold px-4 py-2"
-                  style={{
-                    fontSize: '1rem',
-                    transition: 'all 0.3s ease'
-                  }}
+                  className="btn btn-primary fw-semibold px-4 py-2 transition-smooth"
                 >
                   <i className="fa-solid fa-download me-2"></i>
                   Télécharger le PDF
                 </button>
               </div>
 
-              <div style={{ 
-                display: 'flex', 
-                justifyContent: 'center',
-                backgroundColor: 'var(--body-bg)',
-                padding: '20px',
-                borderRadius: '8px'
-              }}>
+              <div className="flex-center bg-body rounded-2">
                 <Document
                   file={CVFile}
                   onLoadSuccess={onDocumentLoadSuccess}

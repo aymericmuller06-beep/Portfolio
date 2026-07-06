@@ -24,8 +24,8 @@ export default function Home() {
 
   return (
     <>
-      <section className="py-5 px-4 text-center hero-section" style={{ minHeight: 'calc(100vh - 56px)' }}>
-        <div style={{ maxWidth: '700px' }}>
+      <section className="py-5 px-4 text-center hero-section min-h-250">
+        <div className="container-max-700">
           <div className="mb-3">
             <span className="badge bg-warning fw-normal mb-3 me-3" style={{color: getContrastColor('#ffc107')}}>
               <i className="fa-solid fa-star me-2"></i>Bienvenue sur mon portfolio
@@ -37,10 +37,10 @@ export default function Home() {
           <h1 className="responsive-title responsive-title--large">
             Muller Aymeric
           </h1>
-          <p style={{ fontSize: 'clamp(1.1rem, 3vw, 1.35rem)', color: 'var(--text-muted)', marginBottom: '1rem', lineHeight: 1.6 }}>
+          <p className="text-hero-subtitle text-muted">
             Alternant en Réseaux et Services Informatiques
           </p>
-          <p style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '2.5rem', lineHeight: 1.8 }}>
+          <p className="text-body-justified text-muted">
             Étudiant en 
             {' '}<button className="modal-trigger-btn" onClick={btsModal.open}>BTS</button>
             {' '}<button className="modal-trigger-btn" onClick={sioModal.open}>SIO</button>
@@ -97,7 +97,7 @@ export default function Home() {
               <div className="card border-0 h-100 shadow-sm">
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    <i className="fa-solid fa-code text-primary" style={{ fontSize: '1.8rem' }}></i>
+                    <i className="fa-solid fa-code text-primary icon-sm"></i>
                     <h5 className="card-title mb-0 ms-3">Développement Web</h5>
                   </div>
                   <div className="mb-3">
@@ -120,7 +120,7 @@ export default function Home() {
               <div className="card border-0 h-100 shadow-sm">
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    <i className="fa-solid fa-server text-primary" style={{ fontSize: '1.8rem' }}></i>
+                    <i className="fa-solid fa-server text-primary icon-sm"></i>
                     <h5 className="card-title mb-0 ms-3">Systèmes & Réseaux</h5>
                   </div>
                   <div className="mb-3">
@@ -143,7 +143,7 @@ export default function Home() {
               <div className="card border-0 shadow-sm">
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    <i className="fa-solid fa-tools text-primary" style={{ fontSize: '1.8rem' }}></i>
+                    <i className="fa-solid fa-tools text-primary icon-sm"></i>
                     <h5 className="card-title mb-0 ms-3">Outils & Technologies</h5>
                   </div>
                   <div className="d-flex flex-wrap gap-2">

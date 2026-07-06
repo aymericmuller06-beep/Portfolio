@@ -70,7 +70,7 @@ export default function MonEntreprise() {
               <div className="card border-0 h-100 shadow-sm">
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    <i className="fa-solid fa-headset text-primary" style={{ fontSize: '1.8rem' }}></i>
+                    <i className="fa-solid fa-headset text-primary icon-sm"></i>
                     <h5 className="card-title mb-0 ms-3">Service 
                       {' '}<button className="modal-trigger-btn" onClick={hotlineModal.open}>{getDefinitionByAcronym('HOTLINE')?.acronym}</button>
                     </h5>
@@ -85,7 +85,7 @@ export default function MonEntreprise() {
               <div className="card border-0 h-100 shadow-sm">
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    <i className="fa-solid fa-tools text-primary" style={{ fontSize: '1.8rem' }}></i>
+                    <i className="fa-solid fa-tools text-primary icon-sm"></i>
                     <h5 className="card-title mb-0 ms-3">Préparation / réparation du matériel</h5>
                   </div>
                   <p className="text-muted mb-0">
@@ -98,7 +98,7 @@ export default function MonEntreprise() {
               <div className="card border-0 h-100 shadow-sm">
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    <i className="fa-solid fa-book text-primary" style={{ fontSize: '1.8rem' }}></i>
+                    <i className="fa-solid fa-book text-primary icon-sm"></i>
                     <h5 className="card-title mb-0 ms-3">Documentation</h5>
                   </div>
                   <p className="text-muted mb-0">
@@ -111,7 +111,7 @@ export default function MonEntreprise() {
               <div className="card border-0 h-100 shadow-sm">
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    <i className="fa-solid fa-project-diagram text-primary" style={{ fontSize: '1.8rem' }}></i>
+                    <i className="fa-solid fa-project-diagram text-primary icon-sm"></i>
                     <h5 className="card-title mb-0 ms-3">Projets parallèles</h5>
                   </div>
                   <p className="text-muted mb-0">
@@ -129,9 +129,9 @@ export default function MonEntreprise() {
           <h2 className="display-5 fw-bold mb-5 text-center">Détails supplémentaires</h2>
           <div className="row g-4">
             <div className="col-lg-4">
-              <div className="card border-0 h-100 shadow-sm" style={{ opacity: 0.5, cursor: 'not-allowed' }}>
+              <div className="card border-0 h-100 shadow-sm disabled-card">
                 <div className="card-body text-center">
-                  <i className="fa-solid fa-sitemap text-primary mb-3" style={{ fontSize: '2.5rem' }}></i>
+                  <i className="fa-solid fa-sitemap text-primary mb-3 icon-md"></i>
                   <h5 className="card-title mb-3">Organigramme</h5>
                   <p className="text-muted">Structure et organisation de l'entreprise</p>
                   <small className="text-muted">(Non disponible)</small>
@@ -140,14 +140,11 @@ export default function MonEntreprise() {
             </div>
             <div className="col-lg-4">
               <div 
-                className="card border-0 h-100 shadow-sm" 
+                className="card border-0 h-100 shadow-sm cursor-pointer transition-smooth card-hover-light" 
                 onClick={statsModal.open}
-                style={{ cursor: 'pointer', transition: 'all 0.3s ease' }}
-                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
               >
                 <div className="card-body text-center">
-                  <i className="fa-solid fa-chart-bar text-primary mb-3" style={{ fontSize: '2.5rem' }}></i>
+                  <i className="fa-solid fa-chart-bar text-primary mb-3 icon-md"></i>
                   <h5 className="card-title mb-3">Statistiques</h5>
                   <p className="text-muted">Chiffres clés et informations</p>
                   <small className="text-primary" style={{ fontWeight: '500' }}>En savoir plus</small>
@@ -156,14 +153,11 @@ export default function MonEntreprise() {
             </div>
             <div className="col-lg-4">
               <div 
-                className="card border-0 h-100 shadow-sm"
+                className="card border-0 h-100 shadow-sm cursor-pointer transition-smooth card-hover-light"
                 onClick={() => window.open(companyLinks.azurinfo, '_blank')}
-                style={{ cursor: 'pointer', transition: 'all 0.3s ease' }}
-                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
               >
                 <div className="card-body text-center">
-                  <i className="fa-solid fa-globe text-primary mb-3" style={{ fontSize: '2.5rem' }}></i>
+                  <i className="fa-solid fa-globe text-primary mb-3 icon-md"></i>
                   <h5 className="card-title mb-3">Site de l'entreprise</h5>
                   <p className="text-muted">Lien vers le site officiel de l'entreprise</p>
                   <small className="text-primary" style={{ fontWeight: '500' }}>Visitez le site</small>

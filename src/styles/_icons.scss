@@ -1,0 +1,40 @@
+/* ====================================
+   ICON STYLING UTILITIES
+   ==================================== */
+
+/* Icon sizes */
+.icon-sm {
+  font-size: 1.5rem;
+}
+
+.icon-base {
+  font-size: 1.8rem;
+}
+
+.icon-md {
+  font-size: 2.5rem;
+}
+
+.icon-lg {
+  font-size: 3rem;
+}
+
+/* Icon color utilities */
+.icon-primary {
+  color: var(--accent);
+}
+
+.icon-accent-text {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Icon with margin utilities */
+.icon-mb-md {
+  margin-bottom: 1rem;
+}
+
+.icon-mr-sm {
+  margin-right: 0.75rem;
+}

@@ -88,7 +88,7 @@ export default function Portfolio() {
   return (
     <>
       <section className="py-4 px-3 text-center border-bottom hero-section hero-section--small">
-        <div style={{ maxWidth: '80%' }}>
+        <div className="container-max-80">
           <button 
             onClick={() => navigate('/pages/realisations')}
             className="btn btn-link text-decoration-none mb-3"
@@ -102,9 +102,9 @@ export default function Portfolio() {
       </section>
 
       <section className="py-4 px-3 border-bottom">
-        <div className="container" style={{ maxWidth: '80%' }}>
+        <div className="container container-max-80">
           <h2 className="display-5 fw-bold text-center mb-4">Introduction</h2>
-          <p className="lead text-center text-muted" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
+          <p className="lead text-center text-muted text-intro">
             {introduction}
           </p>
           
@@ -112,21 +112,12 @@ export default function Portfolio() {
             <div className="row g-4 mt-5">
               {besoinsClients.map((besoin, idx) => (
                 <div key={idx} className="col-md-6 col-lg-6">
-                  <div className="card h-100 border-0 shadow-sm" style={{ transition: 'transform 0.2s ease, box-shadow 0.2s ease' }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-5px)'
-                      e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.15)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)'
-                      e.currentTarget.style.boxShadow = '0 0.125rem 0.25rem rgba(0,0,0,0.075)'
-                    }}
-                  >
+                  <div className="card h-100 border-0 shadow-sm transition-smooth card-hover-lift">
                     <div className="card-body">
                       <h5 className="card-title fw-semibold text-primary mb-3">
                         <i className="fa-solid fa-check-circle me-2"></i>{besoin.titre}
                       </h5>
-                      <p className="card-text text-muted" style={{ fontSize: '0.95rem', lineHeight: '1.6' }}>
+                      <p className="card-text text-muted text-desc-sm">
                         {besoin.description}
                       </p>
                     </div>
@@ -148,16 +139,16 @@ export default function Portfolio() {
       </section>
 
       <section className="py-4 px-3 border-bottom">
-        <div className="container" style={{ maxWidth: '80%' }}>
-          <h2 className="display-5 fw-bold text-center mb-4">Ce que j'ai fait</h2>
-          <p className="text-start" style={{ fontSize: '1rem', lineHeight: '1.8', textAlign: 'justify' }}>
-            {ceQueJaiFailText}
+        <div className="container container-max-80">
+          <h2 className="display-5 fw-bold text-center mb-4">Ce qu'on a fait</h2>
+          <p className="text-start text-body-justified">
+            {ceQuOnAfait}
           </p>
         </div>
       </section>
 
-      <section className="py-4 px-3 border-bottom bg-body-secondary">
-        <div className="container" style={{ maxWidth: '80%' }}>
+      <section className="py-4 px-3 border-bottom">
+        <div className="container container-max-80 bg-body-secondary">
           <h2 className="display-5 fw-bold text-center mb-5">Preuves & détails</h2>
           {preuves && preuves.length > 0 ? (
             <ProofsCarousel proofs={preuves} />

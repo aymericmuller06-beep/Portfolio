@@ -31,7 +31,7 @@ export default function ProofsCarousel({ proofs = [], showTitle = false }) {
                 <img 
                   src={current.image} 
                   alt={current.title}
-                  className="img-fluid rounded"
+                  className="img-fluid rounded img-responsive"
                   style={{ 
                     maxHeight: '400px', 
                     objectFit: 'cover',
@@ -41,9 +41,8 @@ export default function ProofsCarousel({ proofs = [], showTitle = false }) {
                 
                 {hasMultiple && (
                   <div 
-                    className="position-absolute bottom-0 end-0 m-3"
+                    className="position-absolute bottom-0 end-0 m-3 bg-overlay-dark"
                     style={{
-                      backgroundColor: 'rgba(0, 0, 0, 0.7)',
                       color: 'white',
                       padding: '0.5rem 1rem',
                       borderRadius: '20px',
@@ -104,14 +103,10 @@ export default function ProofsCarousel({ proofs = [], showTitle = false }) {
             <button
               key={idx}
               onClick={() => setCurrentIndex(idx)}
-              className="rounded-circle"
+              className="rounded-circle pagination-dot"
               style={{
-                width: '10px',
-                height: '10px',
                 backgroundColor: idx === currentIndex ? '#0d6efd' : '#e9ecef',
-                border: 'none',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease'
+                border: 'none'
               }}
               aria-label={`Aller à la preuve ${idx + 1}`}
             />

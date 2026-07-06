@@ -40,7 +40,7 @@ export default function Annuaire() {
   return (
   <>
     <section className="py-5 px-4 text-center border-bottom hero-section hero-section--small">
-        <div style={{ maxWidth: '900px' }}>
+        <div className="container-max-900">
           <h1 className="responsive-title responsive-title--medium">
             Annuaire
           </h1>
@@ -60,11 +60,10 @@ export default function Annuaire() {
               </span>
               <input
                 type="text"
-                className="form-control border-0 py-3"
+                className="form-control border-0 py-3 border-accent-bottom"
                 placeholder="Rechercher un acronyme ou une définition..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                style={{ borderBottom: '2px solid var(--accent)' }}
               />
             </div>
           </div>
@@ -96,10 +95,10 @@ export default function Annuaire() {
                             {def.category}
                           </span>
                         </div>
-                        <p className="text-muted mb-2" style={{ fontSize: '0.95rem' }}>
+                        <p className="text-muted mb-2 text-desc-sm">
                           <strong>{def.fullName}</strong>
                         </p>
-                        <p className="card-text mb-0" style={{ lineHeight: '1.6' }}>
+                        <p className="card-text mb-0 line-height-1-6">
                           {def.description}
                         </p>
                       </div>
@@ -111,7 +110,7 @@ export default function Annuaire() {
           </div>
         ) : (
           <div className="text-center py-5">
-            <i className="fa-solid fa-search text-muted" style={{ fontSize: '3rem', marginBottom: '1rem', display: 'block' }}></i>
+            <i className="fa-solid fa-search text-muted icon-lg" style={{ display: 'block', marginBottom: '1rem' }}></i>
             <p className="text-muted">
               Aucune définition trouvée pour "<strong>{searchTerm}</strong>"
             </p>

@@ -1,0 +1,128 @@
+/* ====================================
+   UTILITY CLASSES
+   ==================================== */
+
+/* Backgrounds */
+.bg-light-subtle {
+  background-color: #f8f9fa;
+}
+
+.bg-overlay-dark {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Borders */
+.border-accent-bottom {
+  border-bottom: 2px solid var(--accent);
+}
+
+.border-accent-left {
+  border-left: 4px solid var(--accent);
+}
+
+/* Disabled state */
+.disabled-card {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Cursor utilities */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Overflow & visibility */
+.overflow-visible {
+  overflow: visible;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+/* Button-like elements */
+.btn-unstyled {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.btn-link-accent {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 1rem;
+  align-self: flex-start;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  align-self: flex-start;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+/* Image utilities */
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Pagination dots */
+.pagination-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+/* Text color utilities */
+.text-accent {
+  color: var(--accent);
+}
+
+.text-sm {
+  font-size: 0.9rem;
+}
+
+/* Spacing shortcuts */
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mt-1 {
+  margin-top: 0.75rem;
+}
+
+.mr-1 {
+  margin-right: 1rem;
+}
+
+/* Line height utilities */
+.line-height-1-6 {
+  line-height: 1.6;
+}
+

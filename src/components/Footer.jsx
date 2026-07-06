@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
         </section>
         <div className="text-center mt-5">
-          <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', margin: 0 }}>© 2026-2027 MULLER Aymeric</p>
+          <p className="text-muted-sm">© 2026-2027 MULLER Aymeric</p>
         </div>
       </div>
     </footer>

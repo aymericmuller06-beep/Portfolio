@@ -7,6 +7,8 @@ import ProofsCarousel from '../../components/ProofsCarousel'
 import Modal from '../../components/Modal'
 import { useModal } from '../../hooks/useModal'
 
+const NVBimage = new URL('../../Img/NVB.webp', import.meta.url).href
+
 export default function NiceVolley() {
   const navigate = useNavigate()
   
@@ -84,7 +86,7 @@ export default function NiceVolley() {
   return (
     <>
       <section className="py-4 px-3 text-center border-bottom hero-section hero-section--small">
-        <div style={{ maxWidth: '900px' }}>
+        <div className="container-max-900">
           <button 
             onClick={() => navigate('/pages/realisations')}
             className="btn btn-link text-decoration-none mb-3"
@@ -98,24 +100,24 @@ export default function NiceVolley() {
       </section>
 
       <section className="py-4 px-3 border-bottom">
-        <div className="container" style={{ maxWidth: '80%' }}>
+        <div className="container-max-80">
           <h2 className="display-5 fw-bold text-center mb-3">Introduction</h2>
           
           {/* Texte + Image */}
           <div className="row g-3 align-items-start mb-3">
             <div className="col-lg-6">
-              <p className="lead text-muted" style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: 0 }}>
+              <p className="lead text-muted text-intro-sm">
                 {introduction}
               </p>
             </div>
             
             <div className="col-lg-6">
-              <div className="card border-0 shadow-sm" style={{ minHeight: '250px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f8f9fa' }}>
+              <div className="card border-0 shadow-sm min-h-250 flex-center bg-light-subtle">
                 <div className="card-body text-center p-3">
                   <img 
-                    src="./src/Img/NVB.webp"
+                    src={NVBimage}
                     alt="Club Nice Volley-Ball"
-                    style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px' }}
+                    className="img-responsive"
                   />
                 </div>
               </div>
@@ -127,21 +129,12 @@ export default function NiceVolley() {
             <div className="row g-3">
               {besoinsClients.map((besoin, idx) => (
                 <div key={idx} className="col-md-6 col-lg-4">
-                  <div className="card h-100 border-0 shadow-sm" style={{ transition: 'transform 0.2s ease, box-shadow 0.2s ease' }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-5px)'
-                      e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.15)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)'
-                      e.currentTarget.style.boxShadow = '0 0.125rem 0.25rem rgba(0,0,0,0.075)'
-                    }}
-                  >
+                  <div className="card h-100 border-0 shadow-sm card-hover-lift">
                     <div className="card-body p-3">
                       <h5 className="card-title fw-semibold text-primary mb-2">
                         <i className="fa-solid fa-check-circle me-2"></i>{besoin.titre}
                       </h5>
-                      <p className="card-text text-muted" style={{ fontSize: '0.95rem', lineHeight: '1.6', marginBottom: 0 }}>
+                      <p className="card-text text-muted text-desc-sm-no-margin">
                         {besoin.description}
                       </p>
                     </div>
@@ -154,18 +147,18 @@ export default function NiceVolley() {
       </section>
 
       <section className="py-4 px-3 border-bottom bg-body-secondary">
-        <div className="container" style={{ maxWidth: '80%' }}>
+        <div className="container-max-80">
           <h2 className="display-5 fw-bold text-center mb-4">Ce qu'on a fait</h2>
-          <p className="text-start" style={{ fontSize: '1rem', lineHeight: '1.8', textAlign: 'justify' }}>
+          <p className="text-start text-body-justified">
             {ceQuOnAfait}
           </p>
         </div>
       </section>
 
       <section className="py-4 px-3 border-bottom">
-        <div className="container" style={{ maxWidth: '80%' }}>
+        <div className="container-max-80">
           <h2 className="display-5 fw-bold text-center mb-4">Ce que j'ai fait</h2>
-          <p className="text-start" style={{ fontSize: '1rem', lineHeight: '1.8', textAlign: 'justify' }}>
+          <p className="text-start text-body-justified">
             {ceQueJaiFailText}
           </p>
         </div>
@@ -241,7 +234,6 @@ export default function NiceVolley() {
           <button 
             onClick={() => navigate('/pages/realisations')}
             className="btn btn-primary fw-semibold"
-            style={{ padding: '0.75rem 2rem', fontSize: '1rem' }}
           >
             <i className="fa-solid fa-arrow-left me-2"></i>Retour aux réalisations
           </button>
