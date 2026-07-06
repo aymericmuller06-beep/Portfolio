@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function ProofsCarousel({ proofs = [], showTitle = false }) {
+export default function Carrousel({ proofs = [], showTitle = false }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   // Ne rien afficher si pas de preuves

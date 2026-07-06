@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { realisations, allReferentiels, referentielCategories } from '../../data/realisations'
 import { getDefinitionByAcronym } from '../../data/definitions'
 import { getContrastColor } from '../../utils/contrast'
-import ProofsCarousel from '../../components/ProofsCarousel'
+import Carrousel from '../../components/Carrousel'
 import Modal from '../../components/Modal'
 import { useModal } from '../../hooks/useModal'
 
@@ -150,7 +150,7 @@ export default function BaseConnaissances() {
         <div className="container">
           <h2 className="display-5 fw-bold text-center mb-5">Preuves & détails</h2>
           {preuves && preuves.length > 0 ? (
-            <ProofsCarousel proofs={preuves} />
+            <Carrousel proofs={preuves} />
           ) : (
             <div className="card border-0 shadow-sm">
               <div className="card-body">

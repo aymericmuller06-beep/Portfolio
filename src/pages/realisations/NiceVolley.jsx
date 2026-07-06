@@ -3,11 +3,20 @@ import { useEffect } from 'react'
 import { realisations, allReferentiels, referentielCategories } from '../../data/realisations'
 import { getDefinitionByAcronym } from '../../data/definitions'
 import { getContrastColor } from '../../utils/contrast'
-import ProofsCarousel from '../../components/ProofsCarousel'
+import Carrousel from '../../components/Carrousel'
+import GalerieModale from '../../components/GalerieModale'
 import Modal from '../../components/Modal'
 import { useModal } from '../../hooks/useModal'
 
 const NVBimage = new URL('../../Img/NVB.webp', import.meta.url).href
+
+const login = new URL('../../Img/Screenshot CRM NVB/login.png', import.meta.url).href
+const contacts = new URL('../../Img/Screenshot CRM NVB/contacts.png', import.meta.url).href
+const dashboard = new URL('../../Img/Screenshot CRM NVB/dashboard.png', import.meta.url).href
+const events = new URL('../../Img/Screenshot CRM NVB/events.png', import.meta.url).href
+const stats = new URL('../../Img/Screenshot CRM NVB/stats.png', import.meta.url).href
+
+
 
 export default function NiceVolley() {
   const navigate = useNavigate()
@@ -52,17 +61,40 @@ export default function NiceVolley() {
       titre: "Suivi des clients",
       description: "Le principal problème du club était que le suivi client se faisait très difficilement entre les événements à cause d'une utilisation trop manuelle.",
       icon: "fa-users",
-      color: "text-success"
+      color: "text-warning"
     },
     {
       titre: "Facilité d'utilisation",
       description: "Notre CRM devait rendre les processus de démarche client bien plus simple et rapide pour le club.",
       icon: "fa-hand-holding-heart",
-      color: "text-danger"
+      color: "text-info"
     }
   ]
 
-  const ceQuOnAfait = "L'équipe du club gérait de manière désorganisée les données des membres, événements et campagnes mailing sur plusieurs plateformes différentes. L'objectif était de créer une solution informatisée pour centraliser l'ensemble des informations, statistiques et contacts du club, améliorant ainsi l'efficacité globale. Pour cela, nous avons commencé par des interviews approfondies avec les responsables pour comprendre les workflows existants, puis nous avons modélisé une base de données relationnelle optimisée, et finalement intégré les différents outils existants en une interface unifiée."
+  const ceQuOnAfait = "Voici les images du CRM au bout de la semaine intensive :"
+
+  const screenshotsGalerie = [
+    {
+      titre: "Login",
+      url: login
+    },
+    {
+      titre: "Dashboard",
+      url: dashboard
+    },
+    {
+      titre: "Événements",
+      url: events
+    },
+    {
+      titre: "Statistiques",
+      url: stats
+    },
+    {
+      titre: "Gestion des contacts",
+      url: contacts
+    }
+  ]
 
   const ceQueJaiFailText = "En binôme, j'ai été responsable de la gestion globale du projet et de la coordination avec le client. J'ai développé l'interface ergonomique pour gérer les contacts, événements et campagnes mailing, créé un tableau de bord statistiques pour visualiser les indicateurs clés (nombre de membres, événements, taux de participation), et j'ai coordonné les 5 équipes thématiques pour assurer la cohérence du projet final."
 
@@ -155,9 +187,11 @@ export default function NiceVolley() {
       <section className="py-4 px-3 border-bottom bg-body-secondary">
         <div className="container-max-80">
           <h2 className="display-5 fw-bold text-center mb-4">Ce qu'on a fait</h2>
-          <p className="text-start text-body-justified">
+          <p className="text-start text-muted text-body-justified mb-4">
             {ceQuOnAfait}
           </p>
+          
+          <GalerieModale images={screenshotsGalerie} />
         </div>
       </section>
 
@@ -174,7 +208,7 @@ export default function NiceVolley() {
         <div className="container">
           <h2 className="display-5 fw-bold text-center mb-5">Preuves & détails</h2>
           {preuves && preuves.length > 0 ? (
-            <ProofsCarousel proofs={preuves} />
+            <Carrousel proofs={preuves} />
           ) : (
             <div className="card border-0 shadow-sm">
               <div className="card-body">

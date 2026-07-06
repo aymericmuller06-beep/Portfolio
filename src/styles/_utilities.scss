@@ -106,6 +106,34 @@
   }
 }
 
+/* Carte galerie */
+.gallery-card {
+  height: 200px;
+}
+
+.gallery-card img {
+  object-fit: cover;
+}
+
+/* Carte galerie grande (première) */
+.gallery-card-large {
+  height: 400px;
+  position: relative;
+}
+
+.gallery-card-large img {
+  object-fit: cover;
+}
+
+/* Carte galerie petite */
+.gallery-card-sm {
+  height: 150px;
+}
+
+.gallery-card-sm img {
+  object-fit: cover;
+}
+
 /* Text color utilities */
 .text-accent {
   color: var(--accent);

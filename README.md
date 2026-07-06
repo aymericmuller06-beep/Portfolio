@@ -22,7 +22,8 @@ src/
 │   ├── Header.jsx           # Navigation + toggle thème
 │   ├── Footer.jsx           # Pied de page
 │   ├── Modal.jsx            # Modale réutilisable
-│   └── ProofsCarousel.jsx   # Carousel de preuves
+│   ├── Carrousel.jsx        # Carrousel de preuves
+│   └── GalerieModale.jsx    # Galerie avec diaporama
 ├── pages/
 │   ├── Home.jsx             # Accueil + À propos
 │   ├── Realisations.jsx     # Liste des réalisations
