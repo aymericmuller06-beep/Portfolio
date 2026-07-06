@@ -44,15 +44,21 @@ export default function NiceVolley() {
   const besoinsClients = [
     {
       titre: "Centraliser les données",
-      description: "Le club utilise deux outils : Weezevent et Brevo. Notre CRM devait centraliser et synchroniser les informations de ces deux sources."
+      description: "Le club utilise deux outils : Weezevent et Brevo. Notre CRM devait centraliser et synchroniser les informations de ces deux sources.",
+      icon: "fa-database",
+      color: "text-primary"
     },
     {
       titre: "Suivi des clients",
-      description: "Le principal problème du club était que le suivi client se faisait très difficilement entre les événements à cause d'une utilisation trop manuelle."
+      description: "Le principal problème du club était que le suivi client se faisait très difficilement entre les événements à cause d'une utilisation trop manuelle.",
+      icon: "fa-users",
+      color: "text-success"
     },
     {
       titre: "Facilité d'utilisation",
-      description: "Notre CRM devait rendre les processus de démarche client bien plus simple et rapide pour le club."
+      description: "Notre CRM devait rendre les processus de démarche client bien plus simple et rapide pour le club.",
+      icon: "fa-hand-holding-heart",
+      color: "text-danger"
     }
   ]
 
@@ -104,7 +110,7 @@ export default function NiceVolley() {
           <h2 className="display-5 fw-bold text-center mb-3">Introduction</h2>
           
           {/* Texte + Image */}
-          <div className="row g-3 align-items-start mb-3">
+          <div className="row g-3 d-flex justify-content-center align-items-center mb-4">
             <div className="col-lg-6">
               <p className="lead text-muted text-intro-sm">
                 {introduction}
@@ -112,12 +118,12 @@ export default function NiceVolley() {
             </div>
             
             <div className="col-lg-6">
-              <div className="card border-0 shadow-sm min-h-250 flex-center bg-light-subtle">
-                <div className="card-body text-center p-3">
+              <div className="card border-0 shadow-sm h-300 flex-center bg-light-subtle overflow-hidden">
+                <div className="card-body text-center p-0">
                   <img 
                     src={NVBimage}
                     alt="Club Nice Volley-Ball"
-                    className="img-responsive"
+                    className="img-fill"
                   />
                 </div>
               </div>
@@ -131,8 +137,8 @@ export default function NiceVolley() {
                 <div key={idx} className="col-md-6 col-lg-4">
                   <div className="card h-100 border-0 shadow-sm card-hover-lift">
                     <div className="card-body p-3">
-                      <h5 className="card-title fw-semibold text-primary mb-2">
-                        <i className="fa-solid fa-check-circle me-2"></i>{besoin.titre}
+                      <h5 className={`card-title fw-semibold ${besoin.color} mb-2`}>
+                        <i className={`fa-solid ${besoin.icon} me-2`}></i>{besoin.titre}
                       </h5>
                       <p className="card-text text-muted text-desc-sm-no-margin">
                         {besoin.description}
