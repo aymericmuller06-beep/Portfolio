@@ -2,7 +2,7 @@
    UTILITY CLASSES
    ==================================== */
 
-/* Backgrounds */
+/* Arrière-plans */
 .bg-light-subtle {
   background-color: #f8f9fa;
 }
@@ -11,7 +11,7 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Borders */
+/* Bordures */
 .border-accent-bottom {
   border-bottom: 2px solid var(--accent);
 }
@@ -20,18 +20,18 @@
   border-left: 4px solid var(--accent);
 }
 
-/* Disabled state */
+/* État désactivé */
 .disabled-card {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-/* Cursor utilities */
+/* Utilitaires de curseur */
 .cursor-pointer {
   cursor: pointer;
 }
 
-/* Overflow & visibility */
+/* Débordement et visibilité */
 .overflow-visible {
   overflow: visible;
 }
@@ -40,7 +40,7 @@
   white-space: nowrap;
 }
 
-/* Button-like elements */
+/* Éléments de type bouton */
 .btn-unstyled {
   background: none;
   border: none;
@@ -78,14 +78,21 @@
   }
 }
 
-/* Image utilities */
+/* Utilitaires d'image */
 .img-responsive {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
 }
 
-/* Pagination dots */
+/* Image qui remplit le conteneur */
+.img-fill {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Points de pagination */
 .pagination-dot {
   width: 10px;
   height: 10px;

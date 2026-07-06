@@ -2,7 +2,7 @@
    CONTAINERS & LAYOUT UTILITIES
    ==================================== */
 
-/* Container width variants */
+/* Largeur des conteneurs */
 .container-max-900 {
   max-width: 900px;
   margin-left: auto;
@@ -21,7 +21,7 @@
   margin-right: auto;
 }
 
-/* Flexbox utilities */
+/* Utilitaires flexbox */
 .flex-center {
   display: flex;
   align-items: center;
@@ -48,7 +48,7 @@
   height: 100%;
 }
 
-/* Icon container - fixed size flex box */
+/* Boîte d'icônes - taille fixe avec flexbox */
 .icon-box-sm {
   width: 50px;
   height: 50px;
@@ -59,12 +59,16 @@
   margin-right: 1rem;
 }
 
-/* Full height container */
+/* Conteneur hauteur complète */
 .h-full {
   height: 100%;
 }
 
-/* Min height utilities */
+/* Utilitaires de hauteur minimale */
 .min-h-250 {
   min-height: 250px;
+}
+
+.min-h-150 {
+  min-height: 150px;
 }
