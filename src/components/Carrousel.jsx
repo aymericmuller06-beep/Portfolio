@@ -23,7 +23,7 @@ export default function Carrousel({ items = [], showTitle = false }) {
     <div>
       {showTitle && <h5 className="fw-bold mb-4">Preuves et réalisations</h5>}
       
-      <div className="card border-0 shadow-sm">
+      <div className={`card border-0 shadow-sm ${current.bgClass || ''}`}>
         <div className="card-body p-4">
           <div className="row g-4 align-items-center">
             <div className={hasMultiple ? 'col-lg-5' : 'col-lg-6'}>

@@ -181,11 +181,97 @@ export default function NiceVolley() {
       <section className="py-4 px-3 border-bottom bg-body-secondary">
         <div className="container-max-80">
           <h2 className="display-5 fw-bold text-center mb-4">Ce qu'on a fait</h2>
+          <p className="text-center text-body-justified mb-2">
+            Notre travail ne consistait pas à remplacer les outils existants, mais à créer un layer intérmédiaire pour centraliser et faciliter l'accès aux données. De ce fait, l'outil récupère bien plus que ce qu'il n'envoie.
+          </p>
           <p className="text-start text-muted text-body-justified mb-4">
             Voici les images du CRM au bout de la semaine intensive :
           </p>
           
           <GalerieModale images={screenshotsGalerie} />
+
+          <div className="row g-4 mt-3">
+            <div className="col-lg-6">
+              <div className="card-dark border-0 h-100 shadow-sm bg-main p-4">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-chart-line text-warning icon-sm"></i>
+                    <h5 className="card-title text-warning mb-0 ms-3">Affichages de statistiques</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Statistiques venue par API depuis Weezevent et Brevo.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 mt-4">
+              <div className="card-dark border-0 h-100 shadow-sm bg-main p-4">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-envelope text-info icon-sm"></i>
+                    <h5 className="card-title text-info mb-0 ms-3">Création de segments</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Possibilité de récupérer les nouveaux contacts du dernier événement et de les ajouter à un segment Brevo.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 mt-4">
+              <div className="card-dark border-0 h-100 shadow-sm bg-main p-4">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-users text-info icon-sm"></i>
+                    <h5 className="card-title text-info mb-0 ms-3">Visualisation des contacts</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Possibilité de visualiser tous les contacts récupérés.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 mt-4">
+              <div className="card-dark border-0 h-100 shadow-sm bg-main p-4">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-lock text-warning icon-sm"></i>
+                    <h5 className="card-title text-warning mb-0 ms-3">Connexion simple à mot de passe</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Une connexion simple avec un mot de passe pour ne pas laisser l'accès à tous, mais seulement à l'équipe administrative du club.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 mt-4">
+              <div className="card-dark border-0 h-100 shadow-sm bg-main p-4">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-volleyball text-warning icon-sm"></i>
+                    <h5 className="card-title text-warning mb-0 ms-3">Identité du club</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Le site garde l'identité forte du club niçois en utilisant le logo et les couleurs du club.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 mt-4">
+              <div className="card-dark border-0 h-100 shadow-sm bg-main p-4">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-sync text-info icon-sm"></i>
+                    <h5 className="card-title text-info mb-0 ms-3">Boutons de synchronisation</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Des boutons de synchronisation permettent de mettre à jour les informations en temps réel.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
