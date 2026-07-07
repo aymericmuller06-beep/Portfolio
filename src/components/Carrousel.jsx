@@ -28,16 +28,46 @@ export default function Carrousel({ items = [], showTitle = false }) {
           <div className="row g-4 align-items-center">
             <div className={hasMultiple ? 'col-lg-5' : 'col-lg-6'}>
               <div className="position-relative">
-                <img 
-                  src={current.image} 
-                  alt={current.title}
-                  className="img-fluid rounded img-responsive"
-                  style={{ 
-                    maxHeight: '400px', 
-                    objectFit: 'cover',
-                    width: '100%'
-                  }}
-                />
+                {current.type === 'pdf' ? (
+                  <div className="position-relative">
+                    <img 
+                      src={current.image} 
+                      alt={current.title}
+                      className="img-fluid rounded img-responsive"
+                      style={{ 
+                        maxHeight: '400px', 
+                        objectFit: 'cover',
+                        width: '100%'
+                      }}
+                    />
+                    <div 
+                      className="position-absolute top-0 end-0 m-2"
+                      style={{
+                        backgroundColor: '#dc3545',
+                        color: 'white',
+                        padding: '0.5rem 0.75rem',
+                        borderRadius: '8px',
+                        fontSize: '1.2rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem'
+                      }}
+                    >
+                      <i className="fa-solid fa-file-pdf"></i>
+                    </div>
+                  </div>
+                ) : (
+                  <img 
+                    src={current.image} 
+                    alt={current.title}
+                    className="img-fluid rounded img-responsive"
+                    style={{ 
+                      maxHeight: '400px', 
+                      objectFit: 'cover',
+                      width: '100%'
+                    }}
+                  />
+                )}
                 
                 {hasMultiple && (
                   <div 
@@ -69,8 +99,8 @@ export default function Carrousel({ items = [], showTitle = false }) {
                   rel="noopener noreferrer"
                   className="btn btn-primary btn-sm"
                 >
-                  <i className="fa-solid fa-external-link me-2"></i>
-                  {current.linkText || 'Voir en détail'}
+                  <i className={`fa-solid ${current.type === 'pdf' ? 'fa-file-pdf me-2' : 'fa-external-link me-2'}`}></i>
+                  {current.linkText || (current.type === 'pdf' ? 'Voir le PDF' : 'Voir en détail')}
                 </a>
               )}
 
@@ -105,7 +135,7 @@ export default function Carrousel({ items = [], showTitle = false }) {
               onClick={() => setCurrentIndex(idx)}
               className="rounded-circle pagination-dot"
               style={{
-                backgroundColor: idx === currentIndex ? '#0d6efd' : '#e9ecef',
+                backgroundColor: idx === currentIndex ? 'var(--bs-primary)' : 'var(--bg-surface)',
                 border: 'none'
               }}
               aria-label={`Aller à l'item ${idx + 1}`}

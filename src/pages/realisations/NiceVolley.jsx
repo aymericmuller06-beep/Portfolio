@@ -10,6 +10,12 @@ import { useModal } from '../../hooks/useModal'
 
 const NVBimage = new URL('../../Img/NVB.webp', import.meta.url).href
 
+const crmPdf = new URL('../../Img/CRM Nice volleyball - Gestion de projet IRIS.pdf', import.meta.url).href
+const crmPreview = new URL('../../Img/Gestion de proj CRM NICE.png', import.meta.url).href
+
+const RACI = 'https://docs.google.com/spreadsheets/d/18OlagBLWm_W4wWc6CsgUYbAXz637wBlW4IR48dBREc0/edit?usp=sharing'
+const RACIPreview = new URL('../../Img/Matrice RACI.png', import.meta.url).href
+
 const login = new URL('../../Img/Screenshot CRM NVB/login.png', import.meta.url).href
 const contacts = new URL('../../Img/Screenshot CRM NVB/contacts.png', import.meta.url).href
 const dashboard = new URL('../../Img/Screenshot CRM NVB/dashboard.png', import.meta.url).href
@@ -94,24 +100,23 @@ export default function NiceVolley() {
 
   const preuves = [
     {
+      type: 'pdf',
+      title: "Documentation de l'équipe Gestion de projet",
+      description: "Document complet regroupant tout les outils et travail effectué le long de la semaine par l'équipe.",
+      image: crmPreview,
+      link: crmPdf
+    },
+    {
+      title: "Matrice RACI",
+      description: "Matrice de responsabilités définissant les rôles et responsabilités de chaque pôle dans le projet pour chaque tâche.",
+      image: RACIPreview,
+      link: RACI,
+      linkText: "Voir la RACI"
+    },
+    {
       title: "Gestion de projet",
       description: "En binôme, responsable de la gestion globale du projet et de la coordination avec le client.",
       image: "https://via.placeholder.com/600x400?text=Gestion+Projet"
-    },
-    {
-      title: "Interface de gestion",
-      description: "Développement d'une interface ergonomique pour gérer les contacts, événements et campagnes mailing.",
-      image: "https://via.placeholder.com/600x400?text=Interface"
-    },
-    {
-      title: "Tableau de bord statistiques",
-      description: "Dashboard pour visualiser les indicateurs clés : nombre de membres, événements, taux de participation, etc.",
-      image: "https://via.placeholder.com/600x400?text=Dashboard"
-    },
-    {
-      title: "Gestion de 5 pôles",
-      description: "Coordination de 5 équipes thématiques pour assurer la cohérence et la qualité du projet final.",
-      image: "https://via.placeholder.com/600x400?text=P%C3%B4les"
     }
   ]
 
@@ -287,8 +292,8 @@ export default function NiceVolley() {
               <div className="card-dark border-0 h-100 shadow-sm bg-main p-2">
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    <i className="fa-solid fa-chart-line text-warning icon-sm"></i>
-                    <h5 className="card-title text-warning mb-0 ms-3">Pôle RGPD</h5>
+                    <i className="fa-solid fa-chart-line text-primary icon-sm"></i>
+                    <h5 className="card-title text-primary mb-0 ms-3">Pôle RGPD</h5>
                   </div>
                   <p className="text-muted mb-0">
                     Pole en charge de la conformité du projet avec le RGPD.
@@ -300,8 +305,8 @@ export default function NiceVolley() {
               <div className="card-dark border-0 h-100 shadow-sm bg-main p-2">
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    <i className="fa-solid fa-envelope text-info icon-sm"></i>
-                    <h5 className="card-title text-info mb-0 ms-3">Pôle Merise / conception BDD</h5>
+                    <i className="fa-solid fa-envelope text-danger icon-sm"></i>
+                    <h5 className="card-title text-danger mb-0 ms-3">Pôle Merise / conception BDD</h5>
                   </div>
                   <p className="text-muted mb-0">
                     Pôle en charge de la conception et de la gestion de la base de données.
@@ -339,8 +344,8 @@ export default function NiceVolley() {
               <div className="card-dark border-0 h-100 shadow-sm bg-main p-2">
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    <i className="fa-solid fa-volleyball text-warning icon-sm"></i>
-                    <h5 className="card-title text-warning mb-0 ms-3">Pôle Backend</h5>
+                    <i className="fa-solid fa-volleyball text-purple icon-sm"></i>
+                    <h5 className="card-title text-purple mb-0 ms-3">Pôle Backend</h5>
                   </div>
                   <p className="text-muted mb-0">
                     Pôle en charge du développement et de la gestion du serveur et des bases de données.
@@ -352,8 +357,8 @@ export default function NiceVolley() {
               <div className="card-dark border-0 h-100 shadow-sm bg-main p-2">
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    <i className="fa-solid fa-sync text-info icon-sm"></i>
-                    <h5 className="card-title text-info mb-0 ms-3">Pole SISR / Déploiement</h5>
+                    <i className="fa-solid fa-sync text-pink icon-sm"></i>
+                    <h5 className="card-title text-pink mb-0 ms-3">Pole SISR / Déploiement</h5>
                   </div>
                   <p className="text-muted mb-0">
                     Pôle en charge du déploiement et de la gestion des infrastructures réseau et systèmes.
