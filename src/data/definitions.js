@@ -208,6 +208,90 @@ export const definitions = [
     fullName: 'Brevo',
     description: 'Plateforme d\'email marketing et de CRM pour gérer les campagnes marketing, l\'automatisation et les communications avec les clients.',
     category: 'Outils & Technologies'
+  },
+  {
+    id: 31,
+    acronym: 'IRIS',
+    fullName: 'Informatique Réseaux Informatisation Sécurité',
+    description: 'Classe de formation spécialisée en informatique, réseaux et sécurité.',
+    category: 'Formation'
+  },
+  {
+    id: 32,
+    acronym: 'Kanban',
+    fullName: 'Kanban',
+    description: 'Méthode de gestion visuelle de projet utilisant des cartes pour organiser les tâches dans différentes colonnes (À faire, En cours, Fait).',
+    category: 'Gestion de Projet'
+  },
+  {
+    id: 33,
+    acronym: 'MVP',
+    fullName: 'Minimum Viable Product',
+    description: 'Version la plus simple d\'un produit contenant uniquement les fonctionnalités essentielles pour tester le concept auprès des utilisateurs.',
+    category: 'Gestion de Projet'
+  },
+  {
+    id: 34,
+    acronym: 'RACI',
+    fullName: 'Responsible, Accountable, Consulted, Informed',
+    description: 'Matrice de responsabilités définissant les rôles et les responsabilités de chaque personne pour chaque tâche du projet.',
+    category: 'Gestion de Projet'
+  },
+  {
+    id: 35,
+    acronym: 'RGPD',
+    fullName: 'Règlement Général sur la Protection des Données',
+    description: 'Règlement européen sur la protection des données qui s\'applique à toutes les organisations traitant les données personnelles des résidents de l\'UE.',
+    category: 'Sécurité & Conformité'
+  },
+  {
+    id: 36,
+    acronym: 'Merise',
+    fullName: 'Merise',
+    description: 'Méthode française de conception de systèmes d\'information pour modéliser et concevoir des bases de données et des applications informatiques.',
+    category: 'Outils & Technologies'
+  },
+  {
+    id: 37,
+    acronym: 'BDD',
+    fullName: 'Base De Données',
+    description: 'Système organisé pour stocker, gérer et récupérer efficacement des données de manière structurée.',
+    category: 'Outils & Technologies'
+  },
+  {
+    id: 38,
+    acronym: 'Layer',
+    fullName: 'Couche',
+    description: 'Couche intermédiaire entre le système et l\'utilisateur.',
+    category: 'Outils & Technologies'
+  },
+  {
+    id: 39,
+    acronym: 'API',
+    fullName: 'Application Programming Interface',
+    description: 'Ensemble de règles et de protocoles permettant à différentes applications de communiquer entre elles.',
+    category: 'Outils & Technologies'
+  },
+  {
+    id: 40,
+    acronym: 'Segment',
+    fullName: 'Segment',
+    description: 'Outil permettant de diviser les utilisateurs en groupes.',
+    category: 'Outils & Technologies'
+  },
+  {
+    id: 41,
+    acronym: 'Front-end',
+    fullName: 'Front-end',
+    description: 'Partie d\'une application ou d\'un site web avec laquelle les utilisateurs interagissent directement.',
+    category: 'Outils & Technologies'
+  },
+  {
+    id: 42,
+    acronym: 'Back-end',
+    fullName: 'Back-end',
+    description: 'Partie d\'une application ou d\'un site web qui gère la logique, les bases de données et les serveurs.',
+    category: 'Outils & Technologies'
   }
 ]
 

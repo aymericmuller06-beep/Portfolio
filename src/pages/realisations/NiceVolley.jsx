@@ -16,6 +16,8 @@ const crmPreview = new URL('../../Img/Gestion de proj CRM NICE.png', import.meta
 const RACI = 'https://docs.google.com/spreadsheets/d/18OlagBLWm_W4wWc6CsgUYbAXz637wBlW4IR48dBREc0/edit?usp=sharing'
 const RACIPreview = new URL('../../Img/Matrice RACI.png', import.meta.url).href
 
+const MVP = new URL('../../Img/MVP.png', import.meta.url).href
+
 const login = new URL('../../Img/Screenshot CRM NVB/login.png', import.meta.url).href
 const contacts = new URL('../../Img/Screenshot CRM NVB/contacts.png', import.meta.url).href
 const dashboard = new URL('../../Img/Screenshot CRM NVB/dashboard.png', import.meta.url).href
@@ -27,10 +29,23 @@ const stats = new URL('../../Img/Screenshot CRM NVB/stats.png', import.meta.url)
 export default function NiceVolley() {
   const navigate = useNavigate()
   
-  // Modales pour les outils
+  // Modales pour les outils et acronymes
   const crmModal = useModal()
+  const irisModal = useModal()
   const weezeventModal = useModal()
   const brevoModal = useModal()
+  const kanbanModal = useModal()
+  const mvpModal = useModal()
+  const raciModal = useModal()
+  const rgpdModal = useModal()
+  const meriseModal = useModal()
+  const bddModal = useModal()
+  const layerModal = useModal()
+  const APIModal = useModal()
+  const segmentModal = useModal()
+  const frontModal = useModal()
+  const backModal = useModal()
+  const SISRModal = useModal()
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -53,27 +68,6 @@ export default function NiceVolley() {
       </section>
     )
   }
-
-  const besoinsClients = [
-    {
-      titre: "Centraliser les données",
-      description: "Le club utilise deux outils : Weezevent et Brevo. Notre CRM devait centraliser et synchroniser les informations de ces deux sources.",
-      icon: "fa-database",
-      color: "text-primary"
-    },
-    {
-      titre: "Suivi des clients",
-      description: "Le principal problème du club était que le suivi client se faisait très difficilement entre les événements à cause d'une utilisation trop manuelle.",
-      icon: "fa-users",
-      color: "text-warning"
-    },
-    {
-      titre: "Facilité d'utilisation",
-      description: "Notre CRM devait rendre les processus de démarche client bien plus simple et rapide pour le club.",
-      icon: "fa-hand-holding-heart",
-      color: "text-info"
-    }
-  ]
 
   const screenshotsGalerie = [
     {
@@ -107,16 +101,18 @@ export default function NiceVolley() {
       link: crmPdf
     },
     {
+      title: "MVP",
+      description: "Le MVP (Minimum Viable Product) est la version la plus simple du CRM qui permet de répondre aux besoins principaux du club.",
+      image: MVP,
+      link: MVP,
+      linkText: "Voir le MVP"
+    },
+    {
       title: "Matrice RACI",
       description: "Matrice de responsabilités définissant les rôles et responsabilités de chaque pôle dans le projet pour chaque tâche.",
       image: RACIPreview,
       link: RACI,
       linkText: "Voir la RACI"
-    },
-    {
-      title: "Gestion de projet",
-      description: "En binôme, responsable de la gestion globale du projet et de la coordination avec le client.",
-      image: "https://via.placeholder.com/600x400?text=Gestion+Projet"
     }
   ]
 
@@ -133,6 +129,7 @@ export default function NiceVolley() {
           <h1 className="responsive-title responsive-title--medium">
             {realisation.title}
           </h1>
+          <p className="text-muted no-margin no-padding">CRM pour Customer Relationship Management*</p>
         </div>
       </section>
 
@@ -144,7 +141,11 @@ export default function NiceVolley() {
           <div className="row g-3 d-flex justify-content-center align-items-center mb-4">
             <div className="col-lg-6">
               <p className="lead text-muted text-intro-sm">
-                L'équipe administrative du Club de Nice Volley-Ball a approché ma classe, IRIS, lors de ma première année afin de mettre au point un outil de CRM interne. Notre correspondant, Alexandre, est venu lors d'un de nos cours afin de nous expliquer ses besoins.
+                L'équipe administrative du Club de Nice Volley-Ball a approché ma classe, 
+                {' '}<button className="modal-trigger-btn" onClick={irisModal.open}>IRIS</button>
+                {' '}lors de ma première année afin de mettre au point un outil de 
+                {' '}<button className="modal-trigger-btn" onClick={crmModal.open}>CRM</button>
+                {' '}interne. Notre correspondant, Alexandre, est venu lors d'un de nos cours afin de nous expliquer ses besoins.
               </p>
             </div>
             
@@ -162,24 +163,54 @@ export default function NiceVolley() {
           </div>
           
           {/* Cartes en horizontal */}
-          {besoinsClients && besoinsClients.length > 0 && (
-            <div className="row g-3">
-              {besoinsClients.map((besoin, idx) => (
-                <div key={idx} className="col-md-6 col-lg-4">
-                  <div className="card h-100 border-0 shadow-sm card-hover-lift">
-                    <div className="card-body p-3">
-                      <h5 className={`card-title fw-semibold ${besoin.color} mb-2`}>
-                        <i className={`fa-solid ${besoin.icon} me-2`}></i>{besoin.titre}
-                      </h5>
-                      <p className="card-text text-muted text-desc-sm-no-margin">
-                        {besoin.description}
-                      </p>
-                    </div>
-                  </div>
+          <div className="row g-3">
+            <div className="col-md-6 col-lg-4">
+              <div className="card h-100 border-0 shadow-sm">
+                <div className="card-body p-3">
+                  <h5 className="card-title fw-semibold text-primary mb-2">
+                    <i className="fa-solid fa-database me-2"></i>Centraliser les données
+                  </h5>
+                  <p className="card-text text-muted text-desc-sm-no-margin">
+                    Le club utilise deux outils :
+                    {' '}<button className="modal-trigger-btn" onClick={weezeventModal.open}>Weezevent</button>
+                    {' '}et 
+                    {' '}<button className="modal-trigger-btn" onClick={brevoModal.open}>Brevo</button>
+                    . Notre 
+                    {' '}<button className="modal-trigger-btn" onClick={crmModal.open}>CRM</button>
+                    {' '} devait centraliser et synchroniser les informations de ces deux sources.
+                  </p>
                 </div>
-              ))}
+              </div>
             </div>
-          )}
+
+            <div className="col-md-6 col-lg-4">
+              <div className="card h-100 border-0 shadow-sm">
+                <div className="card-body p-3">
+                  <h5 className="card-title fw-semibold text-warning mb-2">
+                    <i className="fa-solid fa-users me-2"></i>Suivi des clients
+                  </h5>
+                  <p className="card-text text-muted text-desc-sm-no-margin">
+                    Le principal problème du club était que le suivi client se faisait très difficilement entre les événements à cause d'une utilisation trop manuelle.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-6 col-lg-4">
+              <div className="card h-100 border-0 shadow-sm">
+                <div className="card-body p-3">
+                  <h5 className="card-title fw-semibold text-info mb-2">
+                    <i className="fa-solid fa-hand-holding-heart me-2"></i>Facilité d'utilisation
+                  </h5>
+                  <p className="card-text text-muted text-desc-sm-no-margin">
+                    Notre 
+                    {' '}<button className="modal-trigger-btn" onClick={crmModal.open}>CRM</button>
+                    {' '} devait rendre les processus de démarche client bien plus simple et rapide pour le club.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -187,10 +218,14 @@ export default function NiceVolley() {
         <div className="container-max-80">
           <h2 className="display-5 fw-bold text-center mb-4">Ce qu'on a fait</h2>
           <p className="text-center text-body-justified mb-2">
-            Notre travail ne consistait pas à remplacer les outils existants, mais à créer un layer intérmédiaire pour centraliser et faciliter l'accès aux données. De ce fait, l'outil récupère bien plus que ce qu'il n'envoie.
+            Notre travail ne consistait pas à remplacer les outils existants, mais à créer un 
+            {' '}<button className="modal-trigger-btn" onClick={layerModal.open}>Layer</button>
+            {' '}pour centraliser et faciliter l'accès aux données. De ce fait, l'outil récupère bien plus que ce qu'il n'envoie.
           </p>
           <p className="text-start text-muted text-body-justified mb-4">
-            Voici les images du CRM au bout de la semaine intensive :
+            Voici les images du 
+            {' '}<button className="modal-trigger-btn" onClick={crmModal.open}>CRM</button>
+            {' '}au bout de la semaine intensive :
           </p>
           
           <GalerieModale images={screenshotsGalerie} />
@@ -204,7 +239,13 @@ export default function NiceVolley() {
                     <h5 className="card-title text-warning mb-0 ms-3">Affichages de statistiques</h5>
                   </div>
                   <p className="text-muted mb-0">
-                    Statistiques venue par API depuis Weezevent et Brevo.
+                    Statistiques venue par 
+                    {' '}<button className="modal-trigger-btn" onClick={APIModal.open}>API</button>
+                    {' '}depuis 
+                    {' '}<button className="modal-trigger-btn" onClick={weezeventModal.open}>Weezevent</button>
+                    {' '}et 
+                    {' '}<button className="modal-trigger-btn" onClick={brevoModal.open}>Brevo</button>
+                    .
                   </p>
                 </div>
               </div>
@@ -214,10 +255,15 @@ export default function NiceVolley() {
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
                     <i className="fa-solid fa-envelope text-info icon-sm"></i>
-                    <h5 className="card-title text-info mb-0 ms-3">Création de segments</h5>
+                    <h5 className="card-title text-info mb-0 ms-3">Création de 
+                      {' '}<button className="modal-trigger-btn" onClick={segmentModal.open}>segments</button>
+                      </h5>
                   </div>
                   <p className="text-muted mb-0">
-                    Possibilité de récupérer les nouveaux contacts du dernier événement et de les ajouter à un segment Brevo.
+                    Possibilité de récupérer les nouveaux contacts du dernier événement et de les ajouter à un
+                    {' '}<button className="modal-trigger-btn" onClick={segmentModal.open}>Segment</button>
+                    {' '}<button className="modal-trigger-btn" onClick={brevoModal.open}>Brevo</button>
+                    .
                   </p>
                 </div>
               </div>
@@ -284,7 +330,13 @@ export default function NiceVolley() {
         <div className="container-max-80 mb-5">
           <h2 className="display-5 fw-bold text-center mb-4">Ce que j'ai fait</h2>
           <p className="text-center text-body-justified">
-            En binôme, j'ai été responsable de la gestion globale du projet et de la coordination avec le client. Nous avons coordonné les 5 équipes thématiques par le biais d'outils tels que la matrice RACI, le Kanban, le MVP, etc... pour assurer la cohérence du projet final.
+            En binôme, j'ai été responsable de la gestion globale du projet et de la coordination avec le client. Nous avons coordonné les 5 équipes thématiques par le biais d'outils tels que la matrice 
+            {' '}<button className="modal-trigger-btn" onClick={raciModal.open}>RACI</button>
+            , le 
+            {' '}<button className="modal-trigger-btn" onClick={kanbanModal.open}>Kanban</button>
+            , le 
+            {' '}<button className="modal-trigger-btn" onClick={mvpModal.open}>MVP</button>
+            {' '}, etc... pour assurer la cohérence du projet final.
           </p>
 
            <div className="row g-5 mt-3 px-5 mb-5">
@@ -293,7 +345,9 @@ export default function NiceVolley() {
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
                     <i className="fa-solid fa-chart-line text-primary icon-sm"></i>
-                    <h5 className="card-title text-primary mb-0 ms-3">Pôle RGPD</h5>
+                    <h5 className="card-title text-primary mb-0 ms-3">Pôle 
+                      {' '}<button className="modal-trigger-btn" onClick={rgpdModal.open}>RGPD</button>
+                    </h5>
                   </div>
                   <p className="text-muted mb-0">
                     Pole en charge de la conformité du projet avec le RGPD.
@@ -306,7 +360,11 @@ export default function NiceVolley() {
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
                     <i className="fa-solid fa-envelope text-danger icon-sm"></i>
-                    <h5 className="card-title text-danger mb-0 ms-3">Pôle Merise / conception BDD</h5>
+                    <h5 className="card-title text-danger mb-0 ms-3">Pôle 
+                      {' '}<button className="modal-trigger-btn" onClick={meriseModal.open}>Merise</button>
+                      {' '} / conception 
+                      {' '}<button className="modal-trigger-btn" onClick={bddModal.open}>BDD</button>
+                    </h5>
                   </div>
                   <p className="text-muted mb-0">
                     Pôle en charge de la conception et de la gestion de la base de données.
@@ -332,7 +390,9 @@ export default function NiceVolley() {
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
                     <i className="fa-solid fa-lock text-warning icon-sm"></i>
-                    <h5 className="card-title text-warning mb-0 ms-3">Pôle Frontend</h5>
+                    <h5 className="card-title text-warning mb-0 ms-3">Pôle 
+                      {' '}<button className="modal-trigger-btn" onClick={frontModal.open}>Frontend</button>
+                    </h5>
                   </div>
                   <p className="text-muted mb-0">
                     Pôle en charge du développement et de la gestion de l'interface utilisateur.
@@ -345,7 +405,9 @@ export default function NiceVolley() {
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
                     <i className="fa-solid fa-volleyball text-purple icon-sm"></i>
-                    <h5 className="card-title text-purple mb-0 ms-3">Pôle Backend</h5>
+                    <h5 className="card-title text-purple mb-0 ms-3">Pôle 
+                      {' '}<button className="modal-trigger-btn" onClick={backModal.open}>Backend</button> 
+                    </h5>
                   </div>
                   <p className="text-muted mb-0">
                     Pôle en charge du développement et de la gestion du serveur et des bases de données.
@@ -358,7 +420,10 @@ export default function NiceVolley() {
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
                     <i className="fa-solid fa-sync text-pink icon-sm"></i>
-                    <h5 className="card-title text-pink mb-0 ms-3">Pole SISR / Déploiement</h5>
+                    <h5 className="card-title text-pink mb-0 ms-3">Pôle 
+                      {' '}<button className="modal-trigger-btn" onClick={SISRModal.open}>SISR</button> 
+                      {' '}/ Déploiement
+                    </h5>
                   </div>
                   <p className="text-muted mb-0">
                     Pôle en charge du déploiement et de la gestion des infrastructures réseau et systèmes.
@@ -452,18 +517,162 @@ export default function NiceVolley() {
         </div>
       </section>
 
-      {/* Modales pour les outils */}
-      <Modal isOpen={crmModal.isOpen} onClose={crmModal.close} title={getDefinitionByAcronym('CRM')?.fullName}>
-        {getDefinitionByAcronym('CRM')?.description}
+      {/* Modales pour les outils et acronymes */}
+      <Modal 
+        isOpen={crmModal.isOpen} 
+        title={getDefinitionByAcronym('CRM')?.acronym}
+        onClose={crmModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('CRM')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('CRM')?.fullName}"</strong>.
+        </p>
+        <p>{getDefinitionByAcronym('CRM')?.description}</p>
       </Modal>
 
-      <Modal isOpen={weezeventModal.isOpen} onClose={weezeventModal.close} title={getDefinitionByAcronym('Weezevent')?.fullName}>
-        {getDefinitionByAcronym('Weezevent')?.description}
+      <Modal 
+        isOpen={irisModal.isOpen} 
+        title={getDefinitionByAcronym('IRIS')?.acronym}
+        onClose={irisModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('IRIS')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('IRIS')?.fullName}"</strong>.
+        </p>
+        <p>{getDefinitionByAcronym('IRIS')?.description}</p>
       </Modal>
 
-      <Modal isOpen={brevoModal.isOpen} onClose={brevoModal.close} title={getDefinitionByAcronym('Brevo')?.fullName}>
-        {getDefinitionByAcronym('Brevo')?.description}
+      <Modal 
+        isOpen={weezeventModal.isOpen} 
+        title={getDefinitionByAcronym('Weezevent')?.acronym}
+        onClose={weezeventModal.close}
+      >
+        <p>{getDefinitionByAcronym('Weezevent')?.description}</p>
       </Modal>
+
+      <Modal 
+        isOpen={brevoModal.isOpen} 
+        title={getDefinitionByAcronym('Brevo')?.acronym}
+        onClose={brevoModal.close}
+      >
+        <p>{getDefinitionByAcronym('Brevo')?.description}</p>
+      </Modal>
+
+      <Modal 
+        isOpen={kanbanModal.isOpen} 
+        title={getDefinitionByAcronym('Kanban')?.acronym}
+        onClose={kanbanModal.close}
+      >
+        <p>{getDefinitionByAcronym('Kanban')?.description}</p>
+      </Modal>
+
+      <Modal 
+        isOpen={mvpModal.isOpen} 
+        title={getDefinitionByAcronym('MVP')?.acronym}
+        onClose={mvpModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('MVP')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('MVP')?.fullName}"</strong>.
+        </p>
+        <p>{getDefinitionByAcronym('MVP')?.description}</p>
+      </Modal>
+
+      <Modal 
+        isOpen={raciModal.isOpen} 
+        title={getDefinitionByAcronym('RACI')?.acronym}
+        onClose={raciModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('RACI')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('RACI')?.fullName}"</strong>.
+        </p>
+        <p>{getDefinitionByAcronym('RACI')?.description}</p>
+      </Modal>
+
+      <Modal 
+        isOpen={rgpdModal.isOpen} 
+        title={getDefinitionByAcronym('RGPD')?.acronym}
+        onClose={rgpdModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('RGPD')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('RGPD')?.fullName}"</strong>.
+        </p>
+        <p>{getDefinitionByAcronym('RGPD')?.description}</p>
+      </Modal>
+
+      <Modal 
+        isOpen={meriseModal.isOpen} 
+        title={getDefinitionByAcronym('Merise')?.acronym}
+        onClose={meriseModal.close}
+      >
+        <p>{getDefinitionByAcronym('Merise')?.description}</p>
+      </Modal>
+
+      <Modal 
+        isOpen={bddModal.isOpen} 
+        title={getDefinitionByAcronym('BDD')?.acronym}
+        onClose={bddModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('BDD')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('BDD')?.fullName}"</strong>.
+        </p>
+        <p>{getDefinitionByAcronym('BDD')?.description}</p>
+      </Modal>
+
+      <Modal 
+        isOpen={layerModal.isOpen} 
+        title={getDefinitionByAcronym('Layer')?.acronym}
+        onClose={layerModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('Layer')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('Layer')?.fullName}"</strong>.
+        </p>
+        <p>{getDefinitionByAcronym('Layer')?.description}</p>
+      </Modal>
+
+      <Modal 
+        isOpen={APIModal.isOpen} 
+        title={getDefinitionByAcronym('API')?.acronym}
+        onClose={APIModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('API')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('API')?.fullName}"</strong>.
+        </p>
+        <p>{getDefinitionByAcronym('API')?.description}</p>
+      </Modal>
+
+      <Modal 
+        isOpen={segmentModal.isOpen} 
+        title={getDefinitionByAcronym('Segment')?.acronym}
+        onClose={segmentModal.close}
+      >
+        <p>{getDefinitionByAcronym('Segment')?.description}</p>
+      </Modal>
+
+      <Modal 
+        isOpen={frontModal.isOpen} 
+        title={getDefinitionByAcronym('Front-end')?.acronym}
+        onClose={frontModal.close}
+      >
+        <p>{getDefinitionByAcronym('Front-end')?.description}</p>
+      </Modal>
+
+      <Modal 
+        isOpen={backModal.isOpen} 
+        title={getDefinitionByAcronym('Back-end')?.acronym}
+        onClose={backModal.close}
+      >
+        <p>{getDefinitionByAcronym('Back-end')?.description}</p>
+      </Modal>
+
+      <Modal 
+        isOpen={SISRModal.isOpen} 
+        title={getDefinitionByAcronym('SISR')?.acronym}
+        onClose={SISRModal.close}
+      >
+        <p>
+          <strong>{getDefinitionByAcronym('SISR')?.acronym}</strong> signifie <strong>"{getDefinitionByAcronym('SISR')?.fullName}"</strong>.
+        </p>
+        <p>{getDefinitionByAcronym('SISR')?.description}</p>
+      </Modal>
+      
     </>
   )
 }

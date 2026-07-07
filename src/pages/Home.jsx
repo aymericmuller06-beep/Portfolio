@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="py-5 px-4 text-center hero-section min-h-250">
+      <section className="py-5 px-4 text-center hero-section min-h-100vh">
         <div className="container-max-700">
           <div className="mb-3">
             <span className="badge bg-warning fw-normal mb-3 me-3" style={{color: getContrastColor('#ffc107')}}>

@@ -65,6 +65,10 @@
 }
 
 /* Utilitaires de hauteur minimale */
+.min-h-100vh {
+  min-height: calc(100vh - var(--topbar-h));
+}
+
 .min-h-250 {
   min-height: 250px;
 }

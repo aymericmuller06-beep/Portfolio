@@ -30,6 +30,11 @@ export default function Annuaire() {
         gradient: '#52b788',
         badge: 'bg-success',
         badgeColor: '#52b788'
+      },
+      'Gestion de Projet': {
+        gradient: '#b75299',
+        badge: 'bg-purple',
+        badgeColor: '#b75299'
       }
     }
     return colors[category] || { gradient: '#0d6efd', badge: 'bg-primary', badgeColor: '#0d6efd' }
