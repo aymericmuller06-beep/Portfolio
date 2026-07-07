@@ -36,8 +36,6 @@ export default function BaseConnaissances() {
     )
   }
 
-  const introduction = "L'équipe IT d'Azurinfo, mon entreprise d'alternance, avait un besoin critique de centraliser sa documentation technique. Les procédures et normes étaient éparpillées sur plusieurs plateformes, créant un manque de cohérence et rendant difficile l'accès aux informations."
-  
   const besoinsClients = [
     {
       titre: "Centraliser la documentation",
@@ -56,10 +54,6 @@ export default function BaseConnaissances() {
       description: "Mettre en place une gestion des droits appropriée pour contrôler l'accès aux informations sensibles."
     }
   ]
-
-  const ceQuOnAfait = "Le projet a commencé par un audit complet de toutes les ressources documentaires existantes pour évaluer leur état et pertinence. Nous avons ensuite créé une architecture logique claire avec une hiérarchie intuitive de catégories et sous-catégories. L'objectif était d'unifier les formats, standardiser les processus et les mettre en conformité avec les standards du secteur (ITIL, ISO 27001), tout en assurant une base sécurisée avec des droits d'accès appropriés."
-
-  const ceQueJaiFailText = "J'ai mené la restructuration complète et le tri de toutes les ressources selon la nouvelle hiérarchie définie. J'ai harmonisé les formats de documents et créé des templates standardisés pour les nouvelles ressources. J'ai ensuite effectué les tests d'accessibilité pour vérifier que tous les utilisateurs trouvent facilement les informations dont ils ont besoin, et j'ai créé la documentation complète de la base avec un guide utilisateur et une documentation de maintenance."
 
   const preuves = [
     {
@@ -104,7 +98,7 @@ export default function BaseConnaissances() {
         <div className="container container-max-80">
           <h2 className="display-5 fw-bold text-center mb-4">Introduction</h2>
           <p className="lead text-center text-muted text-intro">
-            {introduction}
+            L'équipe IT d'Azurinfo, mon entreprise d'alternance, avait un besoin critique de centraliser sa documentation technique. Les procédures et normes étaient éparpillées sur plusieurs plateformes, créant un manque de cohérence et rendant difficile l'accès aux informations.
           </p>
           
           {besoinsClients && besoinsClients.length > 0 && (
@@ -132,7 +126,7 @@ export default function BaseConnaissances() {
         <div className="container container-max-80">
           <h2 className="display-5 fw-bold text-center mb-4">Ce qu'on a fait</h2>
           <p className="text-start text-body-justified">
-            {ceQuOnAfait}
+            Le projet a commencé par un audit complet de toutes les ressources documentaires existantes pour évaluer leur état et pertinence. Nous avons ensuite créé une architecture logique claire avec une hiérarchie intuitive de catégories et sous-catégories. L'objectif était d'unifier les formats, standardiser les processus et les mettre en conformité avec les standards du secteur (ITIL, ISO 27001), tout en assurant une base sécurisée avec des droits d'accès appropriés.
           </p>
         </div>
       </section>
@@ -141,7 +135,7 @@ export default function BaseConnaissances() {
         <div className="container container-max-80">
           <h2 className="display-5 fw-bold text-center mb-4">Ce que j'ai fait</h2>
           <p className="text-start text-body-justified">
-            {ceQueJaiFailText}
+            J'ai mené la restructuration complète et le tri de toutes les ressources selon la nouvelle hiérarchie définie. J'ai harmonisé les formats de documents et créé des templates standardisés pour les nouvelles ressources. J'ai ensuite effectué les tests d'accessibilité pour vérifier que tous les utilisateurs trouvent facilement les informations dont ils ont besoin, et j'ai créé la documentation complète de la base avec un guide utilisateur et une documentation de maintenance.
           </p>
         </div>
       </section>
@@ -150,7 +144,7 @@ export default function BaseConnaissances() {
         <div className="container">
           <h2 className="display-5 fw-bold text-center mb-5">Preuves & détails</h2>
           {preuves && preuves.length > 0 ? (
-            <Carrousel proofs={preuves} />
+            <Carrousel items={preuves} />
           ) : (
             <div className="card border-0 shadow-sm">
               <div className="card-body">

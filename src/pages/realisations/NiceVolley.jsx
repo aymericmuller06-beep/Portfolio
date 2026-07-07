@@ -48,8 +48,6 @@ export default function NiceVolley() {
     )
   }
 
-  const introduction = "L'équipe administrative du Club de Nice Volley-Ball a approché ma classe, IRIS, lors de ma première année afin de mettre au point un outil de CRM interne. Notre correspondant, Alexandre, est venu lors d'un de nos cours afin de nous expliquer ses besoins."
-  
   const besoinsClients = [
     {
       titre: "Centraliser les données",
@@ -70,8 +68,6 @@ export default function NiceVolley() {
       color: "text-info"
     }
   ]
-
-  const ceQuOnAfait = "Voici les images du CRM au bout de la semaine intensive :"
 
   const screenshotsGalerie = [
     {
@@ -95,8 +91,6 @@ export default function NiceVolley() {
       url: contacts
     }
   ]
-
-  const ceQueJaiFailText = "En binôme, j'ai été responsable de la gestion globale du projet et de la coordination avec le client. J'ai développé l'interface ergonomique pour gérer les contacts, événements et campagnes mailing, créé un tableau de bord statistiques pour visualiser les indicateurs clés (nombre de membres, événements, taux de participation), et j'ai coordonné les 5 équipes thématiques pour assurer la cohérence du projet final."
 
   const preuves = [
     {
@@ -145,7 +139,7 @@ export default function NiceVolley() {
           <div className="row g-3 d-flex justify-content-center align-items-center mb-4">
             <div className="col-lg-6">
               <p className="lead text-muted text-intro-sm">
-                {introduction}
+                L'équipe administrative du Club de Nice Volley-Ball a approché ma classe, IRIS, lors de ma première année afin de mettre au point un outil de CRM interne. Notre correspondant, Alexandre, est venu lors d'un de nos cours afin de nous expliquer ses besoins.
               </p>
             </div>
             
@@ -188,7 +182,7 @@ export default function NiceVolley() {
         <div className="container-max-80">
           <h2 className="display-5 fw-bold text-center mb-4">Ce qu'on a fait</h2>
           <p className="text-start text-muted text-body-justified mb-4">
-            {ceQuOnAfait}
+            Voici les images du CRM au bout de la semaine intensive :
           </p>
           
           <GalerieModale images={screenshotsGalerie} />
@@ -199,7 +193,7 @@ export default function NiceVolley() {
         <div className="container-max-80">
           <h2 className="display-5 fw-bold text-center mb-4">Ce que j'ai fait</h2>
           <p className="text-start text-body-justified">
-            {ceQueJaiFailText}
+            En binôme, j'ai été responsable de la gestion globale du projet et de la coordination avec le client. J'ai développé l'interface ergonomique pour gérer les contacts, événements et campagnes mailing, créé un tableau de bord statistiques pour visualiser les indicateurs clés (nombre de membres, événements, taux de participation), et j'ai coordonné les 5 équipes thématiques pour assurer la cohérence du projet final.
           </p>
         </div>
       </section>
@@ -208,7 +202,7 @@ export default function NiceVolley() {
         <div className="container">
           <h2 className="display-5 fw-bold text-center mb-5">Preuves & détails</h2>
           {preuves && preuves.length > 0 ? (
-            <Carrousel proofs={preuves} />
+            <Carrousel items={preuves} />
           ) : (
             <div className="card border-0 shadow-sm">
               <div className="card-body">

@@ -1,22 +1,22 @@
 import { useState } from 'react'
 
-export default function Carrousel({ proofs = [], showTitle = false }) {
+export default function Carrousel({ items = [], showTitle = false }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  // Ne rien afficher si pas de preuves
-  if (!proofs || proofs.length === 0) {
+  // Ne rien afficher si pas d'items
+  if (!items || items.length === 0) {
     return null
   }
 
-  const current = proofs[currentIndex]
-  const hasMultiple = proofs.length > 1
+  const current = items[currentIndex]
+  const hasMultiple = items.length > 1
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % proofs.length)
+    setCurrentIndex((prev) => (prev + 1) % items.length)
   }
 
   const goToPrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + proofs.length) % proofs.length)
+    setCurrentIndex((prev) => (prev - 1 + items.length) % items.length)
   }
 
   return (
@@ -50,7 +50,7 @@ export default function Carrousel({ proofs = [], showTitle = false }) {
                       fontWeight: 'bold'
                     }}
                   >
-                    {currentIndex + 1} / {proofs.length}
+                    {currentIndex + 1} / {items.length}
                   </div>
                 )}
               </div>
@@ -79,14 +79,14 @@ export default function Carrousel({ proofs = [], showTitle = false }) {
                   <button
                     onClick={goToPrev}
                     className="btn btn-outline-secondary btn-sm"
-                    aria-label="Preuve précédente"
+                    aria-label="Item précédent"
                   >
                     <i className="fa-solid fa-chevron-left"></i>
                   </button>
                   <button
                     onClick={goToNext}
                     className="btn btn-outline-secondary btn-sm"
-                    aria-label="Preuve suivante"
+                    aria-label="Item suivant"
                   >
                     <i className="fa-solid fa-chevron-right"></i>
                   </button>
@@ -99,7 +99,7 @@ export default function Carrousel({ proofs = [], showTitle = false }) {
 
       {hasMultiple && (
         <div className="d-flex justify-content-center gap-2 mt-4">
-          {proofs.map((_, idx) => (
+          {items.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrentIndex(idx)}
@@ -108,7 +108,7 @@ export default function Carrousel({ proofs = [], showTitle = false }) {
                 backgroundColor: idx === currentIndex ? '#0d6efd' : '#e9ecef',
                 border: 'none'
               }}
-              aria-label={`Aller à la preuve ${idx + 1}`}
+              aria-label={`Aller à l'item ${idx + 1}`}
             />
           ))}
         </div>

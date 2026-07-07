@@ -37,53 +37,9 @@ export default function Portfolio() {
     )
   }
 
-  const introduction = "Créer un portfolio professionnel pour showcaser mes projets, compétences et parcours en développement. Ce portfolio est destiné aux potentiels employeurs et clients pour démontrer mes capacités techniques et créatives."
-  
-  const besoinsClients = [
-    {
-      titre: "Se distinguer des candidats",
-      description: "Avoir une présence en ligne professionnelle et unique pour attirer l'attention des recruteurs."
-    },
-    {
-      titre: "Démontrer les compétences",
-      description: "Montrer concrètement les technologies et frameworks maîtrisés (React, Vite, SCSS)."
-    },
-    {
-      titre: "Adapter à tous les appareils",
-      description: "Créer une expérience responsive qui fonctionne parfaitement sur mobile, tablette et desktop."
-    },
-    {
-      titre: "Améliorer l'expérience utilisateur",
-      description: "Mettre en place des fonctionnalités modernes comme thèmes clair/sombre et navigation fluide."
-    }
-  ]
+  const besoinsClients = []
 
-  const ceQuOnAfait = "L'objectif était d'avoir une présence en ligne professionnelle et complète pour se distinguer des autres candidats, tout en démontrant les capacités techniques réelles (React, Vite, SCSS) par des exemples concrets. Nous avons choisi d'utiliser des technologies modernes pour montrer mon expertise, implémenté un design responsive pour tous les appareils, et créé un système de thèmes clair/sombre avec CSS variables pour une meilleure expérience utilisateur."
-
-  const ceQueJaiFailText = "J'ai conçu et développé une page d'accueil professionnelle avec une hero section captivante, mon CV et des appels à l'action. J'ai créé une galerie interactive des réalisations avec descriptions complètes et liens vers les sources. J'ai développé les pages de détail pour chaque projet avec contexte, approche, et carrousels de preuves visuelles, et enfin j'ai créé des pages d'information complémentaires (glossaire, technologies, présentation de l'entreprise)."
-
-  const preuves = [
-    {
-      title: "Page d'accueil professionnelle",
-      description: "Hero section captivante avec présentation personnelle, CV et appel à l'action pour les visiteurs.",
-      image: "https://via.placeholder.com/600x400?text=Home+Page"
-    },
-    {
-      title: "Galerie des réalisations",
-      description: "Showcase interactif de mes projets avec descriptions, technologies utilisées et liens vers les sources.",
-      image: "https://via.placeholder.com/600x400?text=R%C3%A9alisations"
-    },
-    {
-      title: "Pages de détail",
-      description: "Sections détaillées pour chaque projet avec contexte, approche, et carrousels de preuves visuelles.",
-      image: "https://via.placeholder.com/600x400?text=D%C3%A9tail"
-    },
-    {
-      title: "Annuaire et ressources",
-      description: "Pages d'information (glossaire, technologies, entreprise) pour compléter le portfolio avec du contexte.",
-      image: "https://via.placeholder.com/600x400?text=Ressources"
-    }
-  ]
+  const preuves = []
 
   return (
     <>
@@ -105,7 +61,7 @@ export default function Portfolio() {
         <div className="container container-max-80">
           <h2 className="display-5 fw-bold text-center mb-4">Introduction</h2>
           <p className="lead text-center text-muted text-intro">
-            {introduction}
+            
           </p>
           
           {besoinsClients && besoinsClients.length > 0 && (
@@ -133,16 +89,16 @@ export default function Portfolio() {
         <div className="container" style={{ maxWidth: '80%' }}>
           <h2 className="display-5 fw-bold text-center mb-4">Ce qu'on a fait</h2>
           <p className="text-start" style={{ fontSize: '1rem', lineHeight: '1.8', textAlign: 'justify' }}>
-            {ceQuOnAfait}
+          
           </p>
         </div>
       </section>
 
       <section className="py-4 px-3 border-bottom">
         <div className="container container-max-80">
-          <h2 className="display-5 fw-bold text-center mb-4">Ce qu'on a fait</h2>
+          <h2 className="display-5 fw-bold text-center mb-4">Ce que j'ai fait</h2>
           <p className="text-start text-body-justified">
-            {ceQuOnAfait}
+          
           </p>
         </div>
       </section>
@@ -151,7 +107,7 @@ export default function Portfolio() {
         <div className="container container-max-80 bg-body-secondary">
           <h2 className="display-5 fw-bold text-center mb-5">Preuves & détails</h2>
           {preuves && preuves.length > 0 ? (
-            <Carrousel proofs={preuves} />
+            <Carrousel items={preuves} />
           ) : (
             <div className="card border-0 shadow-sm">
               <div className="card-body">
