@@ -276,17 +276,103 @@ export default function NiceVolley() {
       </section>
 
       <section className="py-4 px-3 border-bottom">
-        <div className="container-max-80">
+        <div className="container-max-80 mb-5">
           <h2 className="display-5 fw-bold text-center mb-4">Ce que j'ai fait</h2>
-          <p className="text-start text-body-justified">
-            En binôme, j'ai été responsable de la gestion globale du projet et de la coordination avec le client. J'ai développé l'interface ergonomique pour gérer les contacts, événements et campagnes mailing, créé un tableau de bord statistiques pour visualiser les indicateurs clés (nombre de membres, événements, taux de participation), et j'ai coordonné les 5 équipes thématiques pour assurer la cohérence du projet final.
+          <p className="text-center text-body-justified">
+            En binôme, j'ai été responsable de la gestion globale du projet et de la coordination avec le client. Nous avons coordonné les 5 équipes thématiques par le biais d'outils tels que la matrice RACI, le Kanban, le MVP, etc... pour assurer la cohérence du projet final.
+          </p>
+
+           <div className="row g-5 mt-3 px-5 mb-5">
+            <div className="col-lg-6 mt-4">
+              <div className="card-dark border-0 h-100 shadow-sm bg-main p-2">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-chart-line text-warning icon-sm"></i>
+                    <h5 className="card-title text-warning mb-0 ms-3">Pôle RGPD</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Pole en charge de la conformité du projet avec le RGPD.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 mt-4">
+              <div className="card-dark border-0 h-100 shadow-sm bg-main p-2">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-envelope text-info icon-sm"></i>
+                    <h5 className="card-title text-info mb-0 ms-3">Pôle Merise / conception BDD</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Pôle en charge de la conception et de la gestion de la base de données.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 mt-4">
+              <div className="card-dark border-0 h-100 shadow-sm bg-main p-2">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-users text-info icon-sm"></i>
+                    <h5 className="card-title text-info mb-0 ms-3">Pôle Maquettage</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Pôle en charge de la création et de la gestion des maquettes.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 mt-4">
+              <div className="card-dark border-0 h-100 shadow-sm bg-main p-2">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-lock text-warning icon-sm"></i>
+                    <h5 className="card-title text-warning mb-0 ms-3">Pôle Frontend</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Pôle en charge du développement et de la gestion de l'interface utilisateur.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 mt-4">
+              <div className="card-dark border-0 h-100 shadow-sm bg-main p-2">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-volleyball text-warning icon-sm"></i>
+                    <h5 className="card-title text-warning mb-0 ms-3">Pôle Backend</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Pôle en charge du développement et de la gestion du serveur et des bases de données.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 mt-4">
+              <div className="card-dark border-0 h-100 shadow-sm bg-main p-2">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-sync text-info icon-sm"></i>
+                    <h5 className="card-title text-info mb-0 ms-3">Pole SISR / Déploiement</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Pôle en charge du déploiement et de la gestion des infrastructures réseau et systèmes.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <p className="text-center text-body-justified text-primary fw-bold mb-5">
+            A la fin du projet, nous avons pris la responsabilité de présenter l'entierté du rendu au client lors d'une présentation finale.
           </p>
         </div>
-      </section>
 
-      <section className="py-4 px-3 border-bottom bg-body-secondary">
         <div className="container">
-          <h2 className="display-5 fw-bold text-center mb-5">Preuves & détails</h2>
+          <p className="text-start text-muted text-body-justified">
+            Voici, ci-dessous, les réalisations de mon binôme.
+          </p>
           {preuves && preuves.length > 0 ? (
             <Carrousel items={preuves} />
           ) : (
@@ -297,9 +383,10 @@ export default function NiceVolley() {
             </div>
           )}
         </div>
+
       </section>
 
-      <section className="py-4 px-3 border-bottom">
+      <section className="py-4 px-3 border-bottom bg-body-secondary">
         <div className="container">
           <h2 className="display-5 fw-bold text-center mb-5">Compétences acquises</h2>
           <div className="row justify-content-center">
@@ -349,7 +436,7 @@ export default function NiceVolley() {
         </div>
       </section>
 
-      <section className="py-4 px-3 text-center bg-body-secondary">
+      <section className="py-4 px-3 text-center">
         <div className="container">
           <button 
             onClick={() => navigate('/pages/realisations')}
