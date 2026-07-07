@@ -23,50 +23,52 @@ export default function Carrousel({ items = [], showTitle = false }) {
     <div>
       {showTitle && <h5 className="fw-bold mb-4">Preuves et réalisations</h5>}
       
-      <div className={`card border-0 shadow-sm ${current.bgClass || ''}`}>
-        <div className="card-body p-4">
-          <div className="row g-4 align-items-center">
-            <div className={hasMultiple ? 'col-lg-5' : 'col-lg-6'}>
-              <div className="position-relative">
+      <div className={`card border-0 shadow-sm ${current.bgClass || ''}`} style={{ height: '500px' }}>
+        <div className="card-body p-4 h-100">
+          <div className="row g-4 h-100">
+            {/* Image à gauche - taille fixe */}
+            <div className="col-lg-5" style={{ height: '100%', overflow: 'hidden' }}>
+              <div className="position-relative w-100 h-100" style={{ overflow: 'hidden', borderRadius: '8px' }}>
                 {current.type === 'pdf' ? (
-                  <div className="position-relative">
-                    <img 
-                      src={current.image} 
-                      alt={current.title}
-                      className="img-fluid rounded img-responsive"
-                      style={{ 
-                        maxHeight: '400px', 
-                        objectFit: 'cover',
-                        width: '100%'
-                      }}
-                    />
-                    <div 
-                      className="position-absolute top-0 end-0 m-2"
-                      style={{
-                        backgroundColor: '#dc3545',
-                        color: 'white',
-                        padding: '0.5rem 0.75rem',
-                        borderRadius: '8px',
-                        fontSize: '1.2rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem'
-                      }}
-                    >
-                      <i className="fa-solid fa-file-pdf"></i>
-                    </div>
-                  </div>
+                  <img 
+                    src={current.image} 
+                    alt={current.title}
+                    style={{ 
+                      height: '100%', 
+                      objectFit: 'cover',
+                      width: '100%',
+                      display: 'block'
+                    }}
+                  />
                 ) : (
                   <img 
                     src={current.image} 
                     alt={current.title}
-                    className="img-fluid rounded img-responsive"
                     style={{ 
-                      maxHeight: '400px', 
+                      height: '100%', 
                       objectFit: 'cover',
-                      width: '100%'
+                      width: '100%',
+                      display: 'block'
                     }}
                   />
+                )}
+                
+                {current.type === 'pdf' && (
+                  <div 
+                    className="position-absolute top-0 end-0 m-2"
+                    style={{
+                      backgroundColor: '#dc3545',
+                      color: 'white',
+                      padding: '0.5rem 0.75rem',
+                      borderRadius: '8px',
+                      fontSize: '1.2rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem'
+                    }}
+                  >
+                    <i className="fa-solid fa-file-pdf"></i>
+                  </div>
                 )}
                 
                 {hasMultiple && (
@@ -86,42 +88,53 @@ export default function Carrousel({ items = [], showTitle = false }) {
               </div>
             </div>
 
-            <div className={hasMultiple ? 'col-lg-7' : 'col-lg-6'}>
-              <h5 className="fw-bold mb-3">{current.title}</h5>
-              <p className="text-muted mb-4" style={{ lineHeight: '1.6' }}>
-                {current.description}
-              </p>
+            {/* Contenu à droite - hauteur fixe avec flex */}
+            <div className="col-lg-7 d-flex flex-column" style={{ height: '100%' }}>
+              {/* Titre */}
+              <div className="mb-3">
+                <h5 className="fw-bold mb-0">{current.title}</h5>
+              </div>
 
-              {current.link && (
-                <a 
-                  href={current.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary btn-sm"
-                >
-                  <i className={`fa-solid ${current.type === 'pdf' ? 'fa-file-pdf me-2' : 'fa-external-link me-2'}`}></i>
-                  {current.linkText || (current.type === 'pdf' ? 'Voir le PDF' : 'Voir en détail')}
-                </a>
-              )}
+              {/* Description - grandit selon l'espace disponible */}
+              <div style={{ flex: '1', overflow: 'auto', marginBottom: '1rem' }}>
+                <p className="text-muted mb-0" style={{ lineHeight: '1.6', fontSize: '0.95rem' }}>
+                  {current.description}
+                </p>
+              </div>
 
-              {hasMultiple && (
-                <div className="d-flex gap-2 mt-4">
-                  <button
-                    onClick={goToPrev}
-                    className="btn btn-outline-secondary btn-sm"
-                    aria-label="Item précédent"
+              {/* Boutons et flèches - toujours en bas */}
+              <div className="d-flex gap-2 align-items-center" style={{ marginTop: 'auto' }}>
+                {hasMultiple && (
+                  <>
+                    <button
+                      onClick={goToPrev}
+                      className="btn btn-outline-secondary btn-sm"
+                      aria-label="Item précédent"
+                    >
+                      <i className="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button
+                      onClick={goToNext}
+                      className="btn btn-outline-secondary btn-sm"
+                      aria-label="Item suivant"
+                    >
+                      <i className="fa-solid fa-chevron-right"></i>
+                    </button>
+                  </>
+                )}
+
+                {current.link && (
+                  <a 
+                    href={current.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary btn-sm"
                   >
-                    <i className="fa-solid fa-chevron-left"></i>
-                  </button>
-                  <button
-                    onClick={goToNext}
-                    className="btn btn-outline-secondary btn-sm"
-                    aria-label="Item suivant"
-                  >
-                    <i className="fa-solid fa-chevron-right"></i>
-                  </button>
-                </div>
-              )}
+                    <i className={`fa-solid ${current.type === 'pdf' ? 'fa-file-pdf me-2' : 'fa-external-link me-2'}`}></i>
+                    {current.linkText || (current.type === 'pdf' ? 'Voir le PDF' : 'Voir en détail')}
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>
