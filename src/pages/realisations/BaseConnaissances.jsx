@@ -10,10 +10,6 @@ import { useModal } from '../../hooks/useModal'
 export default function BaseConnaissances() {
   const navigate = useNavigate()
   
-  // Modales pour les outils
-  const itilModal = useModal()
-  const isoModal = useModal()
-
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -35,25 +31,6 @@ export default function BaseConnaissances() {
       </section>
     )
   }
-
-  const besoinsClients = [
-    {
-      titre: "Centraliser la documentation",
-      description: "Réunir toutes les procédures, normes et ressources techniques dispersées en un seul endroit accessible."
-    },
-    {
-      titre: "Harmoniser les formats",
-      description: "Standardiser les documents existants pour une meilleure cohérence et lisibilité."
-    },
-    {
-      titre: "Respecter les standards",
-      description: "Mettre en conformité avec ITIL et ISO 27001 pour garantir la qualité et la sécurité."
-    },
-    {
-      titre: "Sécuriser l'accès",
-      description: "Mettre en place une gestion des droits appropriée pour contrôler l'accès aux informations sensibles."
-    }
-  ]
 
   const preuves = [
     {
@@ -98,27 +75,62 @@ export default function BaseConnaissances() {
         <div className="container container-max-80">
           <h2 className="display-5 fw-bold text-center mb-4">Introduction</h2>
           <p className="lead text-center text-muted text-intro">
-            L'équipe IT d'Azurinfo, mon entreprise d'alternance, avait un besoin critique de centraliser sa documentation technique. Les procédures et normes étaient éparpillées sur plusieurs plateformes, créant un manque de cohérence et rendant difficile l'accès aux informations.
+            En tant que membre du service HotLine, une de mes missions est de maintenir une base de connaissances sur nos clients. Cette base existe depuis le début de l'entreprise et n'a jamais été adaptée a une nouvelle utilisation par de nouveaux employés et même récemment par de l'IA. Je me suis donc proposé pour mener un projet de restructuration et d'amélioration de cette base afin de la rendre plus efficace et accessible.
           </p>
-          
-          {besoinsClients && besoinsClients.length > 0 && (
-            <div className="row g-4 mt-5">
-              {besoinsClients.map((besoin, idx) => (
-                <div key={idx} className="col-md-6 col-lg-6">
-                  <div className="card h-100 border-0 shadow-sm transition-smooth card-hover-lift">
-                    <div className="card-body">
-                      <h5 className="card-title fw-semibold text-primary mb-3">
-                        <i className="fa-solid fa-check-circle me-2"></i>{besoin.titre}
-                      </h5>
-                      <p className="card-text text-muted text-desc-sm">
-                        {besoin.description}
-                      </p>
-                    </div>
-                  </div>
+        
+          <div className="row g-4 mt-5 px-5 mb-5">
+            <div className="col-md-6">
+              <div className="card h-100 border-0 shadow-sm">
+                <div className="card-body">
+                  <h5 className="card-title fw-semibold text-warning mb-3">
+                    <i className="fa-solid fa-database me-2"></i>Centraliser les données
+                  </h5>
+                  <p className="card-text text-muted text-desc-sm">
+                    Unifier les données venant de diverses sources (CRM de l'entreprise, ancien partage, documents internes, ...) et de différents formats (PDF, word, excel, .txt, ...) pour créer une base de connaissances unique et cohérente.
+                  </p>
                 </div>
-              ))}
+              </div>
             </div>
-          )}
+
+            <div className="col-md-6">
+              <div className="card h-100 border-0 shadow-sm">
+                <div className="card-body">
+                  <h5 className="card-title fw-semibold text-info mb-3">
+                    <i className="fa-solid fa-align-left me-2"></i>Harmoniser les formats
+                  </h5>
+                  <p className="card-text text-muted text-desc-sm">
+                    Faire en sorte que la procédure de recherche soit la plus fluide et la plus simple pour n'importe quelle informations recherchée.
+                  </p>
+                </div>
+              </div>
+            </div>
+        
+            <div className="col-md-6">
+              <div className="card h-100 border-0 shadow-sm">
+                <div className="card-body">
+                  <h5 className="card-title fw-semibold text-purple mb-3">
+                    <i className="fa-solid fa-gavel me-2"></i>Respecter l'exactitude des données
+                  </h5>
+                  <p className="card-text text-muted text-desc-sm">
+                    Veiller à ce que les informations soient strictement correctes et à jour. Il fallait marcher à pas de fourmis pour être sûr de ne pas supprimer des informations importantes.
+                  </p>
+                </div>
+              </div>
+            </div>
+        
+            <div className="col-md-6">
+              <div className="card h-100 border-0 shadow-sm">
+                <div className="card-body">
+                  <h5 className="card-title fw-semibold text-danger mb-3">
+                    <i className="fa-solid fa-lock me-2"></i>Sécuriser les données
+                  </h5>
+                  <p className="card-text text-muted text-desc-sm">
+                    L'ancienne base contenait des mots de passe en clair. Il fallait protéger ces données là, ainsi qu'archiver dans un endroit sécurisé les données non-migrées.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -126,7 +138,8 @@ export default function BaseConnaissances() {
         <div className="container container-max-80">
           <h2 className="display-5 fw-bold text-center mb-4">Ce qu'on a fait</h2>
           <p className="text-start text-body-justified">
-            Le projet a commencé par un audit complet de toutes les ressources documentaires existantes pour évaluer leur état et pertinence. Nous avons ensuite créé une architecture logique claire avec une hiérarchie intuitive de catégories et sous-catégories. L'objectif était d'unifier les formats, standardiser les processus et les mettre en conformité avec les standards du secteur (ITIL, ISO 27001), tout en assurant une base sécurisée avec des droits d'accès appropriés.
+            Le projet n'est toujours pas fini. Nous sommes à environ la moitié de la migration. Cependant, les résultats ce font déja ressentir puisque notre nouveau format est utilisé par le service. 
+            {' '}<span className="text-warning">Cependant, nous nous heurtons à des problèmes sur certains clients dont on ne connait pas l'origine.</span>
           </p>
         </div>
       </section>
@@ -134,9 +147,55 @@ export default function BaseConnaissances() {
       <section className="py-4 px-3 border-bottom">
         <div className="container container-max-80">
           <h2 className="display-5 fw-bold text-center mb-4">Ce que j'ai fait</h2>
-          <p className="text-start text-body-justified">
-            J'ai mené la restructuration complète et le tri de toutes les ressources selon la nouvelle hiérarchie définie. J'ai harmonisé les formats de documents et créé des templates standardisés pour les nouvelles ressources. J'ai ensuite effectué les tests d'accessibilité pour vérifier que tous les utilisateurs trouvent facilement les informations dont ils ont besoin, et j'ai créé la documentation complète de la base avec un guide utilisateur et une documentation de maintenance.
+          <p className="text-center text-body-justified">
+            Le projet étant de mon initiative, j'ai pendant 2 semaines était seul à faire la préparation du projet.
           </p>
+
+          <div className="row g-5 mt-3 px-5 mb-5">
+            <div className="col-lg-6 mt-4">
+              <div className="card-dark border-0 h-100 shadow-sm bg-main p-2">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-chart-line text-primary icon-sm"></i>
+                    <h5 className="card-title text-primary mb-0 ms-3">Analyse de l'existant</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    J'ai analyser ce qui avait en place, les différents formats, les différentes sources, etc... .
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-lg-6 mt-4">
+              <div className="card-dark border-0 h-100 shadow-sm bg-main p-2">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-clipboard-list text-purple icon-sm"></i>
+                    <h5 className="card-title text-purple mb-0 ms-3">Plan d'action</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Grâce à mon analyse et sous la supervision de mon tuteur de stage et du du responsable informatique, j'ai pu proposer un plan d'action pour la migration de la base de connaissances.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-12 mt-4">
+              <div className="card-dark border-0 h-100 shadow-sm bg-main p-2">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa-solid fa-book text-info icon-sm"></i>
+                    <h5 className="card-title text-info mb-0 ms-3">Documentation</h5>
+                  </div>
+                  <p className="text-muted mb-0">
+                    Grâce à mon analyse et sous la supervision de mon tuteur de stage et du du responsable informatique, j'ai pu créer et maintenir la documentation technique pour l'entreprise, assurant la continuité du service.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
@@ -212,15 +271,6 @@ export default function BaseConnaissances() {
           </button>
         </div>
       </section>
-
-      {/* Modales pour les outils */}
-      <Modal isOpen={itilModal.isOpen} onClose={itilModal.close} title={getDefinitionByAcronym('ITIL')?.fullName}>
-        {getDefinitionByAcronym('ITIL')?.description}
-      </Modal>
-
-      <Modal isOpen={isoModal.isOpen} onClose={isoModal.close} title={getDefinitionByAcronym('ISO')?.fullName}>
-        {getDefinitionByAcronym('ISO')?.description}
-      </Modal>
     </>
   )
 }
