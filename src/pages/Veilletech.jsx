@@ -67,7 +67,7 @@ export default function Veilletech() {
                   </div>
                   <p className="text-muted mb-3">Je vais utiliser Excel pour faire un suivi des articles</p>
                   
-                  <a href="https://1drv.ms/x/c/4425321540cb89f5/IQBjXY2MZMSGQpbWvVcZ1BpGAfs182K8eGpomouy8GU84v8?e=X8QG09" target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-primary">
+                  <a href="https://1drv.ms/x/c/4425321540cb89f5/IQBU3JA4ekesSo4Q0nNqQk2sAaWwrU3GAooqplUiNcTxO60?e=2KkKAL" target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-primary">
                     <i className="fa-solid fa-file-excel me-2"></i>Accéder au suivi Excel
                   </a>
                 </div>

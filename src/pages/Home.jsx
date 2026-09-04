@@ -182,7 +182,10 @@ export default function Home() {
                       {' '}<button className="modal-trigger-btn" onClick={sisrModal.open}>SISR</button>
                       {' '}en Alternance
                     </h5>
-                    <p className="text-muted mb-2">Formation en alternance chez Azurinfo</p>
+                    <p className="text-muted mb-2">
+                      Formation en alternance chez 
+                      {' '}<Link to="/pages/mon_entreprise" className="modal-trigger-btn">Azurinfo</Link>
+                      </p>
                     <div className="d-flex flex-wrap gap-2">
                       <span className="badge bg-success text-black">Systèmes</span>
                       <span className="badge bg-success text-black">Réseaux</span>
