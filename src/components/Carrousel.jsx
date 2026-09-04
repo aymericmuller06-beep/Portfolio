@@ -92,12 +92,12 @@ export default function Carrousel({ items = [], showTitle = false }) {
             <div className="col-lg-7 d-flex flex-column" style={{ height: '100%' }}>
               {/* Titre */}
               <div className="mb-3">
-                <h5 className="fw-bold mb-0">{current.title}</h5>
+                <h5 className="fw-bold mb-0" style={{ fontSize: '2rem' }}>{current.title}</h5>
               </div>
 
               {/* Description - grandit selon l'espace disponible */}
               <div style={{ flex: '1', overflow: 'auto', marginBottom: '1rem' }}>
-                <p className="text-muted mb-0" style={{ lineHeight: '1.6', fontSize: '0.95rem' }}>
+                <p className="text-muted mb-0" style={{ lineHeight: '1.6', fontSize: '1.5rem' }}>
                   {current.description}
                 </p>
               </div>

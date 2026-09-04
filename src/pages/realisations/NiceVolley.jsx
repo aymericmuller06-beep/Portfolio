@@ -16,6 +16,9 @@ const crmPreview = new URL('../../Img/Gestion de proj CRM NICE.png', import.meta
 const RACI = 'https://docs.google.com/spreadsheets/d/18OlagBLWm_W4wWc6CsgUYbAXz637wBlW4IR48dBREc0/edit?usp=sharing'
 const RACIPreview = new URL('../../Img/Matrice RACI.png', import.meta.url).href
 
+const PresFinale = 'https://canva.link/23v7iolfs7glgoi'
+const PresFinalePreview = new URL('../../Img/PresFinale.png', import.meta.url).href
+
 const MVP = new URL('../../Img/MVP.png', import.meta.url).href
 
 const login = new URL('../../Img/Screenshot CRM NVB/login.png', import.meta.url).href
@@ -113,6 +116,13 @@ export default function NiceVolley() {
       image: RACIPreview,
       link: RACI,
       linkText: "Voir la RACI"
+    },
+    {
+      title: "Présentation finale",
+      description: "Présentation finale du projet, que nous avons utilisé pour présenter le CRM au client",
+      image: PresFinalePreview,
+      link: PresFinale,
+      linkText: "Voir la présentation"
     }
   ]
 
