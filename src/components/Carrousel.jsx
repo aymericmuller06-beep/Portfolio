@@ -23,12 +23,12 @@ export default function Carrousel({ items = [], showTitle = false }) {
     <div>
       {showTitle && <h5 className="fw-bold mb-4">Preuves et réalisations</h5>}
       
-      <div className={`card border-0 shadow-sm ${current.bgClass || ''}`} style={{ height: '500px' }}>
+      <div className={`card border-0 shadow-sm ${current.bgClass || ''} h-500`}>
         <div className="card-body p-4 h-100">
           <div className="row g-4 h-100">
             {/* Image à gauche - taille fixe */}
-            <div className="col-lg-5" style={{ height: '100%', overflow: 'hidden' }}>
-              <div className="position-relative w-100 h-100" style={{ overflow: 'hidden', borderRadius: '8px' }}>
+            <div className="col-lg-5 overflow-hidden h-100" >
+              <div className="position-relative w-100 h-100 overflow-hidden br-8">
                 {current.type === 'pdf' ? (
                   <img 
                     src={current.image} 
@@ -89,21 +89,23 @@ export default function Carrousel({ items = [], showTitle = false }) {
             </div>
 
             {/* Contenu à droite - hauteur fixe avec flex */}
-            <div className="col-lg-7 d-flex flex-column" style={{ height: '100%' }}>
+            <div className="col-lg-7 d-flex flex-column">
               {/* Titre */}
               <div className="mb-3">
-                <h5 className="fw-bold mb-0" style={{ fontSize: '2rem' }}>{current.title}</h5>
+                <h5 className="fw-bold mb-0 text-carrousel-title">
+                  {current.title}
+                </h5>
               </div>
 
               {/* Description - grandit selon l'espace disponible */}
-              <div style={{ flex: '1', overflow: 'auto', marginBottom: '1rem' }}>
-                <p className="text-muted mb-0" style={{ lineHeight: '1.6', fontSize: '1.5rem' }}>
+              <div className="flex-fill overflow-auto mb-3">
+                <p className="text-muted mb-0 text-carrousel-desc">
                   {current.description}
                 </p>
               </div>
 
               {/* Boutons et flèches - toujours en bas */}
-              <div className="d-flex gap-2 align-items-center" style={{ marginTop: 'auto' }}>
+              <div className="d-flex gap-2 align-items-center mt-auto">
                 {hasMultiple && (
                   <>
                     <button
