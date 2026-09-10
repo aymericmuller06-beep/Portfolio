@@ -11,6 +11,10 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.bg-grey {
+  background-color: var(--bs-gray-600);
+}
+
 /* Bordures */
 .border-accent-bottom {
   border-bottom: 2px solid var(--accent);

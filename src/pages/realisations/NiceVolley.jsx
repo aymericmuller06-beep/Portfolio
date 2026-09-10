@@ -338,7 +338,13 @@ export default function NiceVolley() {
 
       <section className="py-4 px-3 border-bottom">
         <div className="container-max-80 mb-5">
-          <h2 className="display-5 fw-bold text-center mb-4">Ce que j'ai fait</h2>
+          <div className="d-flex justify-content-center align-items-center mb-4 gap-3">
+            <h2 className="display-5 fw-bold text-center mb-4">Ce que j'ai fait</h2>
+            <span className="badge bg-info fw-normal mb-3 me-3" style={{color: getContrastColor('#0dcaf0')}}>
+              <i className="fa-solid fa-info me-2"></i>Preuves en fin de la page
+            </span>
+          </div>
+
           <p className="text-center text-body-justified">
             En binôme, j'ai été responsable de la gestion globale du projet et de la coordination avec le client. Nous avons coordonné les 5 équipes thématiques par le biais d'outils tels que la matrice 
             {' '}<button className="modal-trigger-btn" onClick={raciModal.open}>RACI</button>
@@ -347,6 +353,10 @@ export default function NiceVolley() {
             , le 
             {' '}<button className="modal-trigger-btn" onClick={mvpModal.open}>MVP</button>
             {' '}, etc... pour assurer la cohérence du projet final.
+          </p>
+
+          <p className="text-start text-muted text-body-justified mb-4">
+            Voici les 5 équipes qui ont participées à la réalisation du projet:
           </p>
 
            <div className="row g-5 mt-3 px-5 mb-5">
@@ -360,7 +370,7 @@ export default function NiceVolley() {
                     </h5>
                   </div>
                   <p className="text-muted mb-0">
-                    Pole en charge de la conformité du projet avec le RGPD.
+                    Pôle en charge de la conformité du projet avec le RGPD.
                   </p>
                 </div>
               </div>
@@ -445,14 +455,29 @@ export default function NiceVolley() {
           </div>
 
           <p className="text-center text-body-justified text-primary fw-bold mb-5">
-            A la fin du projet, nous avons pris la responsabilité de présenter l'entierté du rendu au client lors d'une présentation finale.
+            A la fin du projet, c'est le pôle de gestion de projet qui avait la responsabilité de présenter l'entierté du rendu au client lors d'une présentation finale.
           </p>
         </div>
+      </section>
 
+      <section className="py-4 px-3 border-bottom bg-body-secondary">
         <div className="container">
+          <h2 className="display-5 fw-bold text-center mb-5">Bilan</h2>
+          
+          <p className="text-start text-body-justified">
+            Ce projet m'a permis d'améliorer ma vision de la gestion de projet. J'ai pu voir la difficulté, même à plusieurs et sur une petit échelle, de coordiner des équipes. Malgré la difficulté, le projet a été enmené à son termes et le client était très satisfait.
+          </p>
+          
+        </div>
+      </section>
+
+      <section className="py-4 px-3 border-bottom">
+        <div className="container">
+          <h2 className="display-5 fw-bold text-center mb-5">Preuves & détails</h2>
           <p className="text-start text-muted text-body-justified">
             Voici, ci-dessous, les réalisations de mon binôme.
           </p>
+
           {preuves && preuves.length > 0 ? (
             <Carrousel items={preuves} />
           ) : (
@@ -463,7 +488,6 @@ export default function NiceVolley() {
             </div>
           )}
         </div>
-
       </section>
 
       <section className="py-4 px-3 border-bottom bg-body-secondary">

@@ -41,11 +41,19 @@ export default function Realisations() {
                             <i className={`fa-solid ${realization.icon} icon-base`} style={{ color: referentielCategories[realization.category]?.color || 'var(--accent)' }}></i>
                           </div>
                           <div>
-                            <h5 className="card-title mb-0 fw-bold" style={{ fontSize: '1.25rem' }}>
-                              {realization.title}
-                            </h5>
+                            <div className="d-flex gap-3">
+                              <h5 className="card-title mb-0 fw-bold" style={{ fontSize: '1.25rem' }}>
+                                {realization.title}
+                              </h5>
+                              {realization.entreprise && (
+                                <span className="badge bg-grey text-light fw-normal me-3" style={{color: getContrastColor('#7c7c7c')}}>
+                                  <i className="fa-solid fa-building me-2"></i>
+                                  Réalisation en entreprise
+                                </span>
+                              )}
+                            </div>
                             <small style={{ color: referentielCategories[realization.category]?.color || 'var(--accent)', fontWeight: '600' }} className="mt-1 d-block">
-                              {realization.category} • {realization.date}
+                              {realization.category} {realization.secondCategory && realization.secondCategory !== realization.category ? `• ${realization.secondCategory}` : ''} • {realization.date}
                             </small>
                           </div>
                         </div>

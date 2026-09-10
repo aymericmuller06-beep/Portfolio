@@ -64,22 +64,25 @@ export const realisations = [
     title: 'CRM pour Nice Volley Ball Club',
     shortDescription: 'Un système de gestion interne pour le club de volley-ball de Nice.',
     category: 'Travailler en mode projet',
+    secondCategory: 'Développer la présence en ligne',
     icon: 'fa-volleyball',
-    referentiels: [13, 14],
+    referentiels: [13, 14, 10],
     date: '2026',
     status: 'Actif',
-    annuaire: ['CRM', 'Weezevent', 'Brevo']
+    annuaire: ['CRM', 'Weezevent', 'Brevo'],
+    entreprise : false
   },
   {
     id: 2,
-    title: 'Refonte d\'une base de connaissances technique',
-    shortDescription: 'Restructuration complète de la base de connaissances interne de mon entreprise.',
+    title: 'Restructuration et migration d\’un Wiki SharePoint',
+    shortDescription: 'Rehabilitation et migration d’un Wiki SharePoint pour une meilleure organisation et accessibilité des informations.',
     category: 'Gérer le patrimoine informatique',
     icon: 'fa-database',
     referentiels: [1, 2, 6],
     date: '2026',
     status: 'Actif',
-    annuaire: ['Git', 'GitHub']
+    annuaire: ['Git', 'GitHub'],
+    entreprise : true
   },
   {
     id: 3,
@@ -90,6 +93,7 @@ export const realisations = [
     referentiels: [19, 20, 21],
     date: '2026-2027',
     status: 'Actif',
-    annuaire: ['React', 'Vite', 'Bootstrap', 'Git']
+    annuaire: ['React', 'Vite', 'Bootstrap', 'Git'],
+    entreprise : false
   }
 ]

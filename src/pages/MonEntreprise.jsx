@@ -124,7 +124,38 @@ export default function MonEntreprise() {
         </div>
       </section>
 
-      <section className="py-5 px-4">
+      <section className="py-5 px-4 border-bottom">
+        <div className="container">
+          <h2 className="display-5 fw-bold mb-5 text-center">Synthèse par années</h2>
+          <div className="d-flex gap-3">
+
+            <div className="d-flex flex-1 card border-0 h-100 shadow-sm cursor-pointer transition-smooth card-hover-light" onClick={() => window.open("https://docs.google.com/document/d/1Hd5oQqlcYd3-LMCrMVBjls1me6XW_sReIxA2rtdl_mk/edit?usp=sharing", '_blank')}>
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3 gap-3">
+                    <i className="fa-solid fa-1 text-purple mb-3 icon-md text-1-5rem"></i>
+                    <h5 className="card-title text-purple mb-3 text-bold text-1-5rem">Première année</h5>
+                  </div>
+                  <p className="text-muted">Débuts en entreprise et apprentissage du fonctionnement interne.</p>
+                  <small className="text-primary text-weight-500">Accéder au document</small>
+                </div>
+            </div>
+
+            <div className="d-flex flex-1 card border-0 h-100 shadow-sm disabled-card">
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3 gap-3">
+                    <i className="fa-solid fa-2 text-danger mb-3 icon-md text-1-5rem"></i>
+                    <h5 className="card-title text-danger mb-3 text-bold text-1-5rem">Seconde année</h5>
+                  </div>
+                  <p className="text-muted">...</p>
+                  <small className="text-primary text-weight-500">(non disponible actuellement)</small>
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section className="py-5 px-4 bg-body-secondary">
         <div className="container">
           <h2 className="display-5 fw-bold mb-5 text-center">Détails supplémentaires</h2>
           <div className="row g-4">
@@ -147,7 +178,7 @@ export default function MonEntreprise() {
                   <i className="fa-solid fa-chart-bar text-primary mb-3 icon-md"></i>
                   <h5 className="card-title mb-3">Statistiques</h5>
                   <p className="text-muted">Chiffres clés et informations</p>
-                  <small className="text-primary" style={{ fontWeight: '500' }}>En savoir plus</small>
+                  <small className="text-primary text-weight-500">En savoir plus</small>
                 </div>
               </div>
             </div>
@@ -160,7 +191,7 @@ export default function MonEntreprise() {
                   <i className="fa-solid fa-globe text-primary mb-3 icon-md"></i>
                   <h5 className="card-title mb-3">Site de l'entreprise</h5>
                   <p className="text-muted">Lien vers le site officiel de l'entreprise</p>
-                  <small className="text-primary" style={{ fontWeight: '500' }}>Visitez le site</small>
+                  <small className="text-primary text-weight-500">Visitez le site</small>
                 </div>
               </div>
             </div>
