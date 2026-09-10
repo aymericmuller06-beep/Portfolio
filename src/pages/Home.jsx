@@ -5,6 +5,7 @@ import { definitions, getDefinitionByAcronym } from '../data/definitions'
 import Modal from '../components/Modal'
 import { useModal } from '../hooks/useModal'
 import { getContrastColor } from '../utils/contrast'
+import profileImage from '../Img/Aymeric png.webp'
 
 export default function Home() {
   const sti2dModal = useModal()
@@ -65,7 +66,7 @@ export default function Home() {
           <div className="row g-4 align-items-center mb-5">
             <div className="col-lg-4 text-center">
               <div className="image-container image-container--square">
-                <img src="./src/Img/Aymeric png.webp" alt="Aymeric Muller" className="img-fluid" />
+                <img src={profileImage} alt="Aymeric Muller" className="img-fluid" />
               </div>
             </div>
             <div className="col-lg-8">

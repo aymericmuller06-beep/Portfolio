@@ -20,7 +20,10 @@ export function initLoader() {
   }
 
   const root = document.getElementById('root')
-  if (!root) return
+  if (!root) {
+    hideLoader()
+    return
+  }
 
   // Simple timeout approach - React should be ready by then
   setTimeout(() => {
@@ -38,7 +41,6 @@ export function initLoader() {
     }, 300)
   }
 }
-
 
 
 

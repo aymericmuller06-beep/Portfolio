@@ -11,6 +11,11 @@ npm run build                # Génère le dossier dist/ pour la production
 npm run preview              # Prévisualise le build de production
 ```
 
+## 🚀 Déployer sur GitHub Pages
+
+Le workflow [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml) construit et publie automatiquement le dossier `dist/` à chaque push sur `main`.
+Dans les réglages du dépôt, choisir **Pages > Build and deployment > Source: GitHub Actions**.
+
 ## 📁 Structure du projet
 
 ```

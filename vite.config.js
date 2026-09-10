@@ -4,6 +4,7 @@ import { resolve } from 'node:path'
 
 export default defineConfig({
   plugins: [react()],
+  base: process.env.NODE_ENV === 'production' ? '/Portfolio/' : '/',
   build: {
     minify: 'esbuild',
     rollupOptions: {
