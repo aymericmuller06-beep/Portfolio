@@ -2,7 +2,7 @@ export function initLoader() {
   const loader = document.getElementById('pageLoader')
   const backToTopBtn = document.getElementById('backToTop')
   
-  if (!loader) return
+  //if (!loader) return
 
   loader.style.display = 'flex'
   loader.style.opacity = '1'
